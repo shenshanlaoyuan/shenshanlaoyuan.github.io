@@ -309,6 +309,139 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/23/Android/Dialog/" itemprop="url">
+                  Dialog
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T15:24:00+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/Android/Dialog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/Android/Dialog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/23/Android/Dialog/" class="leancloud_visitors" data-flag-title="Dialog">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>几种常见的对话框使用。</p>
+<h2 id="确认取消对话框"><a href="#确认取消对话框" class="headerlink" title="确认取消对话框"></a>确认取消对话框</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">      AlertDialog.Builder builder = <span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">builder.setTitle(<span class="string">"约会把..."</span>);</div><div class="line">builder.setMessage(<span class="string">"告别单身, 你愿意吗 ?"</span>);</div><div class="line"></div><div class="line">builder.setPositiveButton(<span class="string">"愿意,gogogo"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">		Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"我也单身, 说不定 可以 来找我..."</span>, <span class="number">0</span>).show();</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">builder.setNegativeButton(<span class="string">"不愿意"</span>, <span class="keyword">null</span> );</div><div class="line">builder.show();</div></pre></td></tr></table></figure>
+<p>显示效果：<br><img src="http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160523140827.png" alt=""></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/23/Android/Dialog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/21/Android/Android下的数据存储与访问方式（三）/" itemprop="url">
                   Android下的数据存储与访问方式（三）
                 </a>
@@ -1488,140 +1621,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/13/IDE/AndroidStudio中如何使用Git和Github管理项目/" itemprop="url">
-                  AndroidStudio中如何使用Git和Github管理项目
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T00:00:00+08:00" content="2016-04-13">
-              2016-04-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/IDE/" itemprop="url" rel="index">
-                    <span itemprop="name">IDE</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/13/IDE/AndroidStudio中如何使用Git和Github管理项目/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/IDE/AndroidStudio中如何使用Git和Github管理项目/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/13/IDE/AndroidStudio中如何使用Git和Github管理项目/" class="leancloud_visitors" data-flag-title="AndroidStudio中如何使用Git和Github管理项目">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文适用于window系统，Mac系统请参考。</p>
-<ol>
-<li>要想在AndroidStudio中使用Git，本地必须安装Git,访问<a href="https://git-for-windows.github.io/">https://git-for-windows.github.io</a>下载安装。Git详细安装使用请参考<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">git教程</a></li>
-<li><p>AndroidStudio中自带Git插件，只需配置下就可以。打开File-&gt;Setting-&gt;Version Control-&gt;Git，设置Git路径（需要定位到bin目录下的git.exe），再点击Test,弹出如下提示框，证明配置成功。<br><img src="http://7xs5l8.com1.z0.glb.clouddn.com/androidstudioQQ%E5%9B%BE%E7%89%8720160413145635.jpg" alt="git"></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/13/IDE/AndroidStudio中如何使用Git和Github管理项目/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1667,7 +1666,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
