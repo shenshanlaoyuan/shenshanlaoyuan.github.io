@@ -38,6 +38,184 @@
     </entry>
     
     <entry>
+      <title><![CDATA[HTML5新增的元素和移除的元素]]></title>
+      <url>http://shenshanlaoyuan.com/2016/10/01/Web/HTML5%E6%96%B0%E5%A2%9E%E7%9A%84%E5%85%83%E7%B4%A0%E5%92%8C%E7%A7%BB%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0/</url>
+      <content type="html"><![CDATA[<p>为了更好地处理今天的互联网应用，HTML5添加了很多新元素及功能，比如: 图形的绘制，多媒体内容，更好的页面结构，更好的形式 处理，和几个api拖放元素，定位，包括网页 应用程序缓存，存储，网络工作者，等。</p>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/'>HTML5新增的元素和移除的元素</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+<script type="text/javascript">
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = ['shenshanlaoyuan.com', 'localhost'];
+  if (white_list.indexOf(domain) >= 0) {
+    var elements = document.getElementsByClassName('source');
+    elements.remove();
+  }
+})()
+</script>
+
+<h2 id="新元素"><a href="#新元素" class="headerlink" title="新元素"></a>新元素</h2><h3 id="新的语义和结构元素"><a href="#新的语义和结构元素" class="headerlink" title="新的语义和结构元素"></a>新的语义和结构元素</h3><table>
+<thead>
+<tr>
+<th>元素</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;article&gt;</code></td>
+<td>定义独立的内容，内容本身必须是有意义的且必须是独立于文档的其余部分。</td>
+</tr>
+<tr>
+<td><code>&lt;aside&gt;</code></td>
+<td>定义页面的侧边栏内容。</td>
+</tr>
+<tr>
+<td><code>&lt;header&gt;</code></td>
+<td>定义了文档的头部区域。</td>
+</tr>
+<tr>
+<td><code>&lt;footer&gt;</code></td>
+<td>定义文档或者文档的一部分区域的页脚。</td>
+</tr>
+<tr>
+<td><code>&lt;section&gt;</code></td>
+<td>定义了文档的某个区域。比如章节、头部、底部或者文档的其他区域。</td>
+</tr>
+<tr>
+<td><code>&lt;time&gt;</code></td>
+<td>定义公历的时间（24 小时制）或日期，时间和时区偏移是可选的。</td>
+</tr>
+<tr>
+<td><code>&lt;details&gt;</code></td>
+<td>规定了用户可见的或者隐藏的需求的补充细节。标签用来供用户开启关闭的交互式控件。任何形式的内容都能被放在 <code>&lt;details&gt;</code> 标签里边。元素的内容对用户是不可见的，除非设置了 open 属性。</td>
+</tr>
+<tr>
+<td><code>&lt;bdi&gt;</code></td>
+<td>标签允许您设置一段文本，使其脱离其父元素的文本方向设置。在发布用户评论或其他您无法完全控制的内容时，该标签很有用。</td>
+</tr>
+<tr>
+<td><code>&lt;summary&gt;</code></td>
+<td>标签为 <code>&lt;details&gt;</code>元素定义一个可见的标题。 当用户点击标题时会显示出详细信息。</td>
+</tr>
+<tr>
+<td><code>&lt;command&gt;</code></td>
+<td>定义命令按钮，比如单选按钮、复选框或按钮。</td>
+</tr>
+<tr>
+<td><code>&lt;dialog&gt;</code></td>
+<td>定义对话框，比如提示框。</td>
+</tr>
+<tr>
+<td><code>&lt;figure&gt;</code></td>
+<td>标签规定独立的流内容（图像、图表、照片、代码等等）。元素的内容应该与主内容相关，同时元素的位置相对于主内容是独立的。如果被删除，则不应对文档流产生影响。</td>
+</tr>
+<tr>
+<td><code>&lt;figcaption&gt;</code></td>
+<td>定义<code>&lt;figure&gt;</code>元素的标题</td>
+</tr>
+<tr>
+<td><code>&lt;mark&gt;</code></td>
+<td>定义带有记号的文本。</td>
+</tr>
+<tr>
+<td><code>&lt;meter&gt;</code></td>
+<td>标签定义度量衡。仅用于已知最大和最小值的度量。比如：磁盘使用情况，查询结果的相关性等。</td>
+</tr>
+<tr>
+<td><code>&lt;nav&gt;</code></td>
+<td>标签定义导航链接的部分。并不是所有的HTML文档都要使用到 <code>&lt;nav&gt;</code> 元素。<code>&lt;nav&gt;</code>元素只是作为标注一个导航链接的区域。</td>
+</tr>
+<tr>
+<td><code>&lt;progress&gt;</code></td>
+<td>标签定义运行中的任务进度（进程）。</td>
+</tr>
+<tr>
+<td><code>&lt;rt&gt;</code></td>
+<td>定义字符（中文注音或字符）的解释或发音。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新表单元素"><a href="#新表单元素" class="headerlink" title="新表单元素"></a>新表单元素</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;datalist&gt;</code></td>
+<td>标签规定了 <code>&lt;input&gt;</code> 元素可能的选项列表。标签被用来在为 <code>&lt;input&gt;</code> 元素提供”自动完成”的特性。用户能看到一个下拉列表，里边的选项是预先定义好的，将作为用户的输入数据。</td>
+</tr>
+<tr>
+<td><code>&lt;keygen&gt;</code></td>
+<td>标签规定用于表单的密钥对生成器字段。当提交表单时，私钥存储在本地，公钥发送到服务器。</td>
+</tr>
+<tr>
+<td><code>&lt;output&gt;</code></td>
+<td>标签作为计算结果输出显示(比如执行脚本的输出)。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="新多媒体元素"><a href="#新多媒体元素" class="headerlink" title="新多媒体元素"></a>新多媒体元素</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;audio&gt;</code></td>
+<td>标签定义声音，比如音乐或其他音频流。<code>&lt;audio&gt;</code>元素支持的3种文件格式：MP3、Wav、Ogg。</td>
+</tr>
+<tr>
+<td><code>&lt;video&gt;</code></td>
+<td>标签定义视频，比如电影片段或其他视频流。目前，<code>&lt;video&gt;</code> 元素支持三种视频格式：MP4、WebM、Ogg。</td>
+</tr>
+<tr>
+<td><code>&lt;source&gt;</code></td>
+<td>标签为媒体元素（比如 <code>&lt;video&gt;</code>和 <code>&lt;audio&gt;</code>）定义媒体资源。</td>
+</tr>
+<tr>
+<td><code>&lt;embed&gt;</code></td>
+<td>标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）。</td>
+</tr>
+<tr>
+<td><code>&lt;track&gt;</code></td>
+<td>标签为媒体元素（比如 <code>&lt;audio&gt;</code>and<code>&lt;video&gt;</code>）规定外部文本轨道。这个元素用于规定字幕文件或其他包含文本的文件，当媒体播放时，这些文件是可见的。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lt-canvas-gt-元素"><a href="#lt-canvas-gt-元素" class="headerlink" title="&lt;canvas&gt;元素"></a><code>&lt;canvas&gt;</code>元素</h3><p>标签通过脚本（通常是 JavaScript）来绘制图形（比如图表和其他图像）。<code>&lt;canvas&gt;</code>标签只是图形容器，必须使用脚本来绘制图形。</p>
+<h3 id="移除的标签"><a href="#移除的标签" class="headerlink" title="移除的标签"></a>移除的标签</h3><ul>
+<li><code>&lt;acronym&gt;</code></li>
+<li><code>&lt;applet&gt;</code></li>
+<li><code>&lt;basefont&gt;</code></li>
+<li><code>&lt;big&gt;</code></li>
+<li><code>&lt;center&gt;</code></li>
+<li><code>&lt;dir&gt;</code></li>
+<li><code>&lt;font&gt;</code></li>
+<li><code>&lt;frame&gt;</code></li>
+<li><code>&lt;frameset&gt;</code></li>
+<li><code>&lt;noframes&gt;</code></li>
+<li><code>&lt;strike&gt;</code></li>
+<li><code>&lt;tt&gt;</code></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决GitHub Pages自有域名二级目录无法访问问题]]></title>
       <url>http://shenshanlaoyuan.com/2016/09/26/Hexo/%E8%A7%A3%E5%86%B3GitHub%20Pages%E8%87%AA%E6%9C%89%E5%9F%9F%E5%90%8D%E4%BA%8C%E7%BA%A7%E7%9B%AE%E5%BD%95%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>通常新建个项目，通过GitHub上创建gh-pages分支可以访问项目主页。然而我访问<code>usename.github.io/repo</code>,或者自定义域名 <code>yoursite.com/repo</code>    ，跳转到了 404 页面。</p>
@@ -1280,18 +1458,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[跟随大神的脚步才能成长为大神-android大神Blog推荐（转）]]></title>
-      <url>http://shenshanlaoyuan.com/2016/03/28/Android/%E5%A4%A7%E7%A5%9EBlog%E6%8E%A8%E8%8D%90/</url>
-      <content type="html"><![CDATA[<p>发现一些非常给力的CSDNBlog和个人Blog，这些Blog都有一个共同的特点，即内容详实，讲解透彻，也算是给后来的初学者指一条路吧！只要你下定决心跟随强者的脚步，成为人们眼中的大神，只不过是时间问题！<br><a id="more"></a><br>下面排名不分先后</p>
-<ul>
-<li>CSDN<br>  鸿洋：<a href="http://blog.csdn.net/lmj623565791" target="_blank" rel="external">http://blog.csdn.net/lmj623565791</a><br>  爱哥：<a href="http://blog.csdn.net/aigestudio" target="_blank" rel="external">http://blog.csdn.net/aigestudio</a><br>  老罗：<a href="http://blog.csdn.net/luoshengyang" target="_blank" rel="external">http://blog.csdn.net/luoshengyang</a><br>  小巫：<a href="http://blog.csdn.net/wwj_748" target="_blank" rel="external">http://blog.csdn.net/wwj_748</a><br>  Mr.Simple：<a href="http://blog.csdn.net/bboyfeiyu" target="_blank" rel="external">http://blog.csdn.net/bboyfeiyu</a><br>  任玉刚：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">http://blog.csdn.net/singwhatiwanna</a><br>  夏安明：<a href="http://blog.csdn.net/xiaanming" target="_blank" rel="external">http://blog.csdn.net/xiaanming</a><br>  徐医生：<a href="http://blog.csdn.net/eclipsexys" target="_blank" rel="external">http://blog.csdn.net/eclipsexys</a><br>  郭神：<a href="http://blog.csdn.net/sinyu890807/" target="_blank" rel="external">http://blog.csdn.net/sinyu890807/</a><br>  张兴业：<a href="http://blog.csdn.net/xyz_lmn/" target="_blank" rel="external">http://blog.csdn.net/xyz_lmn/</a><br>  咪当系欧巴(非常有天赋的Coder)：<a href="http://blog.csdn.net/hellogv" target="_blank" rel="external">http://blog.csdn.net/hellogv</a></li>
-<li>个人Blog<br>  胡凯(android官方开发教程中文译文项目发起者)：<a href="http://hukai.me/blog/archives/" target="_blank" rel="external">http://hukai.me/blog/archives/</a><br>  码农明明桑（有审美细胞的开发者）：<a href="http://blog.isming.me/" target="_blank" rel="external">http://blog.isming.me/</a><br>  stormzhang（收到FaceBook面试邀请的大神）：<a href="http://stormzhang.com/posts.html" target="_blank" rel="external">http://stormzhang.com/posts.html</a><br>  Coder Robin：<a href="http://coderrobin.com/" target="_blank" rel="external">http://coderrobin.com/</a><br>  郝锡强：<a href="http://www.haoxiqiang.info/static/timing.html" target="_blank" rel="external">http://www.haoxiqiang.info/static/timing.html</a><br>  Trinea：<a href="http://www.trinea.cn/" target="_blank" rel="external">http://www.trinea.cn/</a><br>  农民伯伯：<a href="http://www.cnblogs.com/over140/" target="_blank" rel="external">http://www.cnblogs.com/over140/</a><br>  daimajia(北京师范大学在读研究生，SwipeLayout是ZListView产生的源头)：<a href="http://blog.daimajia.com/" target="_blank" rel="external">http://blog.daimajia.com/</a><br>  stay4it：<a href="http://www.cnblogs.com/stay/" target="_blank" rel="external">http://www.cnblogs.com/stay/</a><br>  张明云：<a href="http://zmywly8866.github.io/pages/archive.html" target="_blank" rel="external">http://zmywly8866.github.io/pages/archive.html</a></li>
-<li>你要时常去看的网站<br>  Android开发者官网(你必须熟练使用翻墙)：<a href="http://developer.android.com/index.html" target="_blank" rel="external">http://developer.android.com/index.html</a><br>  GitHub(开源项目就在这里找)：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a><br>  开源项目解析：<a href="http://www.codekk.com/open-source-project-analysis" target="_blank" rel="external">http://www.codekk.com/open-source-project-analysis</a><br>  Android代码查找：<a href="https://www.codota.com/" target="_blank" rel="external">https://www.codota.com/</a> </li>
-</ul>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo搭建独立博客，托管到Github和Coding上]]></title>
       <url>http://shenshanlaoyuan.com/2016/03/28/Hexo/Hexo%E6%90%AD%E5%BB%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%89%98%E7%AE%A1%E5%88%B0Github%E5%92%8CCoding%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一篇很详细的独立博客搭建教程，意在帮助小白们能快速入门，拥有自己的独立博客。作者已在window平台已搭建成功，博客效果请点<a href="http://shenshanlaoyuan.com/">链接</a>查看。<br><a id="more"></a></p>
@@ -1426,6 +1592,18 @@
       <title><![CDATA[最火的Android开源项目（转载）]]></title>
       <url>http://shenshanlaoyuan.com/2016/03/28/Android/%E6%9C%80%E7%81%AB%E7%9A%84Android%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/</url>
       <content type="html"><![CDATA[<p>了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。<br>以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。<br>有时间可以仔细看看。<br><a id="more"></a><br>直接拿来用！最火的Android开源项目（一）<br><a href="http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects" target="_blank" rel="external">http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects</a><br>直接拿来用！最火的Android开源项目（二）<br><a href="http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two" target="_blank" rel="external">http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two</a><br>直接拿来用！最火的Android开源项目（完结篇）<br><a href="http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale）" target="_blank" rel="external">http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[跟随大神的脚步才能成长为大神-android大神Blog推荐（转）]]></title>
+      <url>http://shenshanlaoyuan.com/2016/03/28/Android/%E5%A4%A7%E7%A5%9EBlog%E6%8E%A8%E8%8D%90/</url>
+      <content type="html"><![CDATA[<p>发现一些非常给力的CSDNBlog和个人Blog，这些Blog都有一个共同的特点，即内容详实，讲解透彻，也算是给后来的初学者指一条路吧！只要你下定决心跟随强者的脚步，成为人们眼中的大神，只不过是时间问题！<br><a id="more"></a><br>下面排名不分先后</p>
+<ul>
+<li>CSDN<br>  鸿洋：<a href="http://blog.csdn.net/lmj623565791" target="_blank" rel="external">http://blog.csdn.net/lmj623565791</a><br>  爱哥：<a href="http://blog.csdn.net/aigestudio" target="_blank" rel="external">http://blog.csdn.net/aigestudio</a><br>  老罗：<a href="http://blog.csdn.net/luoshengyang" target="_blank" rel="external">http://blog.csdn.net/luoshengyang</a><br>  小巫：<a href="http://blog.csdn.net/wwj_748" target="_blank" rel="external">http://blog.csdn.net/wwj_748</a><br>  Mr.Simple：<a href="http://blog.csdn.net/bboyfeiyu" target="_blank" rel="external">http://blog.csdn.net/bboyfeiyu</a><br>  任玉刚：<a href="http://blog.csdn.net/singwhatiwanna" target="_blank" rel="external">http://blog.csdn.net/singwhatiwanna</a><br>  夏安明：<a href="http://blog.csdn.net/xiaanming" target="_blank" rel="external">http://blog.csdn.net/xiaanming</a><br>  徐医生：<a href="http://blog.csdn.net/eclipsexys" target="_blank" rel="external">http://blog.csdn.net/eclipsexys</a><br>  郭神：<a href="http://blog.csdn.net/sinyu890807/" target="_blank" rel="external">http://blog.csdn.net/sinyu890807/</a><br>  张兴业：<a href="http://blog.csdn.net/xyz_lmn/" target="_blank" rel="external">http://blog.csdn.net/xyz_lmn/</a><br>  咪当系欧巴(非常有天赋的Coder)：<a href="http://blog.csdn.net/hellogv" target="_blank" rel="external">http://blog.csdn.net/hellogv</a></li>
+<li>个人Blog<br>  胡凯(android官方开发教程中文译文项目发起者)：<a href="http://hukai.me/blog/archives/" target="_blank" rel="external">http://hukai.me/blog/archives/</a><br>  码农明明桑（有审美细胞的开发者）：<a href="http://blog.isming.me/" target="_blank" rel="external">http://blog.isming.me/</a><br>  stormzhang（收到FaceBook面试邀请的大神）：<a href="http://stormzhang.com/posts.html" target="_blank" rel="external">http://stormzhang.com/posts.html</a><br>  Coder Robin：<a href="http://coderrobin.com/" target="_blank" rel="external">http://coderrobin.com/</a><br>  郝锡强：<a href="http://www.haoxiqiang.info/static/timing.html" target="_blank" rel="external">http://www.haoxiqiang.info/static/timing.html</a><br>  Trinea：<a href="http://www.trinea.cn/" target="_blank" rel="external">http://www.trinea.cn/</a><br>  农民伯伯：<a href="http://www.cnblogs.com/over140/" target="_blank" rel="external">http://www.cnblogs.com/over140/</a><br>  daimajia(北京师范大学在读研究生，SwipeLayout是ZListView产生的源头)：<a href="http://blog.daimajia.com/" target="_blank" rel="external">http://blog.daimajia.com/</a><br>  stay4it：<a href="http://www.cnblogs.com/stay/" target="_blank" rel="external">http://www.cnblogs.com/stay/</a><br>  张明云：<a href="http://zmywly8866.github.io/pages/archive.html" target="_blank" rel="external">http://zmywly8866.github.io/pages/archive.html</a></li>
+<li>你要时常去看的网站<br>  Android开发者官网(你必须熟练使用翻墙)：<a href="http://developer.android.com/index.html" target="_blank" rel="external">http://developer.android.com/index.html</a><br>  GitHub(开源项目就在这里找)：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a><br>  开源项目解析：<a href="http://www.codekk.com/open-source-project-analysis" target="_blank" rel="external">http://www.codekk.com/open-source-project-analysis</a><br>  Android代码查找：<a href="https://www.codota.com/" target="_blank" rel="external">https://www.codota.com/</a> </li>
+</ul>
 ]]></content>
     </entry>
     
