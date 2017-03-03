@@ -73,7 +73,7 @@
     <link href="http://shenshanlaoyuan.com/2016/10/01/Web/HTML5%E6%96%B0%E5%A2%9E%E7%9A%84%E5%85%83%E7%B4%A0%E5%92%8C%E7%A7%BB%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0/"/>
     <id>http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/</id>
     <published>2016-10-01T12:00:00.000Z</published>
-    <updated>2017-03-03T11:08:59.000Z</updated>
+    <updated>2017-03-03T11:15:39.000Z</updated>
     
     <content type="html">&lt;p&gt;为了更好地处理今天的互联网应用，HTML5添加了很多新元素及功能，比如: 图形的绘制，多媒体内容，更好的页面结构，更好的形式 处理，和几个api拖放元素，定位，包括网页 应用程序缓存，存储，网络工作者，等。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/&#39;&gt;HTML5新增的元素和移除的元素&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
@@ -233,7 +233,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&quot;lt-canvas-gt-元素&quot;&gt;&lt;a href=&quot;#lt-canvas-gt-元素&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;canvas&amp;gt;元素&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;元素&lt;/h3&gt;&lt;p&gt;标签通过脚本（通常是 JavaScript）来绘制图形（比如图表和其他图像）。&lt;code&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt;标签只是图形容器，必须使用脚本来绘制图形。&lt;/p&gt;
-&lt;h3 id=&quot;移除的标签&quot;&gt;&lt;a href=&quot;#移除的标签&quot; class=&quot;headerlink&quot; title=&quot;移除的标签&quot;&gt;&lt;/a&gt;移除的标签&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&quot;移除的元素&quot;&gt;&lt;a href=&quot;#移除的元素&quot; class=&quot;headerlink&quot; title=&quot;移除的元素&quot;&gt;&lt;/a&gt;移除的元素&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;acronym&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;applet&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;basefont&amp;gt;&lt;/code&gt;&lt;/li&gt;

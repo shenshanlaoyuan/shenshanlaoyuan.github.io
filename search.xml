@@ -198,7 +198,7 @@
 </tbody>
 </table>
 <h3 id="lt-canvas-gt-元素"><a href="#lt-canvas-gt-元素" class="headerlink" title="&lt;canvas&gt;元素"></a><code>&lt;canvas&gt;</code>元素</h3><p>标签通过脚本（通常是 JavaScript）来绘制图形（比如图表和其他图像）。<code>&lt;canvas&gt;</code>标签只是图形容器，必须使用脚本来绘制图形。</p>
-<h3 id="移除的标签"><a href="#移除的标签" class="headerlink" title="移除的标签"></a>移除的标签</h3><ul>
+<h3 id="移除的元素"><a href="#移除的元素" class="headerlink" title="移除的元素"></a>移除的元素</h3><ul>
 <li><code>&lt;acronym&gt;</code></li>
 <li><code>&lt;applet&gt;</code></li>
 <li><code>&lt;basefont&gt;</code></li>
