@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2017-04-11T05:42:20.000Z</updated>
+  <updated>2017-04-11T06:32:21.000Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://shenshanlaoyuan.com/2017/04/17/Java/Java%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%92%8C%E7%AD%94%E6%A1%88/"/>
     <id>http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/</id>
     <published>2017-04-17T12:00:00.000Z</published>
-    <updated>2017-04-11T05:42:20.000Z</updated>
+    <updated>2017-04-11T06:32:21.000Z</updated>
     
     <content type="html">&lt;p&gt;最近在面试，总结了下常见的面试问题以及自己的回答。&lt;br&gt;可能有不对的地方，望斧正！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/&#39;&gt;Java常见的面试题和答案&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
@@ -45,7 +45,7 @@
 })()
 &lt;/script&gt;
 
-&lt;h2 id=&quot;谈谈你对-MVC-的理解？&quot;&gt;&lt;a href=&quot;#谈谈你对-MVC-的理解？&quot; class=&quot;headerlink&quot; title=&quot;谈谈你对 MVC 的理解？&quot;&gt;&lt;/a&gt;谈谈你对 MVC 的理解？&lt;/h2&gt;&lt;p&gt;MVC 是 Model-View-Control 的简称，即模型—视图—控制器。MVC 是一种设计模式，它强制性把应用程序的输入、处理和输出分开。MVC 中的模型、视图、控制器它们分别担负着不同的任务。&lt;/p&gt;
+&lt;h2 id=&quot;结合项目谈谈你对-MVC-的理解？&quot;&gt;&lt;a href=&quot;#结合项目谈谈你对-MVC-的理解？&quot; class=&quot;headerlink&quot; title=&quot;结合项目谈谈你对 MVC 的理解？&quot;&gt;&lt;/a&gt;结合项目谈谈你对 MVC 的理解？&lt;/h2&gt;&lt;p&gt;MVC 是 Model-View-Control 的简称，即模型—视图—控制器。MVC 是一种设计模式，它强制性把应用程序的输入、处理和输出分开。MVC 中的模型、视图、控制器它们分别担负着不同的任务。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;视图：视图是用户看到并与之交互的界面。视图向用户显示相关数据，并接受用户的输入。视图不进行任何业务逻辑的处理。&lt;/li&gt;
 &lt;li&gt;模型：模型表示业务数据和业务处理。相当于一个 JavaBean 。一个模型能为多个视图提供数据。&lt;/li&gt;
@@ -53,7 +53,15 @@
 &lt;/ul&gt;
 &lt;p&gt;MVC 处理过程：首先控制器接受用户的请求，调用相应的模型来进行业务处理，并返回数据给控制器。控制器调用相应的视图来显示处理的结果，并通过视图呈现给用户。&lt;/p&gt;
 &lt;p&gt;项目中对相应 MVC ：View 对应项目中的 Jsp ，Control 对应  Action，Model 对应 service+dao 层的业务逻辑和持久化的操做。&lt;/p&gt;
-</content>
+&lt;h2 id=&quot;项目中为什么用-SSH-框架？&quot;&gt;&lt;a href=&quot;#项目中为什么用-SSH-框架？&quot; class=&quot;headerlink&quot; title=&quot;项目中为什么用 SSH 框架？&quot;&gt;&lt;/a&gt;项目中为什么用 SSH 框架？&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用 Struts 是因为 Struts 是基于 MVC 模式的，很好的将应用程序进行了分层，使开发者更关注于业务逻辑的实现；Struts有着丰富的标签库，能大大提高开发效率。&lt;/li&gt;
+&lt;li&gt;使用 Hibernate 是因为 Hibernate 为 Java 应用提供了一个易用的、高效率的对象关系映射框架。Hibernate 是个轻量级的持久性框架，功能丰富。&lt;/li&gt;
+&lt;li&gt;使用 Spring 是因为 Spring 基于 IOC 和 AOP 架构多层J2EE系统的框架。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;挑一个你做的功能说明-SSH-框架的应用原理？&quot;&gt;&lt;a href=&quot;#挑一个你做的功能说明-SSH-框架的应用原理？&quot; class=&quot;headerlink&quot; title=&quot;挑一个你做的功能说明 SSH 框架的应用原理？&quot;&gt;&lt;/a&gt;挑一个你做的功能说明 SSH 框架的应用原理？&lt;/h2&gt;&lt;p&gt;在表示层中，首先通过 JSP 页面实现交互界面，负责传送请求（Request）和接收响应（Response），然后 Struts 根据配置文件（*.struts.xml）将 ActionServlet 接收到的 Request 委派给相应的 Action 处理。&lt;/p&gt;
+&lt;p&gt;在业务层中，管理服务组件的 SpringIOC 容器负责向 Action 提供业务模型（Model）组件和该组件的协作对象数据处理（DAO）组件完成业务逻辑，并提供事务处理、缓冲池等容器组件以提升系统性能和保证数据的完整性。&lt;/p&gt;
+&lt;p&gt;在持久层中， 则依赖于 Hibernate 的对象映射和数据库交互，处理 DAO 组件请求的数据，并返回处理的结果。&lt;/p&gt;
+&lt;h2 id=&quot;Struts-工作原理？&quot;&gt;&lt;a href=&quot;#Struts-工作原理？&quot; class=&quot;headerlink&quot; title=&quot;Struts 工作原理？&quot;&gt;&lt;/a&gt;Struts 工作原理？&lt;/h2&gt;</content>
     
     <summary type="html">
     

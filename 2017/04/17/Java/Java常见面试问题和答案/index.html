@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/index.html">
 <meta property="og:site_name" content="深山老猿">
 <meta property="og:description" content="最近在面试，总结了下常见的面试问题以及自己的回答。可能有不对的地方，望斧正！">
-<meta property="og:updated_time" content="2017-04-11T05:42:20.000Z">
+<meta property="og:updated_time" content="2017-04-11T06:32:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常见的面试题和答案">
 <meta name="twitter:description" content="最近在面试，总结了下常见的面试问题以及自己的回答。可能有不对的地方，望斧正！">
@@ -453,7 +453,7 @@
 })()
 </script>
 
-<h2 id="谈谈你对-MVC-的理解？"><a href="#谈谈你对-MVC-的理解？" class="headerlink" title="谈谈你对 MVC 的理解？"></a>谈谈你对 MVC 的理解？</h2><p>MVC 是 Model-View-Control 的简称，即模型—视图—控制器。MVC 是一种设计模式，它强制性把应用程序的输入、处理和输出分开。MVC 中的模型、视图、控制器它们分别担负着不同的任务。</p>
+<h2 id="结合项目谈谈你对-MVC-的理解？"><a href="#结合项目谈谈你对-MVC-的理解？" class="headerlink" title="结合项目谈谈你对 MVC 的理解？"></a>结合项目谈谈你对 MVC 的理解？</h2><p>MVC 是 Model-View-Control 的简称，即模型—视图—控制器。MVC 是一种设计模式，它强制性把应用程序的输入、处理和输出分开。MVC 中的模型、视图、控制器它们分别担负着不同的任务。</p>
 <ul>
 <li>视图：视图是用户看到并与之交互的界面。视图向用户显示相关数据，并接受用户的输入。视图不进行任何业务逻辑的处理。</li>
 <li>模型：模型表示业务数据和业务处理。相当于一个 JavaBean 。一个模型能为多个视图提供数据。</li>
@@ -461,7 +461,15 @@
 </ul>
 <p>MVC 处理过程：首先控制器接受用户的请求，调用相应的模型来进行业务处理，并返回数据给控制器。控制器调用相应的视图来显示处理的结果，并通过视图呈现给用户。</p>
 <p>项目中对相应 MVC ：View 对应项目中的 Jsp ，Control 对应  Action，Model 对应 service+dao 层的业务逻辑和持久化的操做。</p>
-
+<h2 id="项目中为什么用-SSH-框架？"><a href="#项目中为什么用-SSH-框架？" class="headerlink" title="项目中为什么用 SSH 框架？"></a>项目中为什么用 SSH 框架？</h2><ul>
+<li>使用 Struts 是因为 Struts 是基于 MVC 模式的，很好的将应用程序进行了分层，使开发者更关注于业务逻辑的实现；Struts有着丰富的标签库，能大大提高开发效率。</li>
+<li>使用 Hibernate 是因为 Hibernate 为 Java 应用提供了一个易用的、高效率的对象关系映射框架。Hibernate 是个轻量级的持久性框架，功能丰富。</li>
+<li>使用 Spring 是因为 Spring 基于 IOC 和 AOP 架构多层J2EE系统的框架。</li>
+</ul>
+<h2 id="挑一个你做的功能说明-SSH-框架的应用原理？"><a href="#挑一个你做的功能说明-SSH-框架的应用原理？" class="headerlink" title="挑一个你做的功能说明 SSH 框架的应用原理？"></a>挑一个你做的功能说明 SSH 框架的应用原理？</h2><p>在表示层中，首先通过 JSP 页面实现交互界面，负责传送请求（Request）和接收响应（Response），然后 Struts 根据配置文件（*.struts.xml）将 ActionServlet 接收到的 Request 委派给相应的 Action 处理。</p>
+<p>在业务层中，管理服务组件的 SpringIOC 容器负责向 Action 提供业务模型（Model）组件和该组件的协作对象数据处理（DAO）组件完成业务逻辑，并提供事务处理、缓冲池等容器组件以提升系统性能和保证数据的完整性。</p>
+<p>在持久层中， 则依赖于 Hibernate 的对象映射和数据库交互，处理 DAO 组件请求的数据，并返回处理的结果。</p>
+<h2 id="Struts-工作原理？"><a href="#Struts-工作原理？" class="headerlink" title="Struts 工作原理？"></a>Struts 工作原理？</h2>
       
     </div>
 
@@ -744,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#谈谈你对-MVC-的理解？"><span class="nav-number">1.</span> <span class="nav-text">谈谈你对 MVC 的理解？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结合项目谈谈你对-MVC-的理解？"><span class="nav-number">1.</span> <span class="nav-text">结合项目谈谈你对 MVC 的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目中为什么用-SSH-框架？"><span class="nav-number">2.</span> <span class="nav-text">项目中为什么用 SSH 框架？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挑一个你做的功能说明-SSH-框架的应用原理？"><span class="nav-number">3.</span> <span class="nav-text">挑一个你做的功能说明 SSH 框架的应用原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts-工作原理？"><span class="nav-number">4.</span> <span class="nav-text">Struts 工作原理？</span></a></li></ol></div>
             
 
           </div>
