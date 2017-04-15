@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2017-04-11T06:32:21.000Z</updated>
+  <updated>2017-04-15T15:27:21.000Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://shenshanlaoyuan.com/2017/04/17/Java/Java%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%92%8C%E7%AD%94%E6%A1%88/"/>
     <id>http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/</id>
     <published>2017-04-17T12:00:00.000Z</published>
-    <updated>2017-04-11T06:32:21.000Z</updated>
+    <updated>2017-04-15T15:27:21.000Z</updated>
     
     <content type="html">&lt;p&gt;最近在面试，总结了下常见的面试问题以及自己的回答。&lt;br&gt;可能有不对的地方，望斧正！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/&#39;&gt;Java常见的面试题和答案&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
@@ -61,7 +61,36 @@
 &lt;h2 id=&quot;挑一个你做的功能说明-SSH-框架的应用原理？&quot;&gt;&lt;a href=&quot;#挑一个你做的功能说明-SSH-框架的应用原理？&quot; class=&quot;headerlink&quot; title=&quot;挑一个你做的功能说明 SSH 框架的应用原理？&quot;&gt;&lt;/a&gt;挑一个你做的功能说明 SSH 框架的应用原理？&lt;/h2&gt;&lt;p&gt;在表示层中，首先通过 JSP 页面实现交互界面，负责传送请求（Request）和接收响应（Response），然后 Struts 根据配置文件（*.struts.xml）将 ActionServlet 接收到的 Request 委派给相应的 Action 处理。&lt;/p&gt;
 &lt;p&gt;在业务层中，管理服务组件的 SpringIOC 容器负责向 Action 提供业务模型（Model）组件和该组件的协作对象数据处理（DAO）组件完成业务逻辑，并提供事务处理、缓冲池等容器组件以提升系统性能和保证数据的完整性。&lt;/p&gt;
 &lt;p&gt;在持久层中， 则依赖于 Hibernate 的对象映射和数据库交互，处理 DAO 组件请求的数据，并返回处理的结果。&lt;/p&gt;
-&lt;h2 id=&quot;Struts-工作原理？&quot;&gt;&lt;a href=&quot;#Struts-工作原理？&quot; class=&quot;headerlink&quot; title=&quot;Struts 工作原理？&quot;&gt;&lt;/a&gt;Struts 工作原理？&lt;/h2&gt;</content>
+&lt;h2 id=&quot;Struts-工作原理？&quot;&gt;&lt;a href=&quot;#Struts-工作原理？&quot; class=&quot;headerlink&quot; title=&quot;Struts 工作原理？&quot;&gt;&lt;/a&gt;Struts 工作原理？&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;客户端发出一个指向 Servlet 容器的请求&lt;/li&gt;
+&lt;li&gt;请求会经过 StrutsPrepareAndExecuteFilter 过滤器&lt;/li&gt;
+&lt;li&gt;过滤器和请求将访问 Struts2 的底层框架结构，在 Web 容器启动时，Struts框架会自动加载配置文件里相关参数，并转换成相应的类。如：ConfigurationManager、ActionMapper、和 ObjectFactory。ConfigurationManager 存有配置文件的一些基本信息，ActionMapper 存有 action 的配置信息。在请求过程中所有的对象（Action，Results,Interceptor 等）是通过 ObjectFactory 来创建的，过滤器会通过询问 ActionMapper 类来查找请求中需要用到的 Action。&lt;/li&gt;
+&lt;li&gt;如果找到需要调用的 Action，过滤器会把请求处理交给 ActionProxy。ActionProxy 为 Action 的代理对象。ActionProxy 通过 ConfigurationManager 询问框架的的配置文件，找到需要调用的 Action 类。&lt;/li&gt;
+&lt;li&gt;ActionProxy 创建一个 ActionInvocation 的实例。ActionInvocation 表示了 Action 的执行状态，或者说它控制 Action 的执行步骤。它持有 Action 实例和所有的 Interceptor。&lt;/li&gt;
+&lt;li&gt;ActionInvocation 实例使用命名模式来调用。ActionInvocation 初始化时，根据配置，加载 Action 相关的所有 Interceptor。&lt;br&gt;通过 ActionInvocation.invoke 方法调用 Action 实现时，执行 Interceptor。在调用 Action 的过程前后，涉及到相关拦截器的（Interceptor）的调用。&lt;/li&gt;
+&lt;li&gt;一旦 Action 执行完毕，ActionInvocation 负责根据 struts.xml 中的配置找到对应的返回结果。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通俗的说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;发送 Http 请求到 Web 服务器&lt;/li&gt;
+&lt;li&gt;执行 Struts 核心过滤器 StrutsPrepareAndExecuteFilter&lt;/li&gt;
+&lt;li&gt;加载 Struts 配置文件中的配置信息，找到对应的 Action 类类并实例化。&lt;/li&gt;
+&lt;li&gt;执行各类拦截器和 Action 中的对应方法&lt;/li&gt;
+&lt;li&gt;配置文件中找到返回结果&lt;/li&gt;
+&lt;li&gt;转发到具体页面或其他操作&lt;h2 id=&quot;Struts-有什么优缺点？&quot;&gt;&lt;a href=&quot;#Struts-有什么优缺点？&quot; class=&quot;headerlink&quot; title=&quot;Struts 有什么优缺点？&quot;&gt;&lt;/a&gt;Struts 有什么优缺点？&lt;/h2&gt;优点：&lt;/li&gt;
+&lt;li&gt;实现 MVC 模式，结构清晰&lt;/li&gt;
+&lt;li&gt;丰富的 Struts 的标记库，利用好能大大提高开发效率&lt;/li&gt;
+&lt;li&gt;全局结果和声明式异常&lt;/li&gt;
+&lt;li&gt;可使用 OGNL 进行参数传递&lt;/li&gt;
+&lt;li&gt;各类方便使用的拦截器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;转到表现层时，需要配置结果页面，页面多了比较繁杂&lt;/li&gt;
+&lt;li&gt;对 Servlet 的依赖性过强&lt;/li&gt;
+&lt;li&gt;Struts 标签稍微比 el表达式繁重&lt;h2 id=&quot;为何使用-Spring-？&quot;&gt;&lt;a href=&quot;#为何使用-Spring-？&quot; class=&quot;headerlink&quot; title=&quot;为何使用 Spring ？&quot;&gt;&lt;/a&gt;为何使用 Spring ？&lt;/h2&gt;Spring 是一个轻量级的控制反转（IoC）、面向切面（AOP）、面向接口、事务管理、包容促进其他框架，使系统中用到的其他框架耦合程度大大降低，拓展性强、简单易用好管理。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
     
     <summary type="html">
     
