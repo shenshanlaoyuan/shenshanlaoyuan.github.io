@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://shenshanlaoyuan.com/2017/04/17/Java/Java常见面试问题和答案/index.html">
 <meta property="og:site_name" content="深山老猿">
 <meta property="og:description" content="最近在面试，总结了下常见的面试问题以及自己的回答。可能有不对的地方，望斧正！">
-<meta property="og:updated_time" content="2017-04-15T15:30:42.000Z">
+<meta property="og:updated_time" content="2017-04-16T14:54:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常见的面试题和答案">
 <meta name="twitter:description" content="最近在面试，总结了下常见的面试问题以及自己的回答。可能有不对的地方，望斧正！">
@@ -501,7 +501,31 @@
 <li>对 Servlet 的依赖性过强</li>
 <li>Struts 标签稍微比 el表达式繁重</li>
 </ol>
-<h2 id="为何使用-Spring-？"><a href="#为何使用-Spring-？" class="headerlink" title="为何使用 Spring ？"></a>为何使用 Spring ？</h2><p>Spring 是一个轻量级的控制反转（IoC）、面向切面（AOP）、面向接口、事务管理、包容促进其他框架，使系统中用到的其他框架耦合程度大大降低，拓展性强、简单易用好管理。</p>
+<h2 id="为何使用-Spring-？"><a href="#为何使用-Spring-？" class="headerlink" title="为何使用 Spring ？"></a>为何使用 Spring ？</h2><p>Spring 是一个轻量级的控制反转（IOC）、面向切面（AOP）、面向接口、事务管理、包容促进其他框架，使系统中用到的其他框架耦合程度大大降低，拓展性强、简单易用好管理。</p>
+<h2 id="Spring-在项目中如何充当粘合剂？"><a href="#Spring-在项目中如何充当粘合剂？" class="headerlink" title="Spring 在项目中如何充当粘合剂？"></a>Spring 在项目中如何充当粘合剂？</h2><ol>
+<li>在项目中利用 Spring 的 IOC （控制反转或依赖注入），明确的定义组件接口（如UserDAO），开发者可以独立开发各个组件，然后根据组件间的依赖关系组装（UseAction 依赖于 UseService,UseService 依赖于 UserDao）运行，很好的把Struts（Action）和 Hibernate（DAO的实现）结合起来。</li>
+<li>Spring 的事务管理把 Hibernate 对数据库的操作进行了事务配置。</li>
+</ol>
+<h2 id="描述在系统中如何使用了-Spring-的事务控制？"><a href="#描述在系统中如何使用了-Spring-的事务控制？" class="headerlink" title="描述在系统中如何使用了 Spring 的事务控制？"></a>描述在系统中如何使用了 Spring 的事务控制？</h2><p>Spring 事务包括编程式事务和声明式事务。在系统中使用了声明式的事务管理是用 Spring 的 AOP 来实现的，配置了只读事务和回滚事务（传播行为为REQUIRED）当出现错误后进行回滚操作。在项目中通过 AOP 切入事务到 service 层，这样做能使一次业务逻辑操作如果包括几个数据库操作都控制在一个事务中。</p>
+<h2 id="Hibernate-的工作原理及为什么要用？"><a href="#Hibernate-的工作原理及为什么要用？" class="headerlink" title="Hibernate 的工作原理及为什么要用？"></a>Hibernate 的工作原理及为什么要用？</h2><p>原理：</p>
+<ol>
+<li>读取并解析配置文件</li>
+<li>读取并解析映射信息，创建 SessionFactory</li>
+<li>打开 Session</li>
+<li>创建事务 Transition</li>
+<li>持久化操作</li>
+<li>提交事务</li>
+<li>关闭 Session</li>
+<li>关闭 SessionFactory</li>
+</ol>
+<p>为什么要用：</p>
+<ol>
+<li>对 JDBC 访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码，</li>
+<li>Hibernate 是一个基于 JDBC 的主流持久化框架，是一个优秀的 ORM 实现，很大程度的简化 DAO 层的编码工作。</li>
+<li>Hibernate 使用 Java 反射机制，而不是字节码增强程序来实现透明性。</li>
+<li>Hibernate 的性能非常好，因为它是一个轻量级框架，映射的灵活性很出色。它支持各种关系数据库，从一对一到多对多的各种复杂关系。</li>
+</ol>
+<h2 id="Hibernate-在系统中使用的优化策略？"><a href="#Hibernate-在系统中使用的优化策略？" class="headerlink" title="Hibernate 在系统中使用的优化策略？"></a>Hibernate 在系统中使用的优化策略？</h2><p>Hibernate 对数据的缓存包括两级：一级缓存，在 Session 的级别上进行，主要是对象缓存，以其 id 为健保存对象，在session的生命期间存在；二级缓存，在 SessionFactory 的级别上进行，有对象缓存和查询缓存，查询缓存以查询条件为健保存查询结果，在 SessionFactory 生命期间存在。默认的，Hibernate 只启用一级缓存。</p>
 
       
     </div>
@@ -785,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结合项目谈谈你对-MVC-的理解？"><span class="nav-number">1.</span> <span class="nav-text">结合项目谈谈你对 MVC 的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目中为什么用-SSH-框架？"><span class="nav-number">2.</span> <span class="nav-text">项目中为什么用 SSH 框架？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挑一个你做的功能说明-SSH-框架的应用原理？"><span class="nav-number">3.</span> <span class="nav-text">挑一个你做的功能说明 SSH 框架的应用原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts-工作原理？"><span class="nav-number">4.</span> <span class="nav-text">Struts 工作原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts-有什么优缺点？"><span class="nav-number">5.</span> <span class="nav-text">Struts 有什么优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为何使用-Spring-？"><span class="nav-number">6.</span> <span class="nav-text">为何使用 Spring ？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结合项目谈谈你对-MVC-的理解？"><span class="nav-number">1.</span> <span class="nav-text">结合项目谈谈你对 MVC 的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目中为什么用-SSH-框架？"><span class="nav-number">2.</span> <span class="nav-text">项目中为什么用 SSH 框架？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挑一个你做的功能说明-SSH-框架的应用原理？"><span class="nav-number">3.</span> <span class="nav-text">挑一个你做的功能说明 SSH 框架的应用原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts-工作原理？"><span class="nav-number">4.</span> <span class="nav-text">Struts 工作原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts-有什么优缺点？"><span class="nav-number">5.</span> <span class="nav-text">Struts 有什么优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为何使用-Spring-？"><span class="nav-number">6.</span> <span class="nav-text">为何使用 Spring ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-在项目中如何充当粘合剂？"><span class="nav-number">7.</span> <span class="nav-text">Spring 在项目中如何充当粘合剂？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述在系统中如何使用了-Spring-的事务控制？"><span class="nav-number">8.</span> <span class="nav-text">描述在系统中如何使用了 Spring 的事务控制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hibernate-的工作原理及为什么要用？"><span class="nav-number">9.</span> <span class="nav-text">Hibernate 的工作原理及为什么要用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hibernate-在系统中使用的优化策略？"><span class="nav-number">10.</span> <span class="nav-text">Hibernate 在系统中使用的优化策略？</span></a></li></ol></div>
             
 
           </div>
