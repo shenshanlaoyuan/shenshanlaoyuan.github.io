@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Mac OS X下Maven的安装与配置]]></title>
+      <url>%2F2017%2F05%2F06%2FJava%2FMac%20OS%20X%E4%B8%8BMaven%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%2F</url>
+      <content type="text"><![CDATA[Maven 下载官网下载压缩包,选择 Binary zip archive 转载请注明出处：http://shenshanlaoyuan.com/2017/05/06/Java/Mac OS X下Maven的安装与配置/访问原文「Mac OS X下Maven的安装与配置」获取最佳阅读体验并参与讨论 (function() { Element.prototype.remove = function() { this.parentElement.removeChild(this); } NodeList.prototype.remove = HTMLCollection.prototype.remove = function() { for(var i = this.length - 1; i >= 0; i--) { if(this[i] && this[i].parentElement) { this[i].parentElement.removeChild(this[i]); } } } var domain = document.domain; var white_list = ['shenshanlaoyuan.com', 'localhost']; if (white_list.indexOf(domain) >= 0) { var elements = document.getElementsByClassName('source'); elements.remove(); } })() 打开终端，输入unzip和拖动这个压缩文件到终端，解压1$ unzip /Users/shenshanlaoyuan/Downloads/apache-maven-3.5.0-bin.zip 输入ls,会看到apache-maven-3.5.0这个文件夹 cd进入到这个文件夹1$ cd apache-maven-3.5.0 再输入pwd命令得到当前文件夹全路径，选中复制1$ pwd 配置环境变量打开终端，输入以下命令，编辑bash_profile文件1$ vi ~/.bash_profile 添加以下代码在最后,M2_HOME=后面改成刚才复制的文件夹全路径123# mavenexport M2_HOME=/Users/shenshanlaoyuan/apache-maven-3.5.0export PATH=$PATH:$M2_HOME/bin 编辑完成按ESC键跳到命令模式，输入:wq就能保存并退出 vi。 最后输入如下命令以使修改的bash_profile文件生效1$ source ~/.bash_profile 查看是否安装成功1$ mvn -v 如果输出以下信息，说明 maven 安装成功了]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[引入开源项目的正确姿势]]></title>
       <url>%2F2017%2F02%2F27%2FAndroid%2F%E5%BC%95%E5%85%A5%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF%2F</url>
       <content type="text"><![CDATA[为什么要用开源项目？软件开发领域一直有一个原则，DRY，Don’t repeat yourself，翻译过来就是”不要重复造轮子“。一个项目的开发，我们不可能一切从 0 开始，如果真要那样··· 开源项目的主要目的是共享，其实就为了让大家不要重复造轮子，尤其在互联网这个快速发展的领域，速度就是生命，引入开源项目，可以节省大量的人力和时间。 虽说开源项目为我们节省了大量的人力和时间，但是开源项目并不是完美的，相信使用过开源项目的人都大大小小踩过一些坑，如代码不规范啊，项目有 bug 啊等等，出了问题都会为我们的项目以及公司带来不小的影响，这个时候如何选择开源项目就变得很重要。 转载请注明出处：http://shenshanlaoyuan.com/2017/02/27/Android/引入开源项目的正确姿势/访问原文「引入开源项目的正确姿势」获取最佳阅读体验并参与讨论 (function() { Element.prototype.remove = function() { this.parentElement.removeChild(this); } NodeList.prototype.remove = HTMLCollection.prototype.remove = function() { for(var i = this.length - 1; i >= 0; i--) { if(this[i] && this[i].parentElement) { this[i].parentElement.removeChild(this[i]); } } } var domain = document.domain; var white_list = ['shenshanlaoyuan.com', 'localhost']; if (white_list.indexOf(domain) >= 0) { var elements = document.getElementsByClassName('source'); elements.remove(); } })() 如何选择开源项目1.看 Star 数一般来说都会选则按 Star 数来排序，当然 Star 数高不代表是完美的，但起码说明该项目蛮火的，不然也不会那么多人 Star 的。 2.看作者如 JakeWharton 大神、Facebook 团队等。大神和大公司出品的框架质量相对较高，可保证后续的维护和 Bug 修复，不容易烂尾。 3.看最后更新时间、Issues、Fork 等GitHub上有些的项目好几个月甚至一年没更新了，对于一个开源项目来说最怕的是作者不维护了，这就意味着之后再也不会有改进了，而且出了什么问题也很难被迅速解决。 总结对于开源项目的选择，没有哪个最好的，你只有在综合评估的指标下，选择一个相对来说成熟并且适合你自己的就好了。]]></content>
@@ -171,16 +178,16 @@
 
     
     <entry>
-      <title><![CDATA[跟随大神的脚步才能成长为大神-android大神Blog推荐（转）]]></title>
-      <url>%2F2016%2F03%2F28%2FAndroid%2F%E5%A4%A7%E7%A5%9EBlog%E6%8E%A8%E8%8D%90%2F</url>
-      <content type="text"><![CDATA[发现一些非常给力的CSDNBlog和个人Blog，这些Blog都有一个共同的特点，即内容详实，讲解透彻，也算是给后来的初学者指一条路吧！只要你下定决心跟随强者的脚步，成为人们眼中的大神，只不过是时间问题！下面排名不分先后 CSDN 鸿洋：http://blog.csdn.net/lmj623565791 爱哥：http://blog.csdn.net/aigestudio 老罗：http://blog.csdn.net/luoshengyang 小巫：http://blog.csdn.net/wwj_748 Mr.Simple：http://blog.csdn.net/bboyfeiyu 任玉刚：http://blog.csdn.net/singwhatiwanna 夏安明：http://blog.csdn.net/xiaanming 徐医生：http://blog.csdn.net/eclipsexys 郭神：http://blog.csdn.net/sinyu890807/ 张兴业：http://blog.csdn.net/xyz_lmn/ 咪当系欧巴(非常有天赋的Coder)：http://blog.csdn.net/hellogv 个人Blog 胡凯(android官方开发教程中文译文项目发起者)：http://hukai.me/blog/archives/ 码农明明桑（有审美细胞的开发者）：http://blog.isming.me/ stormzhang（收到FaceBook面试邀请的大神）：http://stormzhang.com/posts.html Coder Robin：http://coderrobin.com/ 郝锡强：http://www.haoxiqiang.info/static/timing.html Trinea：http://www.trinea.cn/ 农民伯伯：http://www.cnblogs.com/over140/ daimajia(北京师范大学在读研究生，SwipeLayout是ZListView产生的源头)：http://blog.daimajia.com/ stay4it：http://www.cnblogs.com/stay/ 张明云：http://zmywly8866.github.io/pages/archive.html 你要时常去看的网站 Android开发者官网(你必须熟练使用翻墙)：http://developer.android.com/index.html GitHub(开源项目就在这里找)：https://github.com/ 开源项目解析：http://www.codekk.com/open-source-project-analysis Android代码查找：https://www.codota.com/]]></content>
+      <title><![CDATA[最火的Android开源项目（转载）]]></title>
+      <url>%2F2016%2F03%2F28%2FAndroid%2F%E6%9C%80%E7%81%AB%E7%9A%84Android%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%2F</url>
+      <content type="text"><![CDATA[了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。有时间可以仔细看看。直接拿来用！最火的Android开源项目（一）http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects直接拿来用！最火的Android开源项目（二）http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two直接拿来用！最火的Android开源项目（完结篇）http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[最火的Android开源项目（转载）]]></title>
-      <url>%2F2016%2F03%2F28%2FAndroid%2F%E6%9C%80%E7%81%AB%E7%9A%84Android%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%2F</url>
-      <content type="text"><![CDATA[了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。有时间可以仔细看看。直接拿来用！最火的Android开源项目（一）http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects直接拿来用！最火的Android开源项目（二）http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two直接拿来用！最火的Android开源项目（完结篇）http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale]]></content>
+      <title><![CDATA[跟随大神的脚步才能成长为大神-android大神Blog推荐（转）]]></title>
+      <url>%2F2016%2F03%2F28%2FAndroid%2F%E5%A4%A7%E7%A5%9EBlog%E6%8E%A8%E8%8D%90%2F</url>
+      <content type="text"><![CDATA[发现一些非常给力的CSDNBlog和个人Blog，这些Blog都有一个共同的特点，即内容详实，讲解透彻，也算是给后来的初学者指一条路吧！只要你下定决心跟随强者的脚步，成为人们眼中的大神，只不过是时间问题！下面排名不分先后 CSDN 鸿洋：http://blog.csdn.net/lmj623565791 爱哥：http://blog.csdn.net/aigestudio 老罗：http://blog.csdn.net/luoshengyang 小巫：http://blog.csdn.net/wwj_748 Mr.Simple：http://blog.csdn.net/bboyfeiyu 任玉刚：http://blog.csdn.net/singwhatiwanna 夏安明：http://blog.csdn.net/xiaanming 徐医生：http://blog.csdn.net/eclipsexys 郭神：http://blog.csdn.net/sinyu890807/ 张兴业：http://blog.csdn.net/xyz_lmn/ 咪当系欧巴(非常有天赋的Coder)：http://blog.csdn.net/hellogv 个人Blog 胡凯(android官方开发教程中文译文项目发起者)：http://hukai.me/blog/archives/ 码农明明桑（有审美细胞的开发者）：http://blog.isming.me/ stormzhang（收到FaceBook面试邀请的大神）：http://stormzhang.com/posts.html Coder Robin：http://coderrobin.com/ 郝锡强：http://www.haoxiqiang.info/static/timing.html Trinea：http://www.trinea.cn/ 农民伯伯：http://www.cnblogs.com/over140/ daimajia(北京师范大学在读研究生，SwipeLayout是ZListView产生的源头)：http://blog.daimajia.com/ stay4it：http://www.cnblogs.com/stay/ 张明云：http://zmywly8866.github.io/pages/archive.html 你要时常去看的网站 Android开发者官网(你必须熟练使用翻墙)：http://developer.android.com/index.html GitHub(开源项目就在这里找)：https://github.com/ 开源项目解析：http://www.codekk.com/open-source-project-analysis Android代码查找：https://www.codota.com/]]></content>
     </entry>
 
     
