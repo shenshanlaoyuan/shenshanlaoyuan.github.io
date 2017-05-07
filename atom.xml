@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2017-05-06T09:47:47.000Z</updated>
+  <updated>2017-05-07T09:44:30.000Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -16,14 +16,127 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CentOS 下安装 ZooKeeper</title>
+    <link href="http://shenshanlaoyuan.com/2017/05/07/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/CentOS%20%E4%B8%8B%E5%AE%89%E8%A3%85%20ZooKeeper/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/07/工具使用/CentOS 下安装 ZooKeeper/</id>
+    <published>2017-05-07T02:52:00.000Z</published>
+    <updated>2017-05-07T09:44:30.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;1-单机模式-Standalone-mode&quot;&gt;&lt;a href=&quot;#1-单机模式-Standalone-mode&quot; class=&quot;headerlink&quot; title=&quot;1.单机模式(Standalone mode)&quot;&gt;&lt;/a&gt;1.单机模式(Standalone mode)&lt;/h2&gt;&lt;h3 id=&quot;下载解压&quot;&gt;&lt;a href=&quot;#下载解压&quot; class=&quot;headerlink&quot; title=&quot;下载解压&quot;&gt;&lt;/a&gt;下载解压&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://apache.fayea.com/zookeeper/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;下载或使用 wget 命令下载&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# tar zxf zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果 &lt;code&gt;wget&lt;/code&gt; 命令找不到，先安装 wget 的 RPM 包&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# yum -y install wget&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/工具使用/CentOS 下安装 ZooKeeper/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/工具使用/CentOS 下安装 ZooKeeper/&#39;&gt;CentOS 下安装 ZooKeeper&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;h3 id=&quot;启动-ZooKeeper&quot;&gt;&lt;a href=&quot;#启动-ZooKeeper&quot; class=&quot;headerlink&quot; title=&quot;启动 ZooKeeper&quot;&gt;&lt;/a&gt;启动 ZooKeeper&lt;/h3&gt;&lt;p&gt;进入 zookeeper 解压后的目录&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# cd zookeeper-3.4.9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# ll&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gy1ffcx8fxfklj30v80iqjrz.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在目录下面创建 data 目录&lt;br&gt;/root/zookeeper-3.4.9/data&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# mkdir data&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修改 conf 目录下面的 zoo_sample.cfg 配置文件名字&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# mv conf/zoo_sample.cfg conf/zoo.cfg&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;再修改配置文件内容&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# vim conf/zoo.cfg&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果没找到vim 命令先安装下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# yum -y install vim*&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;把 dataDir 后面改成刚才创建的 data 目录全路径，如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/006tNc79gy1ffcx2viortj30vc0imwfa.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;进入bin目录开启 ZooKeeper&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# cd bin&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# ./zkServer.sh start&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;查看是否开启开启成功&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# ./zkServer.sh status&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;出现如下内容开启成功&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ZooKeeper JMX enabled by default&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Using config: /root/zookeeper-3.4.9/bin/../conf/zoo.cfg&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Mode: standalone&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;关闭-ZooKeeper&quot;&gt;&lt;a href=&quot;#关闭-ZooKeeper&quot; class=&quot;headerlink&quot; title=&quot;关闭 ZooKeeper&quot;&gt;&lt;/a&gt;关闭 ZooKeeper&lt;/h3&gt;&lt;p&gt;进入 bin 目录输入命令&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# ./zkServer.sh stop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;2-集群模式-Replicated-mode&quot;&gt;&lt;a href=&quot;#2-集群模式-Replicated-mode&quot; class=&quot;headerlink&quot; title=&quot;2.集群模式(Replicated mode)&quot;&gt;&lt;/a&gt;2.集群模式(Replicated mode)&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-单机模式-Standalone-mode&quot;&gt;&lt;a href=&quot;#1-单机模式-Standalone-mode&quot; class=&quot;headerlink&quot; title=&quot;1.单机模式(Standalone mode)&quot;&gt;&lt;/a&gt;1.单机模式(Standalone mode)&lt;/h2&gt;&lt;h3 id=&quot;下载解压&quot;&gt;&lt;a href=&quot;#下载解压&quot; class=&quot;headerlink&quot; title=&quot;下载解压&quot;&gt;&lt;/a&gt;下载解压&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://apache.fayea.com/zookeeper/&quot;&gt;官网&lt;/a&gt;下载或使用 wget 命令下载&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# tar zxf zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果 &lt;code&gt;wget&lt;/code&gt; 命令找不到，先安装 wget 的 RPM 包&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# yum -y install wget&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://shenshanlaoyuan.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="CentOS" scheme="http://shenshanlaoyuan.com/tags/CentOS/"/>
+    
+      <category term="ZooKeeper" scheme="http://shenshanlaoyuan.com/tags/ZooKeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
+    <link href="http://shenshanlaoyuan.com/2017/05/07/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%A7%A3%E5%86%B3%20CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/07/工具使用/解决 CentOS7安装完成后ifconfig命令不能用问题/</id>
+    <published>2017-05-07T02:50:00.000Z</published>
+    <updated>2017-05-07T04:08:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;本来想查看一下本机的 ip 地址，ifconfig 命令报错&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# ifconfig&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-bash: ifconfig: command not found&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/工具使用/解决 CentOS7安装完成后ifconfig命令不能用问题/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/工具使用/解决 CentOS7安装完成后ifconfig命令不能用问题/&#39;&gt;解决 CentOS 安装完成后 ifconfig 命令不能用问题&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;h2 id=&quot;解决思路&quot;&gt;&lt;a href=&quot;#解决思路&quot; class=&quot;headerlink&quot; title=&quot;解决思路&quot;&gt;&lt;/a&gt;解决思路&lt;/h2&gt;&lt;h3 id=&quot;1-查看-ifconfig-命令是否存在&quot;&gt;&lt;a href=&quot;#1-查看-ifconfig-命令是否存在&quot; class=&quot;headerlink&quot; title=&quot;1.查看 ifconfig 命令是否存在&quot;&gt;&lt;/a&gt;1.查看 ifconfig 命令是否存在&lt;/h3&gt;&lt;p&gt;查看 &lt;code&gt;/sbin/ifconfig&lt;/code&gt; 是否存在&lt;/p&gt;
+&lt;h3 id=&quot;2-如果-ifconfig-命令不存在&quot;&gt;&lt;a href=&quot;#2-如果-ifconfig-命令不存在&quot; class=&quot;headerlink&quot; title=&quot;2.如果 ifconfig 命令不存在&quot;&gt;&lt;/a&gt;2.如果 ifconfig 命令不存在&lt;/h3&gt;&lt;p&gt;执行下面两个命令安装&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# yum upgrade&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# yum install net-tools&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-如果-ifconfig-命令存在，设置环境变量&quot;&gt;&lt;a href=&quot;#3-如果-ifconfig-命令存在，设置环境变量&quot; class=&quot;headerlink&quot; title=&quot;3.如果 ifconfig 命令存在，设置环境变量&quot;&gt;&lt;/a&gt;3.如果 ifconfig 命令存在，设置环境变量&lt;/h3&gt;&lt;p&gt; 临时修改环境变量：&lt;br&gt; &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# export PATH = $PATH:/sbin&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;永久修改环境变量只要修改 &lt;code&gt;/etc/profile&lt;/code&gt; 文件即可。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来想查看一下本机的 ip 地址，ifconfig 命令报错&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# ifconfig&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-bash: ifconfig: command not found&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://shenshanlaoyuan.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="CentOS" scheme="http://shenshanlaoyuan.com/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac OS X下Maven的安装与配置</title>
-    <link href="http://shenshanlaoyuan.com/2017/05/06/Java/Mac%20OS%20X%E4%B8%8BMaven%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
-    <id>http://shenshanlaoyuan.com/2017/05/06/Java/Mac OS X下Maven的安装与配置/</id>
+    <link href="http://shenshanlaoyuan.com/2017/05/06/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/Mac%20OS%20X%E4%B8%8BMaven%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/06/工具使用/Mac OS X下Maven的安装与配置/</id>
     <published>2017-05-05T20:39:00.000Z</published>
-    <updated>2017-05-06T09:47:47.000Z</updated>
+    <updated>2017-05-07T04:03:04.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Maven-下载&quot;&gt;&lt;a href=&quot;#Maven-下载&quot; class=&quot;headerlink&quot; title=&quot;Maven 下载&quot;&gt;&lt;/a&gt;Maven 下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://maven.apache.org/download.cgi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网下载&lt;/a&gt;压缩包,选择 &lt;code&gt;Binary zip archive&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1ffbqojfs9wj314e0j6dgt.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/06/Java/Mac OS X下Maven的安装与配置/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/06/Java/Mac OS X下Maven的安装与配置/&#39;&gt;Mac OS X下Maven的安装与配置&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/06/工具使用/Mac OS X下Maven的安装与配置/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/06/工具使用/Mac OS X下Maven的安装与配置/&#39;&gt;Mac OS X下Maven的安装与配置&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -63,7 +176,7 @@
     
     </summary>
     
-      <category term="Java" scheme="http://shenshanlaoyuan.com/categories/Java/"/>
+      <category term="工具使用" scheme="http://shenshanlaoyuan.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
       <category term="Maven" scheme="http://shenshanlaoyuan.com/tags/Maven/"/>
@@ -375,13 +488,13 @@
   
   <entry>
     <title>该重新学习下前端知识了</title>
-    <link href="http://shenshanlaoyuan.com/2016/09/24/Essay/%E8%AF%A5%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%BA%86/"/>
-    <id>http://shenshanlaoyuan.com/2016/09/24/Essay/该重新学习下前端知识了/</id>
+    <link href="http://shenshanlaoyuan.com/2016/09/24/%E9%9A%8F%E7%AC%94/%E8%AF%A5%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%BA%86/"/>
+    <id>http://shenshanlaoyuan.com/2016/09/24/随笔/该重新学习下前端知识了/</id>
     <published>2016-09-24T12:00:00.000Z</published>
-    <updated>2016-09-24T09:27:46.000Z</updated>
+    <updated>2017-05-07T03:53:29.000Z</updated>
     
     <content type="html">&lt;p&gt;前几天微博朋友圈被微信小程序刷屏了。虽说现在只是内测，但微博Q群里都讨论炸了，可见微信对移动互联网影响多大。&lt;br&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/cb105e8438ba4d5e9a7f8548906a93c2_th.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/09/24/Essay/该重新学习下前端知识了/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/09/24/Essay/该重新学习下前端知识了/&#39;&gt;该重新学习下前端知识了&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/09/24/随笔/该重新学习下前端知识了/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/09/24/随笔/该重新学习下前端知识了/&#39;&gt;该重新学习下前端知识了&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -413,8 +526,10 @@
     
     </summary>
     
-      <category term="Essay" scheme="http://shenshanlaoyuan.com/categories/Essay/"/>
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -615,13 +730,13 @@
   
   <entry>
     <title>最爱听民谣</title>
-    <link href="http://shenshanlaoyuan.com/2016/06/03/Essay/%E6%9C%80%E7%88%B1%E5%90%AC%E6%B0%91%E8%B0%A3/"/>
-    <id>http://shenshanlaoyuan.com/2016/06/03/Essay/最爱听民谣/</id>
+    <link href="http://shenshanlaoyuan.com/2016/06/03/%E9%9A%8F%E7%AC%94/%E6%9C%80%E7%88%B1%E5%90%AC%E6%B0%91%E8%B0%A3/"/>
+    <id>http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/</id>
     <published>2016-06-03T03:57:00.000Z</published>
-    <updated>2016-09-14T12:11:35.000Z</updated>
+    <updated>2017-05-07T03:53:29.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/thumb.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/06/03/Essay/最爱听民谣/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/06/03/Essay/最爱听民谣/&#39;&gt;最爱听民谣&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/&#39;&gt;最爱听民谣&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -651,22 +766,24 @@
     
     </summary>
     
-      <category term="Essay" scheme="http://shenshanlaoyuan.com/categories/Essay/"/>
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>前面些文章写的有点水了</title>
-    <link href="http://shenshanlaoyuan.com/2016/06/02/Essay/%E5%89%8D%E9%9D%A2%E4%BA%9B%E6%96%87%E7%AB%A0%E5%86%99%E7%9A%84%E6%9C%89%E7%82%B9%E6%B0%B4%E4%BA%86/"/>
-    <id>http://shenshanlaoyuan.com/2016/06/02/Essay/前面些文章写的有点水了/</id>
+    <link href="http://shenshanlaoyuan.com/2016/06/02/%E9%9A%8F%E7%AC%94/%E5%89%8D%E9%9D%A2%E4%BA%9B%E6%96%87%E7%AB%A0%E5%86%99%E7%9A%84%E6%9C%89%E7%82%B9%E6%B0%B4%E4%BA%86/"/>
+    <id>http://shenshanlaoyuan.com/2016/06/02/随笔/前面些文章写的有点水了/</id>
     <published>2016-06-02T01:10:00.000Z</published>
-    <updated>2016-09-14T12:14:11.000Z</updated>
+    <updated>2017-05-07T03:53:29.000Z</updated>
     
     <content type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;因为是第一次写博客，可能前面些文章技术含量很低，后面尽量多写点有质量的文章。&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/5.jpg&quot; alt=&quot;坚持&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/06/02/Essay/前面些文章写的有点水了/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/06/02/Essay/前面些文章写的有点水了/&#39;&gt;前面些文章写的有点水了&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/06/02/随笔/前面些文章写的有点水了/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/06/02/随笔/前面些文章写的有点水了/&#39;&gt;前面些文章写的有点水了&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -702,8 +819,10 @@
     
     </summary>
     
-      <category term="Essay" scheme="http://shenshanlaoyuan.com/categories/Essay/"/>
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="随笔" scheme="http://shenshanlaoyuan.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -1126,107 +1245,6 @@
     
     
       <category term="数据存储" scheme="http://shenshanlaoyuan.com/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为博文添加出处和版权声明</title>
-    <link href="http://shenshanlaoyuan.com/2016/04/25/Hexo/%E4%B8%BA%E5%8D%9A%E6%96%87%E6%B7%BB%E5%8A%A0%E5%87%BA%E5%A4%84%E5%92%8C%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E/"/>
-    <id>http://shenshanlaoyuan.com/2016/04/25/Hexo/为博文添加出处和版权声明/</id>
-    <published>2016-04-25T04:52:00.000Z</published>
-    <updated>2016-05-20T03:25:27.000Z</updated>
-    
-    <content type="html">&lt;p&gt;自己写博客也有一段时间了，主要是分享自己的学习心得和总结。最近发现有的网站用爬虫抓取我的博文，连作者和出处都没标明。所以自己谷歌找了一个解决办法，如下文。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/04/25/Hexo/为博文添加出处和版权声明/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/04/25/Hexo/为博文添加出处和版权声明/&#39;&gt;为博文添加出处和版权声明&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-  Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-  }
-  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-    for(var i = this.length - 1; i &gt;= 0; i--) {
-        if(this[i] &amp;&amp; this[i].parentElement) {
-            this[i].parentElement.removeChild(this[i]);
-        }
-    }
-  }
-  var domain = document.domain;
-  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
-  if (white_list.indexOf(domain) &gt;= 0) {
-    var elements = document.getElementsByClassName(&#39;source&#39;);
-    elements.remove();
-  }
-})()
-&lt;/script&gt;
- 
-&lt;p&gt;我这博客用的是hexo搭建的，所以用的是hexo插件的解决办法。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;安装插件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在博客目录下打开git bash,输入&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install hexo-filter-indicate-the-source --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在 _config.yml文件配置&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在站点配置文件_config.yml添加如下配置&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;indicate_the_source:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  pattern: indicate-the-source&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  enable: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  render_engine: ejs&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  element_class: source&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  domain_white_list:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    - shenshanlaoyuan.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    - localhost&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  template: &quot;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;blockquote&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;转载请注明出处：&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%-&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;post.permalink&lt;/span&gt; %&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;访问原文「&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;%- post.permalink %&amp;gt;&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%-&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;post.title&lt;/span&gt; %&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;」获取最佳阅读体验并参与讨论&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;blockquote&lt;/span&gt;&amp;gt;&lt;/span&gt;&quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;只要把domain_white_list域里面的域名改成你的就行了。&lt;/p&gt;
-&lt;p&gt;这些作用域的意思请参考&lt;a href=&quot;https://blog.jamespan.me/2016/01/15/do-not-forget-to-indicate-the-source/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《如果你转载文章不注明出处》&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;文章中写法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;只要在文章截断&lt;code&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt; 的后面追加 &lt;code&gt;&amp;lt;!-- indicate-the-source --&amp;gt;&lt;/code&gt;就可以了&lt;/p&gt;
-&lt;p&gt;显示效果如图&lt;br&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160425134423.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;红色框里面就是多显示的内容。因为刚才在domain_white_list域填写了你自己的域名，所以在你自己的博客中这些内容不显示的。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;添加&lt;a href=&quot;http://creativecommons.net.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知识共享协议&lt;/a&gt;&lt;br&gt;Creative Commons协议具体内容详见这篇文章&lt;a href=&quot;http://blog.csdn.net/biaobiaoqi/article/details/9296129&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《给博客配上CC协议》&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;只要在博文末尾添加下面段代码就行&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a rel=&amp;quot;license&amp;quot; href=&amp;quot;http://creativecommons.org/licenses/by-nc-sa/3.0/cn/&amp;quot;&amp;gt;&amp;lt;img alt=&amp;quot;知识共享许可协议&amp;quot; style=&amp;quot;border-width:0&amp;quot; src=&amp;quot;https://i.creativecommons.org/l/by-nc-sa/3.0/cn/80x15.png&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;本作品采用&amp;lt;a rel=&amp;quot;license&amp;quot; href=&amp;quot;http://creativecommons.org/licenses/by-nc-sa/3.0/cn/&amp;quot;&amp;gt;知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议&amp;lt;/a&amp;gt;进行许可。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;显示效果见本文末尾&lt;/p&gt;
-&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/cn/&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;知识共享许可协议&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by-nc-sa/3.0/cn/80x15.png&quot;&gt;&lt;/a&gt;&lt;br&gt;本作品采用&lt;a rel=&quot;external&quot; href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/cn/&quot; target=&quot;_blank&quot;&gt;知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自己写博客也有一段时间了，主要是分享自己的学习心得和总结。最近发现有的网站用爬虫抓取我的博文，连作者和出处都没标明。所以自己谷歌找了一个解决办法，如下文。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://shenshanlaoyuan.com/categories/Hexo/"/>
-    
-    
-      <category term="CC协议" scheme="http://shenshanlaoyuan.com/tags/CC%E5%8D%8F%E8%AE%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>这两天有些伤感了</title>
-    <link href="http://shenshanlaoyuan.com/2016/04/17/Essay/%E6%83%85%E4%B8%8D%E7%9F%A5%E6%89%80%E8%B5%B7%EF%BC%8C%E4%B8%80%E5%BE%80%E8%80%8C%E6%B7%B1/"/>
-    <id>http://shenshanlaoyuan.com/2016/04/17/Essay/情不知所起，一往而深/</id>
-    <published>2016-04-16T16:00:00.000Z</published>
-    <updated>2016-09-14T12:14:05.000Z</updated>
-    
-    <content type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;情不知所起，一往而深！&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20131002185038_z5ktN.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
-&lt;p&gt;只愿得一人心，白首不分离。这清晰的话语，嘲笑孤单的自己!&lt;/p&gt;
-&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=26427662&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
-
-
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/u=1809226659,1818775413&amp;amp;fm=21&amp;amp;gp=0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;去年今日此门中，&lt;br&gt;人面桃花相映红。&lt;br&gt;人面不知何处在，&lt;br&gt;桃花依旧笑春风。&lt;/blockquote&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;情不知所起，一往而深！&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20131002185038_z5ktN.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Essay" scheme="http://shenshanlaoyuan.com/categories/Essay/"/>
-    
-    
-      <category term="Essay" scheme="http://shenshanlaoyuan.com/tags/Essay/"/>
     
   </entry>
   
