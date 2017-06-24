@@ -186,6 +186,66 @@
   </entry>
   
   <entry>
+    <title>Spring 框架之IoC</title>
+    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%20%E6%A1%86%E6%9E%B6%E4%B9%8BIoC/"/>
+    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/</id>
+    <published>2017-03-04T12:50:00.000Z</published>
+    <updated>2017-06-24T09:58:00.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;什么是IoC&quot;&gt;&lt;a href=&quot;#什么是IoC&quot; class=&quot;headerlink&quot; title=&quot;什么是IoC?&quot;&gt;&lt;/a&gt;什么是IoC?&lt;/h1&gt;&lt;p&gt;Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。&lt;/p&gt;
+&lt;p&gt;使用IoC可以解决程序耦合性高的问题。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/&#39;&gt;Spring 框架之IoC&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;h1 id=&quot;简单IoC示例&quot;&gt;&lt;a href=&quot;#简单IoC示例&quot; class=&quot;headerlink&quot; title=&quot;简单IoC示例&quot;&gt;&lt;/a&gt;简单IoC示例&lt;/h1&gt;&lt;h2 id=&quot;步骤一-下载Spring的开发包&quot;&gt;&lt;a href=&quot;#步骤一-下载Spring的开发包&quot; class=&quot;headerlink&quot; title=&quot;步骤一:下载Spring的开发包&quot;&gt;&lt;/a&gt;步骤一:下载Spring的开发包&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://spring.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;或者&lt;a href=&quot;http://repo.springsource.org/libs-release-local/org/springframework/spring&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;下载&lt;/p&gt;
+&lt;p&gt;解压后目录结构:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;docs         :API和开发规范.&lt;/li&gt;
+&lt;li&gt;libs         :jar包和源码.&lt;/li&gt;
+&lt;li&gt;schema        :约束.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;步骤二-创建web项目-引入Spring的开发包&quot;&gt;&lt;a href=&quot;#步骤二-创建web项目-引入Spring的开发包&quot; class=&quot;headerlink&quot; title=&quot;步骤二:创建web项目,引入Spring的开发包&quot;&gt;&lt;/a&gt;步骤二:创建web项目,引入Spring的开发包&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwf88f03zj30m006qq2z.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;步骤三-创建Spring配置文件&quot;&gt;&lt;a href=&quot;#步骤三-创建Spring配置文件&quot; class=&quot;headerlink&quot; title=&quot;步骤三:创建Spring配置文件&quot;&gt;&lt;/a&gt;步骤三:创建Spring配置文件&lt;/h2&gt;&lt;p&gt;在src目录下创建&lt;code&gt;applicationContext.xml&lt;/code&gt;文件&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;beans&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.springframework.org/schema/beans&quot;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;xmlns:xsi&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;xmlns:p&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.springframework.org/schema/p&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;xsi:schemaLocation&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        http://www.springframework.org/schema/beans &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 使用bean标签 --&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;bean&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;userService&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;com.shenshanlaoyuan.demo.UserServiceImpl&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   	&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;bean&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;beans&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;步骤四-编写相关的类&quot;&gt;&lt;a href=&quot;#步骤四-编写相关的类&quot; class=&quot;headerlink&quot; title=&quot;步骤四:编写相关的类&quot;&gt;&lt;/a&gt;步骤四:编写相关的类&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;UserService&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;UserServiceImpl&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;UserService&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;hello spring&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;步骤五-配置Bean&quot;&gt;&lt;a href=&quot;#步骤五-配置Bean&quot; class=&quot;headerlink&quot; title=&quot;步骤五:配置Bean&quot;&gt;&lt;/a&gt;步骤五:配置Bean&lt;/h2&gt;&lt;p&gt;在&lt;code&gt;applicationContext.xml&lt;/code&gt;文件&lt;code&gt;beans&lt;/code&gt;标签下添加&lt;code&gt;bean&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;bean&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;userService&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;com.shenshanlaoyuan.demo.UserServiceImpl&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;bean&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;步骤六-编写测试类&quot;&gt;&lt;a href=&quot;#步骤六-编写测试类&quot; class=&quot;headerlink&quot; title=&quot;步骤六:编写测试类&quot;&gt;&lt;/a&gt;步骤六:编写测试类&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * 测试类&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * &lt;span class=&quot;doctag&quot;&gt;@author&lt;/span&gt; shenshanlaoyuan&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;TestService&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//原来的方式&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testSayHello1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		UserServiceImpl usi = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; UserServiceImpl();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		usi.sayHello();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//spring方式&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;testSayHello2&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//创建工厂，加载配置文件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		ApplicationContext ac = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ClassPathXmlApplicationContext(&lt;span class=&quot;string&quot;&gt;&quot;applicationContext.xml&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//从工厂中获取到对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		UserService us = (UserService) ac.getBean(&lt;span class=&quot;string&quot;&gt;&quot;userService&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;comment&quot;&gt;//调用对象的方法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		us.sayHello();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;示例源代码&quot;&gt;&lt;a href=&quot;#示例源代码&quot; class=&quot;headerlink&quot; title=&quot;示例源代码&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/shenshanlaoyuan/PracticeDemo/tree/master/SpringIoCDemo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;示例源代码&lt;/a&gt;&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是IoC&quot;&gt;&lt;a href=&quot;#什么是IoC&quot; class=&quot;headerlink&quot; title=&quot;什么是IoC?&quot;&gt;&lt;/a&gt;什么是IoC?&lt;/h1&gt;&lt;p&gt;Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。&lt;/p&gt;
+&lt;p&gt;使用IoC可以解决程序耦合性高的问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://shenshanlaoyuan.com/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://shenshanlaoyuan.com/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring 框架之框架概述</title>
     <link href="http://shenshanlaoyuan.com/2017/03/03/Java/Spring%E6%A1%86%E6%9E%B6%E4%B9%8B%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0/"/>
     <id>http://shenshanlaoyuan.com/2017/03/03/Java/Spring框架之框架概述/</id>
@@ -1191,74 +1251,6 @@
     
     
       <category term="XML" scheme="http://shenshanlaoyuan.com/tags/XML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android下的数据存储与访问方式（二）</title>
-    <link href="http://shenshanlaoyuan.com/2016/05/14/Android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://shenshanlaoyuan.com/2016/05/14/Android/Android下的数据存储与访问方式（二）/</id>
-    <published>2016-05-13T16:00:00.000Z</published>
-    <updated>2016-09-14T11:49:34.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Android为数据存储提供了如下几种方式：&lt;br&gt;1.文件 2.SharedPreferences 3.SQLite 4.网络 5.ContentProvider&lt;/p&gt;
-&lt;p&gt;文件方式请阅读上一篇文章&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/13/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（一）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;SharedPreferences&quot;&gt;&lt;a href=&quot;#SharedPreferences&quot; class=&quot;headerlink&quot; title=&quot;SharedPreferences&quot;&gt;&lt;/a&gt;SharedPreferences&lt;/h2&gt;&lt;p&gt;很多时候我们开发的软件需要向用户提供软件参数设置功能，例如我们常用的QQ，用户可以设置是否允许陌生人添加自己为好友，设置字体的大小等等。对于软件配置参数的保存，如果是window软件通常我们会采用ini文件进行保存，如果是j2se应用，我们会采用properties属性文件或者xml进行保存。&lt;/p&gt;
-&lt;p&gt;如果是Android应用，我们最适合采用什么方式保存软件配置参数呢？&lt;/p&gt;
-&lt;p&gt;Android平台给我们提供了一个SharedPreferences类，它是一个轻量级的存储类，特别适合用于&lt;strong&gt;保存软件配置参数&lt;/strong&gt;。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/05/14/Android/Android下的数据存储与访问方式（二）/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/05/14/Android/Android下的数据存储与访问方式（二）/&#39;&gt;Android下的数据存储与访问方式（二）&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-  Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-  }
-  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-    for(var i = this.length - 1; i &gt;= 0; i--) {
-        if(this[i] &amp;&amp; this[i].parentElement) {
-            this[i].parentElement.removeChild(this[i]);
-        }
-    }
-  }
-  var domain = document.domain;
-  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
-  if (white_list.indexOf(domain) &gt;= 0) {
-    var elements = document.getElementsByClassName(&#39;source&#39;);
-    elements.remove();
-  }
-})()
-&lt;/script&gt;
-
-&lt;p&gt;使用SharedPreferences保存数据，其背后是用xml文件存放数据，文件存放在&lt;code&gt;/data/data/&amp;lt;package name&amp;gt;/shared_prefs&lt;/code&gt;目录下&lt;/p&gt;
-&lt;h3 id=&quot;使用SharedPreferences保存数据&quot;&gt;&lt;a href=&quot;#使用SharedPreferences保存数据&quot; class=&quot;headerlink&quot; title=&quot;使用SharedPreferences保存数据&quot;&gt;&lt;/a&gt;使用SharedPreferences保存数据&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;SharedPreferences sp = getSharedPreferences(&lt;span class=&quot;string&quot;&gt;&quot;config&quot;&lt;/span&gt;, Context.MODE_PRIVATE);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Editor editor = sp.edit();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;editor.putString(&lt;span class=&quot;string&quot;&gt;&quot;number&quot;&lt;/span&gt;, number);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;editor.putString(&lt;span class=&quot;string&quot;&gt;&quot;password&quot;&lt;/span&gt;, password);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;editor.commit();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;生成的config.xml文件中内容如下&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;yes&#39; ?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;map&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;number&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;1395545452415&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;password&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;4545872&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;string&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;map&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;因为SharedPreferences背后是使用xml文件保存数据，getSharedPreferences(name,mode)方法的第一个参数用于指定该文件的名称，名称不用带后缀，后缀会由Android自动加上。方法的第二个参数指定文件的操作模式，共有四种操作模式，&lt;br&gt;这四种模式为&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Context.MODE_PRIVATE：为默认操作模式，代表该文件是私有数据，只能被应用本身访问，在该模式下，写入的内容会覆盖原文件的内容，如果想把新写入的内容追加到原文件中。可以使用Context.MODE_APPEND&lt;/li&gt;
-&lt;li&gt;Context.MODE_APPEND：模式会检查文件是否存在，存在就往文件追加内容，否则就创建新文件。Context.MODE_WORLD_READABLE和Context.MODE_WORLD_WRITEABLE用来控制其他应用是否有权限读写该文件。&lt;/li&gt;
-&lt;li&gt;MODE_WORLD_READABLE：表示当前文件可以被其他应用读取；&lt;/li&gt;
-&lt;li&gt;MODE_WORLD_WRITEABLE：表示当前文件可以被其他应用写入。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果希望SharedPreferences背后使用的xml文件能被其他应用读和写，可以指定&lt;code&gt;Context.MODE_WORLD_READABLE&lt;/code&gt;和&lt;code&gt;Context.MODE_WORLD_WRITEABLE&lt;/code&gt;权限。&lt;/p&gt;
-&lt;p&gt;另外Activity还提供了另一个getPreferences(mode)方法操作SharedPreferences，这个方法默认使用当前类不带包名的类名作为文件的名称。&lt;/p&gt;
-&lt;h3 id=&quot;读取SharedPreferences保存的数据&quot;&gt;&lt;a href=&quot;#读取SharedPreferences保存的数据&quot; class=&quot;headerlink&quot; title=&quot;读取SharedPreferences保存的数据&quot;&gt;&lt;/a&gt;读取SharedPreferences保存的数据&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt; SharedPreferences sp = getSharedPreferences(&lt;span class=&quot;string&quot;&gt;&quot;config&quot;&lt;/span&gt;, Context.MODE_PRIVATE);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;// 如果找到了number的值,那么就返回number的值, 否则 就返回这里的默认值 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String number= sp.getString(&lt;span class=&quot;string&quot;&gt;&quot;number&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String password= sp.getString(&lt;span class=&quot;string&quot;&gt;&quot;password&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Android为数据存储提供了如下几种方式：&lt;br&gt;1.文件 2.SharedPreferences 3.SQLite 4.网络 5.ContentProvider&lt;/p&gt;
-&lt;p&gt;文件方式请阅读上一篇文章&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/13/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（一）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;SharedPreferences&quot;&gt;&lt;a href=&quot;#SharedPreferences&quot; class=&quot;headerlink&quot; title=&quot;SharedPreferences&quot;&gt;&lt;/a&gt;SharedPreferences&lt;/h2&gt;&lt;p&gt;很多时候我们开发的软件需要向用户提供软件参数设置功能，例如我们常用的QQ，用户可以设置是否允许陌生人添加自己为好友，设置字体的大小等等。对于软件配置参数的保存，如果是window软件通常我们会采用ini文件进行保存，如果是j2se应用，我们会采用properties属性文件或者xml进行保存。&lt;/p&gt;
-&lt;p&gt;如果是Android应用，我们最适合采用什么方式保存软件配置参数呢？&lt;/p&gt;
-&lt;p&gt;Android平台给我们提供了一个SharedPreferences类，它是一个轻量级的存储类，特别适合用于&lt;strong&gt;保存软件配置参数&lt;/strong&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://shenshanlaoyuan.com/categories/Android/"/>
-    
-    
-      <category term="数据存储" scheme="http://shenshanlaoyuan.com/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"/>
-    
-      <category term="Android" scheme="http://shenshanlaoyuan.com/tags/Android/"/>
     
   </entry>
   
