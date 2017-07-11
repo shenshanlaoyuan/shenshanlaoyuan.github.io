@@ -629,7 +629,7 @@ SQLite的数据类型：Typelessness(无类型), 可以保存任何类型的数�
     $("#gitment_title").attr("style", "display:none");
     $("#container").attr("style", "").addClass("gitment_container");
     var gitment = new Gitment({
-      id: window.location.pathname,
+      id: location.href,
       theme: myTheme,
       owner: 'shenshanlaoyuan',
       repo: 'BlogComment',
