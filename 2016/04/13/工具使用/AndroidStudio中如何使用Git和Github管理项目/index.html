@@ -606,6 +606,7 @@ AndroidStudio中自带Git插件，只需配置下就可以。打开File-&amp;gt;
     $("#gitment_title").attr("style", "display:none");
     $("#container").attr("style", "").addClass("gitment_container");
     var gitment = new Gitment({
+      id: location.href,
       theme: myTheme,
       owner: 'shenshanlaoyuan',
       repo: 'BlogComment',
