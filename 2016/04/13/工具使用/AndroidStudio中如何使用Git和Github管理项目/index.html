@@ -406,17 +406,6 @@ AndroidStudio中自带Git插件，只需配置下就可以。打开File-&amp;gt;
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/04/13/工具使用/AndroidStudio中如何使用Git和Github管理项目/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/04/13/工具使用/AndroidStudio中如何使用Git和Github管理项目/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -596,12 +585,39 @@ AndroidStudio中自带Git插件，只需配置下就可以。打开File-&amp;gt;
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+  <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+  <div id="container" style="display:none"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  const myTheme = {
+    render(state, instance) {
+      const container = document.createElement('div');
+      container.lang = "en-US";
+      container.className = 'gitment-container gitment-root-container';
+      container.appendChild(instance.renderHeader(state, instance));
+      container.appendChild(instance.renderEditor(state, instance));
+      container.appendChild(instance.renderComments(state, instance));
+      container.appendChild(instance.renderFooter(state, instance));
+      return container;
+    }
+  }
+  function showGitment() {
+    $("#gitment_title").attr("style", "display:none");
+    $("#container").attr("style", "").addClass("gitment_container");
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      theme: myTheme,
+      owner: 'shenshanlaoyuan',
+      repo: 'BlogComment',
+      oauth: {
+        client_id: 'de88c6609903e4b788c5',
+        client_secret: 'b68c84b098411f0b5663de9fe320c097de9a612b'
+      }
+    });
+    gitment.render('container');
+  }
+  </script>
     
   </div>
 
@@ -879,26 +895,6 @@ AndroidStudio中自带Git插件，只需配置下就可以。打开File-&amp;gt;
 
   
 
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://shenshanlaoyuan.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://shenshanlaoyuan.com/2016/04/13/工具使用/AndroidStudio中如何使用Git和Github管理项目/';
-          this.page.identifier = '2016/04/13/工具使用/AndroidStudio中如何使用Git和Github管理项目/';
-          this.page.title = 'AndroidStudio中如何使用Git和Github管理项目';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://shenshanlaoyuan.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
 
   
 
