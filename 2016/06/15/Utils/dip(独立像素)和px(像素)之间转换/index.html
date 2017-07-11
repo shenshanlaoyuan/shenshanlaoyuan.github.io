@@ -593,7 +593,7 @@ px: 普通像素">
     $("#gitment_title").attr("style", "display:none");
     $("#container").attr("style", "").addClass("gitment_container");
     var gitment = new Gitment({
-      id: window.location.pathname,
+      id: location.href,
       theme: myTheme,
       owner: 'shenshanlaoyuan',
       repo: 'BlogComment',
