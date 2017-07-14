@@ -89,21 +89,16 @@
 
 
 
-<meta name="description" content="什么是IoC?Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。
-使用IoC可以解决程序耦合性高的问题。">
+<meta name="description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring 框架之IoC">
-<meta property="og:url" content="http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/index.html">
+<meta property="og:title" content="Spring 框架之Bean工厂">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/index.html">
 <meta property="og:site_name" content="深山老猿">
-<meta property="og:description" content="什么是IoC?Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。
-使用IoC可以解决程序耦合性高的问题。">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwf88f03zj30m006qq2z.jpg">
-<meta property="og:updated_time" content="2017-06-24T09:58:00.000Z">
+<meta property="og:description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
+<meta property="og:updated_time" content="2017-07-02T10:46:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring 框架之IoC">
-<meta name="twitter:description" content="什么是IoC?Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。
-使用IoC可以解决程序耦合性高的问题。">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwf88f03zj30m006qq2z.jpg">
+<meta name="twitter:title" content="Spring 框架之Bean工厂">
+<meta name="twitter:description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
 
 
 
@@ -131,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/"/>
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/"/>
 
 
 
 
 
-  <title> Spring 框架之IoC | 深山老猿 </title>
+  <title> Spring 框架之Bean工厂 | 深山老猿 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -320,7 +315,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -341,7 +336,7 @@
             
             
               
-                Spring 框架之IoC
+                Spring 框架之Bean工厂
               
             
           </h1>
@@ -356,7 +351,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T20:50:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T21:50:00+08:00">
                 2017-03-04
               </time>
             
@@ -396,7 +391,7 @@
 
           
           
-             <span id="/2017/03/04/Java/Spring框架之IoC/" class="leancloud_visitors" data-flag-title="Spring 框架之IoC">
+             <span id="/2017/03/04/Java/spring-bean-factory/" class="leancloud_visitors" data-flag-title="Spring 框架之Bean工厂">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,9 +420,8 @@
       
 
       
-        <h1 id="什么是IoC"><a href="#什么是IoC" class="headerlink" title="什么是IoC?"></a>什么是IoC?</h1><p>Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。</p>
-<p>使用IoC可以解决程序耦合性高的问题。</p>
-<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/'>Spring 框架之IoC</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+        <p>Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。</p>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/'>Spring 框架之Bean工厂</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
 <script type="text/javascript">
 (function() {
   Element.prototype.remove = function() {
@@ -449,20 +443,26 @@
 })()
 </script>
 
-<h1 id="简单IoC示例"><a href="#简单IoC示例" class="headerlink" title="简单IoC示例"></a>简单IoC示例</h1><h2 id="步骤一-下载Spring的开发包"><a href="#步骤一-下载Spring的开发包" class="headerlink" title="步骤一:下载Spring的开发包"></a>步骤一:下载Spring的开发包</h2><p><a href="http://spring.io/" target="_blank" rel="external">官网</a>或者<a href="http://repo.springsource.org/libs-release-local/org/springframework/spring" target="_blank" rel="external">下载地址</a>下载</p>
-<p>解压后目录结构:</p>
+<h2 id="ApplicationContext接口"><a href="#ApplicationContext接口" class="headerlink" title="ApplicationContext接口"></a>ApplicationContext接口</h2><p>使用该工厂接口可以获取到具体的Bean对象。该接口下有两个具体的实现类</p>
 <ul>
-<li>docs         :API和开发规范.</li>
-<li>libs         :jar包和源码.</li>
-<li>schema        :约束.</li>
+<li>ClassPathXmlApplicationContext            – 加载类路径下的Spring配置文件</li>
+<li>FileSystemXmlApplicationContext            – 加载本地磁盘下的Spring配置文件</li>
 </ul>
-<h2 id="步骤二-创建web项目-引入Spring的开发包"><a href="#步骤二-创建web项目-引入Spring的开发包" class="headerlink" title="步骤二:创建web项目,引入Spring的开发包"></a>步骤二:创建web项目,引入Spring的开发包</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwf88f03zj30m006qq2z.jpg" alt=""></p>
-<h2 id="步骤三-创建Spring配置文件"><a href="#步骤三-创建Spring配置文件" class="headerlink" title="步骤三:创建Spring配置文件"></a>步骤三:创建Spring配置文件</h2><p>在src目录下创建<code>applicationContext.xml</code>文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">    <span class="attr">xmlns:p</span>=<span class="string">"http://www.springframework.org/schema/p"</span></div><div class="line">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></div><div class="line">        http://www.springframework.org/schema/beans </div><div class="line">        http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;</div><div class="line">	</div><div class="line">   	<span class="comment">&lt;!-- 使用bean标签 --&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userService"</span> <span class="attr">class</span>=<span class="string">"com.shenshanlaoyuan.demo.UserServiceImpl"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="步骤四-编写相关的类"><a href="#步骤四-编写相关的类" class="headerlink" title="步骤四:编写相关的类"></a>步骤四:编写相关的类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"hello spring"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="步骤五-配置Bean"><a href="#步骤五-配置Bean" class="headerlink" title="步骤五:配置Bean"></a>步骤五:配置Bean</h2><p>在<code>applicationContext.xml</code>文件<code>beans</code>标签下添加<code>bean</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userService"</span> <span class="attr">class</span>=<span class="string">"com.shenshanlaoyuan.demo.UserServiceImpl"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="步骤六-编写测试类"><a href="#步骤六-编写测试类" class="headerlink" title="步骤六:编写测试类"></a>步骤六:编写测试类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 测试类</div><div class="line"> * <span class="doctag">@author</span> shenshanlaoyuan</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestService</span> </span>&#123;</div><div class="line">	<span class="comment">//原来的方式</span></div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSayHello1</span><span class="params">()</span></span>&#123;</div><div class="line">		UserServiceImpl usi = <span class="keyword">new</span> UserServiceImpl();</div><div class="line">		usi.sayHello();</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//spring方式</span></div><div class="line">	<span class="meta">@Test</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSayHello2</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="comment">//创建工厂，加载配置文件</span></div><div class="line">		ApplicationContext ac = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</div><div class="line">		<span class="comment">//从工厂中获取到对象</span></div><div class="line">		UserService us = (UserService) ac.getBean(<span class="string">"userService"</span>);</div><div class="line">		<span class="comment">//调用对象的方法</span></div><div class="line">		us.sayHello();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="示例源代码"><a href="#示例源代码" class="headerlink" title="示例源代码"></a><a href="https://github.com/shenshanlaoyuan/PracticeDemo/tree/master/SpringIoCDemo" target="_blank" rel="external">示例源代码</a></h2>
+<h2 id="BeanFactory工厂"><a href="#BeanFactory工厂" class="headerlink" title="BeanFactory工厂"></a>BeanFactory工厂</h2><p>Spring框架早期的创建Bean对象的工厂接口</p>
+<ul>
+<li>使用BeanFactory接口也可以获取到Bean对象<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">	BeanFactory factory = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> ClassPathResource(<span class="string">"applicationContext.xml"</span>));</div><div class="line">	UserService us = (UserService) factory.getBean(<span class="string">"us"</span>);</div><div class="line">	us.sayHello();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="BeanFactory-和-ApplicationContext-的区别"><a href="#BeanFactory-和-ApplicationContext-的区别" class="headerlink" title="BeanFactory 和 ApplicationContext 的区别"></a>BeanFactory 和 ApplicationContext 的区别</h2><ul>
+<li>BeanFactory                – BeanFactory 采取延迟加载，第一次getBean时才会初始化Bean</li>
+<li>ApplicationContext        – 在加载<code>applicationContext.xml</code>时候就会创建具体的Bean对象的实例，还提供了一些其他的功能<ul>
+<li>事件传递</li>
+<li>Bean自动装配</li>
+<li>各种不同应用层的Context实现</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -530,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/Java/spring-summary/" rel="next" title="Spring 框架之框架概述">
-                <i class="fa fa-chevron-left"></i> Spring 框架之框架概述
+              <a href="/2017/03/04/Java/spring-IoC/" rel="next" title="Spring 框架之IoC">
+                <i class="fa fa-chevron-left"></i> Spring 框架之IoC
               </a>
             
           </div>
@@ -540,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/04/Java/Spring框架之Bean工厂/" rel="prev" title="Spring 框架之Bean工厂">
-                Spring 框架之Bean工厂 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/04/Java/spring-bean-tag/" rel="prev" title="Spring 框架之bean标签属性">
+                Spring 框架之bean标签属性 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -779,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是IoC"><span class="nav-number">1.</span> <span class="nav-text">什么是IoC?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单IoC示例"><span class="nav-number">2.</span> <span class="nav-text">简单IoC示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤一-下载Spring的开发包"><span class="nav-number">2.1.</span> <span class="nav-text">步骤一:下载Spring的开发包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤二-创建web项目-引入Spring的开发包"><span class="nav-number">2.2.</span> <span class="nav-text">步骤二:创建web项目,引入Spring的开发包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤三-创建Spring配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">步骤三:创建Spring配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤四-编写相关的类"><span class="nav-number">2.4.</span> <span class="nav-text">步骤四:编写相关的类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤五-配置Bean"><span class="nav-number">2.5.</span> <span class="nav-text">步骤五:配置Bean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤六-编写测试类"><span class="nav-number">2.6.</span> <span class="nav-text">步骤六:编写测试类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例源代码"><span class="nav-number">2.7.</span> <span class="nav-text">示例源代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ApplicationContext接口"><span class="nav-number">1.</span> <span class="nav-text">ApplicationContext接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory工厂"><span class="nav-number">2.</span> <span class="nav-text">BeanFactory工厂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory-和-ApplicationContext-的区别"><span class="nav-number">3.</span> <span class="nav-text">BeanFactory 和 ApplicationContext 的区别</span></a></li></ol></div>
             
 
           </div>
