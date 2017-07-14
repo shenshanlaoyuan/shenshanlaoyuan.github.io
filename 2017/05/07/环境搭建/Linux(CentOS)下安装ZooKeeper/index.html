@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Spring," />
+  <meta name="keywords" content="CentOS,ZooKeeper," />
 
 
 
@@ -89,16 +89,22 @@
 
 
 
-<meta name="description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
+<meta name="description" content="1.单机模式(Standalone mode)下载解压官网下载或使用 wget 命令下载12# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz# tar zxf zookeeper-3.4.9.tar.gz
+如果 wget 命令找不到，先安装 wget 的 RPM 包1# yum -y inst">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring 框架之Bean工厂">
-<meta property="og:url" content="http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/index.html">
+<meta property="og:title" content="Linux(CentOS) 下安装 ZooKeeper">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/index.html">
 <meta property="og:site_name" content="深山老猿">
-<meta property="og:description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
-<meta property="og:updated_time" content="2017-07-02T10:46:07.000Z">
+<meta property="og:description" content="1.单机模式(Standalone mode)下载解压官网下载或使用 wget 命令下载12# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz# tar zxf zookeeper-3.4.9.tar.gz
+如果 wget 命令找不到，先安装 wget 的 RPM 包1# yum -y inst">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1ffcx8fxfklj30v80iqjrz.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79gy1ffcx2viortj30vc0imwfa.jpg">
+<meta property="og:updated_time" content="2017-05-26T06:18:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring 框架之Bean工厂">
-<meta name="twitter:description" content="Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。">
+<meta name="twitter:title" content="Linux(CentOS) 下安装 ZooKeeper">
+<meta name="twitter:description" content="1.单机模式(Standalone mode)下载解压官网下载或使用 wget 命令下载12# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz# tar zxf zookeeper-3.4.9.tar.gz
+如果 wget 命令找不到，先安装 wget 的 RPM 包1# yum -y inst">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1ffcx8fxfklj30v80iqjrz.jpg">
 
 
 
@@ -126,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/"/>
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/"/>
 
 
 
 
 
-  <title> Spring 框架之Bean工厂 | 深山老猿 </title>
+  <title> Linux(CentOS) 下安装 ZooKeeper | 深山老猿 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -315,7 +321,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -336,7 +342,7 @@
             
             
               
-                Spring 框架之Bean工厂
+                Linux(CentOS) 下安装 ZooKeeper
               
             
           </h1>
@@ -351,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T21:50:00+08:00">
-                2017-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T10:52:00+08:00">
+                2017-05-07
               </time>
             
 
@@ -374,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -391,7 +397,7 @@
 
           
           
-             <span id="/2017/03/04/Java/Spring 框架之Bean工厂/" class="leancloud_visitors" data-flag-title="Spring 框架之Bean工厂">
+             <span id="/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/" class="leancloud_visitors" data-flag-title="Linux(CentOS) 下安装 ZooKeeper">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,8 +426,9 @@
       
 
       
-        <p>Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。</p>
-<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/'>Spring 框架之Bean工厂</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+        <h2 id="1-单机模式-Standalone-mode"><a href="#1-单机模式-Standalone-mode" class="headerlink" title="1.单机模式(Standalone mode)"></a>1.单机模式(Standalone mode)</h2><h3 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h3><p><a href="http://apache.fayea.com/zookeeper/" target="_blank" rel="external">官网</a>下载或使用 wget 命令下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz</div><div class="line"># tar zxf zookeeper-3.4.9.tar.gz</div></pre></td></tr></table></figure></p>
+<p>如果 <code>wget</code> 命令找不到，先安装 wget 的 RPM 包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install wget</div></pre></td></tr></table></figure></p>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/'>Linux(CentOS) 下安装 ZooKeeper</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
 <script type="text/javascript">
 (function() {
   Element.prototype.remove = function() {
@@ -443,26 +450,22 @@
 })()
 </script>
 
-<h2 id="ApplicationContext接口"><a href="#ApplicationContext接口" class="headerlink" title="ApplicationContext接口"></a>ApplicationContext接口</h2><p>使用该工厂接口可以获取到具体的Bean对象。该接口下有两个具体的实现类</p>
-<ul>
-<li>ClassPathXmlApplicationContext            – 加载类路径下的Spring配置文件</li>
-<li>FileSystemXmlApplicationContext            – 加载本地磁盘下的Spring配置文件</li>
-</ul>
-<h2 id="BeanFactory工厂"><a href="#BeanFactory工厂" class="headerlink" title="BeanFactory工厂"></a>BeanFactory工厂</h2><p>Spring框架早期的创建Bean对象的工厂接口</p>
-<ul>
-<li>使用BeanFactory接口也可以获取到Bean对象<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">	BeanFactory factory = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> ClassPathResource(<span class="string">"applicationContext.xml"</span>));</div><div class="line">	UserService us = (UserService) factory.getBean(<span class="string">"us"</span>);</div><div class="line">	us.sayHello();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="BeanFactory-和-ApplicationContext-的区别"><a href="#BeanFactory-和-ApplicationContext-的区别" class="headerlink" title="BeanFactory 和 ApplicationContext 的区别"></a>BeanFactory 和 ApplicationContext 的区别</h2><ul>
-<li>BeanFactory                – BeanFactory 采取延迟加载，第一次getBean时才会初始化Bean</li>
-<li>ApplicationContext        – 在加载<code>applicationContext.xml</code>时候就会创建具体的Bean对象的实例，还提供了一些其他的功能<ul>
-<li>事件传递</li>
-<li>Bean自动装配</li>
-<li>各种不同应用层的Context实现</li>
-</ul>
-</li>
-</ul>
-
+<h3 id="启动-ZooKeeper"><a href="#启动-ZooKeeper" class="headerlink" title="启动 ZooKeeper"></a>启动 ZooKeeper</h3><p>进入 zookeeper 解压后的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># cd zookeeper-3.4.9</div><div class="line"># ll</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1ffcx8fxfklj30v80iqjrz.jpg" alt=""></p>
+<p>在目录下面创建 data 目录<br>/root/zookeeper-3.4.9/data<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># mkdir data</div></pre></td></tr></table></figure></p>
+<p>修改 conf 目录下面的 zoo_sample.cfg 配置文件名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># mv conf/zoo_sample.cfg conf/zoo.cfg</div></pre></td></tr></table></figure>
+<p>再修改配置文件内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># vim conf/zoo.cfg</div></pre></td></tr></table></figure>
+<p>如果没找到vim 命令先安装下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install vim*</div></pre></td></tr></table></figure></p>
+<p>把 dataDir 后面改成刚才创建的 data 目录全路径，如下图</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1ffcx2viortj30vc0imwfa.jpg" alt=""></p>
+<p>进入bin目录开启 ZooKeeper<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># cd bin</div><div class="line"># ./zkServer.sh start</div></pre></td></tr></table></figure></p>
+<p>查看是否开启开启成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ./zkServer.sh status</div></pre></td></tr></table></figure></p>
+<p>出现如下内容开启成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ZooKeeper JMX enabled by default</div><div class="line">Using config: /root/zookeeper-3.4.9/bin/../conf/zoo.cfg</div><div class="line">Mode: standalone</div></pre></td></tr></table></figure></p>
+<h3 id="关闭-ZooKeeper"><a href="#关闭-ZooKeeper" class="headerlink" title="关闭 ZooKeeper"></a>关闭 ZooKeeper</h3><p>进入 bin 目录输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ./zkServer.sh stop</div></pre></td></tr></table></figure>
+<h2 id="2-集群模式-Replicated-mode"><a href="#2-集群模式-Replicated-mode" class="headerlink" title="2.集群模式(Replicated mode)"></a>2.集群模式(Replicated mode)</h2>
       
     </div>
 
@@ -517,7 +520,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring/" rel="tag"># Spring</a>
+            <a href="/tags/CentOS/" rel="tag"># CentOS</a>
+          
+            <a href="/tags/ZooKeeper/" rel="tag"># ZooKeeper</a>
           
         </div>
       
@@ -530,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/04/Java/Spring 框架之IoC/" rel="next" title="Spring 框架之IoC">
-                <i class="fa fa-chevron-left"></i> Spring 框架之IoC
+              <a href="/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/" rel="next" title="解决 CentOS 安装完成后 ifconfig 命令不能用问题">
+                <i class="fa fa-chevron-left"></i> 解决 CentOS 安装完成后 ifconfig 命令不能用问题
               </a>
             
           </div>
@@ -539,10 +544,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/04/Java/Spring 框架之<bean>标签属性/" rel="prev" title="Spring 框架之bean标签属性">
-                Spring 框架之bean标签属性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -778,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ApplicationContext接口"><span class="nav-number">1.</span> <span class="nav-text">ApplicationContext接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory工厂"><span class="nav-number">2.</span> <span class="nav-text">BeanFactory工厂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeanFactory-和-ApplicationContext-的区别"><span class="nav-number">3.</span> <span class="nav-text">BeanFactory 和 ApplicationContext 的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-单机模式-Standalone-mode"><span class="nav-number">1.</span> <span class="nav-text">1.单机模式(Standalone mode)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载解压"><span class="nav-number">1.1.</span> <span class="nav-text">下载解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-ZooKeeper"><span class="nav-number">1.2.</span> <span class="nav-text">启动 ZooKeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭-ZooKeeper"><span class="nav-number">1.3.</span> <span class="nav-text">关闭 ZooKeeper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-集群模式-Replicated-mode"><span class="nav-number">2.</span> <span class="nav-text">2.集群模式(Replicated mode)</span></a></li></ol></div>
             
 
           </div>

@@ -17,14 +17,14 @@
   
   <entry>
     <title>Linux(CentOS) 下安装 ZooKeeper</title>
-    <link href="http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Linux(CentOS)%20%E4%B8%8B%E5%AE%89%E8%A3%85%20ZooKeeper/"/>
-    <id>http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS) 下安装 ZooKeeper/</id>
+    <link href="http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Linux(CentOS)%E4%B8%8B%E5%AE%89%E8%A3%85ZooKeeper/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/</id>
     <published>2017-05-07T02:52:00.000Z</published>
     <updated>2017-05-26T06:18:30.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;1-单机模式-Standalone-mode&quot;&gt;&lt;a href=&quot;#1-单机模式-Standalone-mode&quot; class=&quot;headerlink&quot; title=&quot;1.单机模式(Standalone mode)&quot;&gt;&lt;/a&gt;1.单机模式(Standalone mode)&lt;/h2&gt;&lt;h3 id=&quot;下载解压&quot;&gt;&lt;a href=&quot;#下载解压&quot; class=&quot;headerlink&quot; title=&quot;下载解压&quot;&gt;&lt;/a&gt;下载解压&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://apache.fayea.com/zookeeper/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;下载或使用 wget 命令下载&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# tar zxf zookeeper-3.4.9.tar.gz&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;如果 &lt;code&gt;wget&lt;/code&gt; 命令找不到，先安装 wget 的 RPM 包&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# yum -y install wget&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS) 下安装 ZooKeeper/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS) 下安装 ZooKeeper/&#39;&gt;Linux(CentOS) 下安装 ZooKeeper&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/环境搭建/Linux(CentOS)下安装ZooKeeper/&#39;&gt;Linux(CentOS) 下安装 ZooKeeper&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -81,13 +81,13 @@
   
   <entry>
     <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
-    <link href="http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3%20CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/"/>
-    <id>http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决 CentOS7安装完成后ifconfig命令不能用问题/</id>
+    <link href="http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/</id>
     <published>2017-05-07T02:50:00.000Z</published>
     <updated>2017-05-26T06:18:30.000Z</updated>
     
     <content type="html">&lt;p&gt;本来想查看一下本机的 ip 地址，ifconfig 命令报错&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# ifconfig&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-bash: ifconfig: command not found&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决 CentOS7安装完成后ifconfig命令不能用问题/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决 CentOS7安装完成后ifconfig命令不能用问题/&#39;&gt;解决 CentOS 安装完成后 ifconfig 命令不能用问题&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/&#39;&gt;解决 CentOS 安装完成后 ifconfig 命令不能用问题&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -130,13 +130,13 @@
   
   <entry>
     <title>Mac OS X下Maven的安装与配置</title>
-    <link href="http://shenshanlaoyuan.com/2017/05/06/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Mac%20OS%20X%E4%B8%8BMaven%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
-    <id>http://shenshanlaoyuan.com/2017/05/06/环境搭建/Mac OS X下Maven的安装与配置/</id>
+    <link href="http://shenshanlaoyuan.com/2017/05/06/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/MacOS%E4%B8%8BMaven%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://shenshanlaoyuan.com/2017/05/06/环境搭建/MacOS下Maven的安装与配置/</id>
     <published>2017-05-05T20:39:00.000Z</published>
     <updated>2017-05-26T06:18:30.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Maven-下载&quot;&gt;&lt;a href=&quot;#Maven-下载&quot; class=&quot;headerlink&quot; title=&quot;Maven 下载&quot;&gt;&lt;/a&gt;Maven 下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://maven.apache.org/download.cgi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网下载&lt;/a&gt;压缩包,选择 &lt;code&gt;Binary zip archive&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1ffbqojfs9wj314e0j6dgt.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/06/环境搭建/Mac OS X下Maven的安装与配置/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/06/环境搭建/Mac OS X下Maven的安装与配置/&#39;&gt;Mac OS X下Maven的安装与配置&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/05/06/环境搭建/MacOS下Maven的安装与配置/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/05/06/环境搭建/MacOS下Maven的安装与配置/&#39;&gt;Mac OS X下Maven的安装与配置&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -187,13 +187,13 @@
   
   <entry>
     <title>Spring 框架之bean标签属性</title>
-    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%20%E6%A1%86%E6%9E%B6%E4%B9%8B%3Cbean%3E%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
-    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之<bean>标签属性/</id>
+    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%E6%A1%86%E6%9E%B6%E4%B9%8B%3Cbean%3E%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
+    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之<bean>标签属性/</id>
     <published>2017-03-04T14:50:00.000Z</published>
     <updated>2017-07-02T11:07:41.000Z</updated>
     
     <content type="html">&lt;p&gt;主要有id、class、scope、init-method、destroy-method等。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之&lt;bean&gt;标签属性/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之&lt;bean&gt;标签属性/&#39;&gt;Spring 框架之bean标签属性&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之&lt;bean&gt;标签属性/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之&lt;bean&gt;标签属性/&#39;&gt;Spring 框架之bean标签属性&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -258,13 +258,13 @@
   
   <entry>
     <title>Spring 框架之Bean工厂</title>
-    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%20%E6%A1%86%E6%9E%B6%E4%B9%8BBean%E5%B7%A5%E5%8E%82/"/>
-    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/</id>
+    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%E6%A1%86%E6%9E%B6%E4%B9%8BBean%E5%B7%A5%E5%8E%82/"/>
+    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之Bean工厂/</id>
     <published>2017-03-04T13:50:00.000Z</published>
     <updated>2017-07-02T10:46:07.000Z</updated>
     
     <content type="html">&lt;p&gt;Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之Bean工厂/&#39;&gt;Spring 框架之Bean工厂&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之Bean工厂/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之Bean工厂/&#39;&gt;Spring 框架之Bean工厂&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
@@ -322,14 +322,14 @@
   
   <entry>
     <title>Spring 框架之IoC</title>
-    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%20%E6%A1%86%E6%9E%B6%E4%B9%8BIoC/"/>
-    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/</id>
+    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/Spring%E6%A1%86%E6%9E%B6%E4%B9%8BIoC/"/>
+    <id>http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/</id>
     <published>2017-03-04T12:50:00.000Z</published>
     <updated>2017-06-24T09:58:00.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;什么是IoC&quot;&gt;&lt;a href=&quot;#什么是IoC&quot; class=&quot;headerlink&quot; title=&quot;什么是IoC?&quot;&gt;&lt;/a&gt;什么是IoC?&lt;/h1&gt;&lt;p&gt;Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。&lt;/p&gt;
 &lt;p&gt;使用IoC可以解决程序耦合性高的问题。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring 框架之IoC/&#39;&gt;Spring 框架之IoC&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/Spring框架之IoC/&#39;&gt;Spring 框架之IoC&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
