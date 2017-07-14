@@ -84,14 +84,16 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Linux(CentOS)%E4%B8%8B%E5%AE%89%E8%A3%85ZooKeeper/</loc>
     <lastmod>2017-05-26T06:18:30.000Z</lastmod>
     <data>
         <display>
-        <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
-        <pubTime>2017-05-07T02:50:00.000Z</pubTime>
+        <title>Linux(CentOS) 下安装 ZooKeeper</title>
+        <pubTime>2017-05-07T02:52:00.000Z</pubTime>
         
         <tag>CentOS</tag>
+         
+        <tag>ZooKeeper</tag>
          
          
            
@@ -126,16 +128,14 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Linux(CentOS)%E4%B8%8B%E5%AE%89%E8%A3%85ZooKeeper/</loc>
+    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-05-26T06:18:30.000Z</lastmod>
     <data>
         <display>
-        <title>Linux(CentOS) 下安装 ZooKeeper</title>
-        <pubTime>2017-05-07T02:52:00.000Z</pubTime>
+        <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
+        <pubTime>2017-05-07T02:50:00.000Z</pubTime>
         
         <tag>CentOS</tag>
-         
-        <tag>ZooKeeper</tag>
          
          
            
