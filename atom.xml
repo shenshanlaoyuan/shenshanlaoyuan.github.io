@@ -1103,55 +1103,6 @@
   </entry>
   
   <entry>
-    <title>博客增加留言板功能</title>
-    <link href="http://shenshanlaoyuan.com/2016/05/28/Hexo/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD/"/>
-    <id>http://shenshanlaoyuan.com/2016/05/28/Hexo/博客增加留言板功能/</id>
-    <published>2016-05-28T12:00:00.000Z</published>
-    <updated>2016-10-08T02:01:45.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;在NexT主题上增加留言板的功能&quot;&gt;&lt;a href=&quot;#在NexT主题上增加留言板的功能&quot; class=&quot;headerlink&quot; title=&quot;在NexT主题上增加留言板的功能&quot;&gt;&lt;/a&gt;在NexT主题上增加留言板的功能&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720161008091804.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/05/28/Hexo/博客增加留言板功能/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/05/28/Hexo/博客增加留言板功能/&#39;&gt;博客增加留言板功能&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-  Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-  }
-  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-    for(var i = this.length - 1; i &gt;= 0; i--) {
-        if(this[i] &amp;&amp; this[i].parentElement) {
-            this[i].parentElement.removeChild(this[i]);
-        }
-    }
-  }
-  var domain = document.domain;
-  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
-  if (white_list.indexOf(domain) &gt;= 0) {
-    var elements = document.getElementsByClassName(&#39;source&#39;);
-    elements.remove();
-  }
-})()
-&lt;/script&gt;
-
-&lt;h4 id=&quot;1-在菜单中添加-guestbook-字段&quot;&gt;&lt;a href=&quot;#1-在菜单中添加-guestbook-字段&quot; class=&quot;headerlink&quot; title=&quot;1.在菜单中添加 guestbook 字段&quot;&gt;&lt;/a&gt;1.在菜单中添加 guestbook 字段&lt;/h4&gt;&lt;p&gt;在主题配置文件&lt;code&gt;/themes/next/_config.yml&lt;/code&gt;中添加&lt;code&gt;guestbook&lt;/code&gt;字段如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;menu:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  home: /&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  #categories: /categories&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  archives: /archives&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  #tags: /tags&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  readingnotes: https://readingnotes.shenshanlaoyuan.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  resume: http://resume.shenshanlaoyuan.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  #about: /about&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  about: http://about.shenshanlaoyuan.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  #commonweal: /404.html&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  guestbook: /guestbook&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;在主题配置文件&lt;code&gt;/themes/next/_config.yml&lt;/code&gt; 添加&lt;code&gt;guestbook&lt;/code&gt;字段下图标,如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;menu_icons:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  enable: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  home: home&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  about: user&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  categories: th&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  tags: tags&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  archives: archive&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  commonweal: heartbeat&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  readingnotes: book&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  resume: tablet&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  guestbook: edit&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&quot;2-修改-guestbook-字段语言&quot;&gt;&lt;a href=&quot;#2-修改-guestbook-字段语言&quot; class=&quot;headerlink&quot; title=&quot;2.修改 guestbook 字段语言&quot;&gt;&lt;/a&gt;2.修改 guestbook 字段语言&lt;/h4&gt;&lt;p&gt;主题目录&lt;code&gt;/themes/next/languages/zh-Hans.yml&lt;/code&gt;文件增加&lt;code&gt;guestbook&lt;/code&gt;字段语言&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;menu:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  home: 首页&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  archives: 归档&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  categories: 分类&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  tags: 标签&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  readingnotes: 读书笔记&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  resume: 简历&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  about: 关于&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  search: 搜索&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  commonweal: 公益404&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  guestbook: 留言&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&quot;3-新建-guestbook-页面&quot;&gt;&lt;a href=&quot;#3-新建-guestbook-页面&quot; class=&quot;headerlink&quot; title=&quot;3.新建 guestbook 页面&quot;&gt;&lt;/a&gt;3.新建 guestbook 页面&lt;/h4&gt;&lt;p&gt;在博客根目录下，右键选择&lt;code&gt;Git Bash Here&lt;/code&gt;打开命令窗口。执行&lt;code&gt;hexo new page &amp;quot;guestbook&amp;quot;&lt;/code&gt;,会在博客目录&lt;code&gt;/source&lt;/code&gt;目录下生成&lt;code&gt;guestbook&lt;/code&gt;的文件夹，在文件夹中的&lt;code&gt;index.md&lt;/code&gt;文件中添加&lt;code&gt;comments: true&lt;/code&gt;如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;title: guestbook&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;date: 2016-10-08 08:48:58&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;comments: true&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&quot;4-添加最近访客&quot;&gt;&lt;a href=&quot;#4-添加最近访客&quot; class=&quot;headerlink&quot; title=&quot;4.添加最近访客&quot;&gt;&lt;/a&gt;4.添加最近访客&lt;/h4&gt;&lt;p&gt;在&lt;code&gt;index.md&lt;/code&gt;文件正文中添加如下内容&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt; 最近访客&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div class=&amp;quot;ds-recent-visitors&amp;quot; data-num-items=&amp;quot;28&amp;quot; data-avatar-size=&amp;quot;42&amp;quot; id=&amp;quot;ds-recent-visitors&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&quot;5-修改多说CSS&quot;&gt;&lt;a href=&quot;#5-修改多说CSS&quot; class=&quot;headerlink&quot; title=&quot;5.修改多说CSS&quot;&gt;&lt;/a&gt;5.修改多说CSS&lt;/h4&gt;&lt;p&gt;登陆多说，点击后台管理，选择设置，向下找到自定义CSS，插入如下代码，滑到最底部点击保存即可。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#ds-reset&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.ds-avatar&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#ds-recent-visitors&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.ds-avatar&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;54px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;54px&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;/*設置圖像的長和寬，這裏要根據自己的評論框情況更改*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border-radius&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;27px&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;/*設置圖像圓角效果,在這裏我直接設置了超過width/2的像素，即為圓形了*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-border-radius&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;27px&lt;/span&gt;;     &lt;span class=&quot;comment&quot;&gt;/*圓角效果：兼容webkit瀏覽器*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-border-radius&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;27px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;box-shadow&lt;/span&gt;: inset &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; -&lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#3333&lt;/span&gt;sf;     &lt;span class=&quot;comment&quot;&gt;/*設置圖像陰影效果*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-box-shadow&lt;/span&gt;: inset &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; -&lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#3333&lt;/span&gt;sf;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#ds-recent-visitors&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.ds-avatar&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;float&lt;/span&gt;: left&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*隱藏多說底部版權*/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#ds-thread&lt;/span&gt; &lt;span class=&quot;selector-id&quot;&gt;#ds-reset&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.ds-powered-by&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: none;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;在NexT主题上增加留言板的功能&quot;&gt;&lt;a href=&quot;#在NexT主题上增加留言板的功能&quot; class=&quot;headerlink&quot; title=&quot;在NexT主题上增加留言板的功能&quot;&gt;&lt;/a&gt;在NexT主题上增加留言板的功能&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720161008091804.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://shenshanlaoyuan.com/categories/Hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Dialog</title>
     <link href="http://shenshanlaoyuan.com/2016/05/23/Android/Dialog/"/>
     <id>http://shenshanlaoyuan.com/2016/05/23/Android/Dialog/</id>
@@ -1282,6 +1233,56 @@
     
     
       <category term="SQLite" scheme="http://shenshanlaoyuan.com/tags/SQLite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客添加Fork me on GitHub</title>
+    <link href="http://shenshanlaoyuan.com/2016/05/20/Hexo/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0Fork%20me%20on%20GitHub/"/>
+    <id>http://shenshanlaoyuan.com/2016/05/20/Hexo/博客添加Fork me on GitHub/</id>
+    <published>2016-05-20T02:58:00.000Z</published>
+    <updated>2016-05-20T03:31:27.000Z</updated>
+    
+    <content type="html">&lt;p&gt;效果如下所示：&lt;br&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160520110717.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/05/20/Hexo/博客添加Fork me on GitHub/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/05/20/Hexo/博客添加Fork me on GitHub/&#39;&gt;博客添加Fork me on GitHub&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;ol&gt;
+&lt;li&gt;去网址&lt;a href=&quot;https://github.com/blog/273-github-ribbons&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/blog/273-github-ribbons&lt;/a&gt;挑选自己喜欢的样式，并复制代码。&lt;/li&gt;
+&lt;li&gt;修改主题文件。以我用的next主题为例,粘贴刚才复制的代码到&lt;code&gt;themes/next/layout/_layout.swig&lt;/code&gt;文件中，修改后的的文件内容如下&lt;br&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160520111944.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;再把其中的链接地址改为你的github地址。如上图修改红框中地址。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;效果如下所示：&lt;br&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160520110717.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://shenshanlaoyuan.com/categories/Hexo/"/>
+    
+    
+      <category term="GitHub" scheme="http://shenshanlaoyuan.com/tags/GitHub/"/>
     
   </entry>
   
