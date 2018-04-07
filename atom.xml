@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2018-04-07T09:34:15.000Z</updated>
+  <updated>2018-04-07T09:39:14.000Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://shenshanlaoyuan.com/2018/04/07/Python/python%E5%85%A5%E9%97%A8/"/>
     <id>http://shenshanlaoyuan.com/2018/04/07/Python/python入门/</id>
     <published>2018-04-07T09:20:00.000Z</published>
-    <updated>2018-04-07T09:34:15.000Z</updated>
+    <updated>2018-04-07T09:39:14.000Z</updated>
     
     <content type="html">&lt;p&gt;Python入门系列电子书，搭配廖雪峰的&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Python教程&lt;/font&gt;&lt;/a&gt;学习效果更佳。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2018/04/07/Python/python入门/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2018/04/07/Python/python入门/&#39;&gt;Python入门&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
@@ -45,24 +45,24 @@
 })()
 &lt;/script&gt;
 
-&lt;h2 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;Python基础&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/linux%E5%9F%BA%E7%A1%80/&quot;&gt;Linux操作系统基础&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E5%9F%BA%E7%A1%80/&quot;&gt;Python语法基础&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Python核心编程&quot;&gt;&lt;a href=&quot;#Python核心编程&quot; class=&quot;headerlink&quot; title=&quot;Python核心编程&quot;&gt;&lt;/a&gt;Python核心编程&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining//Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/python%E9%AB%98%E7%BA%A7/html%E7%89%88/python%E9%AB%98%E7%BA%A7-%E8%AF%BE%E4%BB%B6/&quot;&gt;Python高级&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/html%E7%89%88/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B-%E5%AE%8C%E6%95%B4%E8%AF%BE%E4%BB%B6/&quot;&gt;系统编程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/html%E7%89%88/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-%E5%85%A8%E9%83%A8%E8%AF%BE%E4%BB%B6/&quot;&gt;网络编程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%88%E4%BE%8B/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%88%E4%BE%8B%E8%AF%BE%E4%BB%B6/&quot;&gt;web服务器案例&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E4%BB%B6/&quot;&gt;正则表达式&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;数据结构与算法&quot;&gt;&lt;a href=&quot;#数据结构与算法&quot; class=&quot;headerlink&quot; title=&quot;数据结构与算法&quot;&gt;&lt;/a&gt;数据结构与算法&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/&quot;&gt;数据结构与算法&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/&quot;&gt;MySQL&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/mongo/&quot;&gt;mongo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/&quot;&gt;redis&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;前端&quot;&gt;&lt;a href=&quot;#前端&quot; class=&quot;headerlink&quot; title=&quot;前端&quot;&gt;&lt;/a&gt;前端&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E5%89%8D%E7%AB%AF/&quot;&gt;前端&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Django&quot;&gt;&lt;a href=&quot;#Django&quot; class=&quot;headerlink&quot; title=&quot;Django&quot;&gt;&lt;/a&gt;Django&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/django/&quot;&gt;Django&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;爬虫&quot;&gt;&lt;a href=&quot;#爬虫&quot; class=&quot;headerlink&quot; title=&quot;爬虫&quot;&gt;&lt;/a&gt;爬虫&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E7%88%AC%E8%99%AB/&quot;&gt;爬虫&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Tornado&quot;&gt;&lt;a href=&quot;#Tornado&quot; class=&quot;headerlink&quot; title=&quot;Tornado&quot;&gt;&lt;/a&gt;Tornado&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/tornado/&quot;&gt;Tornado&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;shell和自动化运维&quot;&gt;&lt;a href=&quot;#shell和自动化运维&quot; class=&quot;headerlink&quot; title=&quot;shell和自动化运维&quot;&gt;&lt;/a&gt;shell和自动化运维&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/shell%E8%AF%BE%E4%BB%B6/%E8%BF%90%E7%BB%B4%E5%92%8Cshell.html&quot;&gt;shell&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/nginx%E8%AF%BE%E4%BB%B6/nginx%E8%AF%BE%E4%BB%B6.html&quot;&gt;nginx&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2.html&quot;&gt;自动化部署&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;Python基础&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/linux%E5%9F%BA%E7%A1%80/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Linux操作系统基础&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E5%9F%BA%E7%A1%80/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Python语法基础&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Python核心编程&quot;&gt;&lt;a href=&quot;#Python核心编程&quot; class=&quot;headerlink&quot; title=&quot;Python核心编程&quot;&gt;&lt;/a&gt;Python核心编程&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining//Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/python%E9%AB%98%E7%BA%A7/html%E7%89%88/python%E9%AB%98%E7%BA%A7-%E8%AF%BE%E4%BB%B6/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Python高级&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/html%E7%89%88/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B-%E5%AE%8C%E6%95%B4%E8%AF%BE%E4%BB%B6/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;系统编程&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/html%E7%89%88/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-%E5%85%A8%E9%83%A8%E8%AF%BE%E4%BB%B6/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;网络编程&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%88%E4%BE%8B/Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%88%E4%BE%8B%E8%AF%BE%E4%BB%B6/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;web服务器案例&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/Python%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E4%BB%B6/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;正则表达式&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据结构与算法&quot;&gt;&lt;a href=&quot;#数据结构与算法&quot; class=&quot;headerlink&quot; title=&quot;数据结构与算法&quot;&gt;&lt;/a&gt;数据结构与算法&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;数据结构与算法&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;MySQL&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/mongo/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;mongo&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;redis&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前端&quot;&gt;&lt;a href=&quot;#前端&quot; class=&quot;headerlink&quot; title=&quot;前端&quot;&gt;&lt;/a&gt;前端&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E5%89%8D%E7%AB%AF/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;前端&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Django&quot;&gt;&lt;a href=&quot;#Django&quot; class=&quot;headerlink&quot; title=&quot;Django&quot;&gt;&lt;/a&gt;Django&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/django/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Django&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;爬虫&quot;&gt;&lt;a href=&quot;#爬虫&quot; class=&quot;headerlink&quot; title=&quot;爬虫&quot;&gt;&lt;/a&gt;爬虫&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/%E7%88%AC%E8%99%AB/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;爬虫&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Tornado&quot;&gt;&lt;a href=&quot;#Tornado&quot; class=&quot;headerlink&quot; title=&quot;Tornado&quot;&gt;&lt;/a&gt;Tornado&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/tornado/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;Tornado&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;shell和自动化运维&quot;&gt;&lt;a href=&quot;#shell和自动化运维&quot; class=&quot;headerlink&quot; title=&quot;shell和自动化运维&quot;&gt;&lt;/a&gt;shell和自动化运维&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/shell%E8%AF%BE%E4%BB%B6/%E8%BF%90%E7%BB%B4%E5%92%8Cshell.html&quot;&gt;&lt;font color=&quot;blue&quot;&gt;shell&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/nginx%E8%AF%BE%E4%BB%B6/nginx%E8%AF%BE%E4%BB%B6.html&quot;&gt;&lt;font color=&quot;blue&quot;&gt;nginx&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/PythonTraining/shell/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2.html&quot;&gt;&lt;font color=&quot;blue&quot;&gt;自动化部署&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
