@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2018-04-07T09:39:14.000Z</updated>
+  <updated>2018-08-09T07:18:17.000Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring 框架之Bean工厂</title>
+    <link href="http://shenshanlaoyuan.com/2018/05/01/Java/%E6%85%95%E8%AF%BE%E7%BD%91%E9%AB%98%E5%B9%B6%E5%8F%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%B9%B6%E5%8F%91%E5%92%8C%E9%AB%98%E5%B9%B6%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/</id>
+    <published>2018-05-01T13:50:00.000Z</published>
+    <updated>2018-08-09T07:18:17.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
+&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&#39;&gt;Spring 框架之Bean工厂&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;h2 id=&quot;课程地址&quot;&gt;&lt;a href=&quot;#课程地址&quot; class=&quot;headerlink&quot; title=&quot;课程地址&quot;&gt;&lt;/a&gt;课程地址&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://coding.imooc.com/class/195.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;慕课网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/s/16tDdVXjM9fcvC1cSSwCSMw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度网盘&lt;/a&gt;&lt;br&gt;&lt;strong&gt;密码arkw &lt;/strong&gt;（资源来源于网络，如有侵权联系删除！）&lt;/p&gt;
+&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h2 id=&quot;并发&quot;&gt;&lt;a href=&quot;#并发&quot; class=&quot;headerlink&quot; title=&quot;并发&quot;&gt;&lt;/a&gt;并发&lt;/h2&gt;&lt;p&gt;同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程交替得换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行。&lt;/p&gt;
+&lt;h2 id=&quot;高并发&quot;&gt;&lt;a href=&quot;#高并发&quot; class=&quot;headerlink&quot; title=&quot;高并发&quot;&gt;&lt;/a&gt;高并发&lt;/h2&gt;&lt;p&gt;高并发（High Concurrency）是互联网分布式系统架构设计中必须考虑的因素之一，他通常是指，通过设计保证系统能够&lt;strong&gt;同时并行处理&lt;/strong&gt;很多请求。&lt;/p&gt;
+&lt;h2 id=&quot;并发和高并发对比&quot;&gt;&lt;a href=&quot;#并发和高并发对比&quot; class=&quot;headerlink&quot; title=&quot;并发和高并发对比&quot;&gt;&lt;/a&gt;并发和高并发对比&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;谈并发时：多个线程操作相同的资源，保证线程安全，合理利用资源&lt;/li&gt;
+&lt;li&gt;谈高并发时：服务能同时处理很多请求（如12306的抢票，天猫双十一的秒杀活动，这会导致系统在短时间内执行大量的操作，如对资源的请求，数据库的访问），提高程序性能（如果高并发处理不好，不光会导致用户体验不好，还可能会使服务器宕机，出现OOM等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot; class=&quot;headerlink&quot; title=&quot;课程内容&quot;&gt;&lt;/a&gt;课程内容&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png&quot; alt=&quot;内容介绍&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png&quot; alt=&quot;3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png&quot; alt=&quot;4&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
+&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://shenshanlaoyuan.com/categories/Java/"/>
+    
+    
+      <category term="高并发" scheme="http://shenshanlaoyuan.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Python入门</title>
@@ -380,65 +439,6 @@
     
     
       <category term="Spring" scheme="http://shenshanlaoyuan.com/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring 框架之Bean工厂</title>
-    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/%E6%85%95%E8%AF%BE%E7%BD%91%E9%AB%98%E5%B9%B6%E5%8F%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%B9%B6%E5%8F%91%E5%92%8C%E9%AB%98%E5%B9%B6%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/</id>
-    <published>2017-03-04T13:50:00.000Z</published>
-    <updated>2018-08-09T07:14:10.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
-&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&#39;&gt;Spring 框架之Bean工厂&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-  Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-  }
-  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-    for(var i = this.length - 1; i &gt;= 0; i--) {
-        if(this[i] &amp;&amp; this[i].parentElement) {
-            this[i].parentElement.removeChild(this[i]);
-        }
-    }
-  }
-  var domain = document.domain;
-  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
-  if (white_list.indexOf(domain) &gt;= 0) {
-    var elements = document.getElementsByClassName(&#39;source&#39;);
-    elements.remove();
-  }
-})()
-&lt;/script&gt;
-
-&lt;h2 id=&quot;课程地址&quot;&gt;&lt;a href=&quot;#课程地址&quot; class=&quot;headerlink&quot; title=&quot;课程地址&quot;&gt;&lt;/a&gt;课程地址&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://coding.imooc.com/class/195.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;慕课网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/s/16tDdVXjM9fcvC1cSSwCSMw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度网盘&lt;/a&gt;&lt;br&gt;&lt;strong&gt;密码arkw &lt;/strong&gt;（资源来源于网络，如有侵权联系删除！）&lt;/p&gt;
-&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h2 id=&quot;并发&quot;&gt;&lt;a href=&quot;#并发&quot; class=&quot;headerlink&quot; title=&quot;并发&quot;&gt;&lt;/a&gt;并发&lt;/h2&gt;&lt;p&gt;同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程交替得换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行。&lt;/p&gt;
-&lt;h2 id=&quot;高并发&quot;&gt;&lt;a href=&quot;#高并发&quot; class=&quot;headerlink&quot; title=&quot;高并发&quot;&gt;&lt;/a&gt;高并发&lt;/h2&gt;&lt;p&gt;高并发（High Concurrency）是互联网分布式系统架构设计中必须考虑的因素之一，他通常是指，通过设计保证系统能够&lt;strong&gt;同时并行处理&lt;/strong&gt;很多请求。&lt;/p&gt;
-&lt;h2 id=&quot;并发和高并发对比&quot;&gt;&lt;a href=&quot;#并发和高并发对比&quot; class=&quot;headerlink&quot; title=&quot;并发和高并发对比&quot;&gt;&lt;/a&gt;并发和高并发对比&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;谈并发时：多个线程操作相同的资源，保证线程安全，合理利用资源&lt;/li&gt;
-&lt;li&gt;谈高并发时：服务能同时处理很多请求（如12306的抢票，天猫双十一的秒杀活动，这会导致系统在短时间内执行大量的操作，如对资源的请求，数据库的访问），提高程序性能（如果高并发处理不好，不光会导致用户体验不好，还可能会使服务器宕机，出现OOM等）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot; class=&quot;headerlink&quot; title=&quot;课程内容&quot;&gt;&lt;/a&gt;课程内容&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png&quot; alt=&quot;内容介绍&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png&quot; alt=&quot;3&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png&quot; alt=&quot;4&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
-&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://shenshanlaoyuan.com/categories/Java/"/>
-    
-    
-      <category term="高并发" scheme="http://shenshanlaoyuan.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
