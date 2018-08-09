@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,开源项目," />
+  <meta name="keywords" content="高并发," />
 
 
 
@@ -89,16 +89,26 @@
 
 
 
-<meta name="description" content="了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。有时间可以仔细看看。">
+<meta name="description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最火的Android开源项目（转载）">
-<meta property="og:url" content="http://shenshanlaoyuan.com/2016/03/28/Android/最火的Android开源项目（转载）/index.html">
+<meta property="og:title" content="慕课网高并发课程笔记（三）-项目准备">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2017/05/05/Java/bingfa3/index.html">
 <meta property="og:site_name" content="深山老猿">
-<meta property="og:description" content="了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。有时间可以仔细看看。">
-<meta property="og:updated_time" content="2016-05-14T00:31:55.000Z">
+<meta property="og:description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956311599230.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956319836166.png">
+<meta property="og:updated_time" content="2018-08-09T07:41:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最火的Android开源项目（转载）">
-<meta name="twitter:description" content="了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。有时间可以仔细看看。">
+<meta name="twitter:title" content="慕课网高并发课程笔记（三）-项目准备">
+<meta name="twitter:description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
+<meta name="twitter:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png">
 
 
 
@@ -126,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://shenshanlaoyuan.com/2016/03/28/Android/最火的Android开源项目（转载）/"/>
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2017/05/05/Java/bingfa3/"/>
 
 
 
 
 
-  <title> 最火的Android开源项目（转载） | 深山老猿 </title>
+  <title> 慕课网高并发课程笔记（三）-项目准备 | 深山老猿 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -315,7 +325,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/03/28/Android/最火的Android开源项目（转载）/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/05/05/Java/bingfa3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -336,7 +346,7 @@
             
             
               
-                最火的Android开源项目（转载）
+                慕课网高并发课程笔记（三）-项目准备
               
             
           </h1>
@@ -351,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-28T00:00:00+08:00">
-                2016-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T21:50:00+08:00">
+                2017-05-05
               </time>
             
 
@@ -374,8 +384,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -391,7 +401,7 @@
 
           
           
-             <span id="/2016/03/28/Android/最火的Android开源项目（转载）/" class="leancloud_visitors" data-flag-title="最火的Android开源项目（转载）">
+             <span id="/2017/05/05/Java/bingfa3/" class="leancloud_visitors" data-flag-title="慕课网高并发课程笔记（三）-项目准备">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,7 +430,53 @@
       
 
       
-        <p>了解常见的开源项目，可以扩大我们的视野，知道有哪些可以利用的资源，对于我们平常的设计和开发很有好处。当然，如果有更多时间的话，也可以专门学习某开源项目，提高自己的开发水平。<br>以下是几个网址，是从网上看到的，简单介绍了一些Android开源项目，个人觉得了解一下，对于平时开发还是很有帮助的。<br>有时间可以仔细看看。<br><a id="more"></a><br>直接拿来用！最火的Android开源项目（一）<br><a href="http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects" target="_blank" rel="external">http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects</a><br>直接拿来用！最火的Android开源项目（二）<br><a href="http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two" target="_blank" rel="external">http://www.csdn.net/article/2013-05-08/2815145-Android-open-source-projects-two</a><br>直接拿来用！最火的Android开源项目（完结篇）<br><a href="http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale）" target="_blank" rel="external">http://www.csdn.net/article/2013-05-21/2815370-Android-open-source-projects-finale</a></p>
+        <h2 id="线程安全与线程不安全"><a href="#线程安全与线程不安全" class="headerlink" title="线程安全与线程不安全"></a>线程安全与线程不安全</h2><ul>
+<li>线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。</li>
+<li>线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。</li>
+</ul>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2017/05/05/Java/bingfa3/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2017/05/05/Java/bingfa3/'>慕课网高并发课程笔记（三）-项目准备</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+<script type="text/javascript">
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = ['shenshanlaoyuan.com', 'localhost'];
+  if (white_list.indexOf(domain) >= 0) {
+    var elements = document.getElementsByClassName('source');
+    elements.remove();
+  }
+})()
+</script>
+
+<h2 id="环境搭建与准备"><a href="#环境搭建与准备" class="headerlink" title="环境搭建与准备"></a>环境搭建与准备</h2><h3 id="Spring-Boot构建项目"><a href="#Spring-Boot构建项目" class="headerlink" title="Spring Boot构建项目"></a>Spring Boot构建项目</h3><p><a href="Https://start.spring.io/" target="_blank" rel="external">Https://start.spring.io/</a></p>
+<p>具体搭建过程参考视频。</p>
+<h3 id="注解的准备"><a href="#注解的准备" class="headerlink" title="注解的准备"></a>注解的准备</h3><ul>
+<li><p>线程安全的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 对于线程安全的类，加入一个<span class="doctag">@ThreadSafe</span>注解的标示</div><div class="line"> * <span class="doctag">@Target</span>(ElementType.TYPE) 说明作用于类上</div><div class="line"> * <span class="doctag">@Retention</span>(RetentionPolicy.SOURCE) 指定注解作用的范围，在编译的时候就会被忽略掉</div><div class="line"> * <span class="doctag">@author</span> gaowenfeng</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ThreadSafe &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>线程不安全的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标示[线程不安全的类]</div><div class="line"> * <span class="doctag">@Target</span>(ElementType.TYPE) 说明作用于类上</div><div class="line"> * <span class="doctag">@Retention</span>(RetentionPolicy.SOURCE) 指定注解作用的范围，在编译的时候就会被忽略掉</div><div class="line"> * <span class="doctag">@author</span> gaowenfeng</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NotThreadSafe &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>推荐写法的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标记[推荐]的类或者写法</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Recommend &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不推荐写法的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标记[不推荐]的类或者写法</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NotRecommend &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="ElementType-详解"><a href="#ElementType-详解" class="headerlink" title="ElementType 详解"></a>ElementType 详解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> ElementType &#123;</div><div class="line">    <span class="comment">/** Class, interface (including annotation type), or enum declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在类，借口，枚举上*/</span></div><div class="line">    TYPE,</div><div class="line"></div><div class="line">    <span class="comment">/** Field declaration (includes enum constants) */</span></div><div class="line">   <span class="comment">/** 声明注解作用在属性上*/</span></div><div class="line">    FIELD,</div><div class="line"></div><div class="line">    <span class="comment">/** Method declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在方法上*/</span></div><div class="line">    METHOD,</div><div class="line"></div><div class="line">    <span class="comment">/** Formal parameter declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在参数上*/</span></div><div class="line">    PARAMETER,</div><div class="line"></div><div class="line">    <span class="comment">/** Constructor declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在构造函数上*/</span></div><div class="line">    CONSTRUCTOR,</div><div class="line"></div><div class="line">    <span class="comment">/** Local variable declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在本地变量上*/</span></div><div class="line">    LOCAL_VARIABLE,</div><div class="line"></div><div class="line">    <span class="comment">/** Annotation type declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在注解上*/</span></div><div class="line">    ANNOTATION_TYPE,</div><div class="line"></div><div class="line">    <span class="comment">/** Package declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在包上*/</span></div><div class="line">    PACKAGE,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Type parameter declaration</div><div class="line">     *</div><div class="line">     * <span class="doctag">@since</span> 1.8</div><div class="line">     */</div><div class="line">   <span class="comment">/** 声明注解可以应用在TYPE声明上*/</span></div><div class="line">    TYPE_PARAMETER,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Use of a type</div><div class="line">     * Type.TYPE_USE 表示这个 Annotation 可以用在所有使用 Type 的地方（如：泛型，类型转换等）</div><div class="line">     * <span class="doctag">@since</span> 1.8</div><div class="line">     */</div><div class="line">    TYPE_USE</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="RetentionPolicy详解"><a href="#RetentionPolicy详解" class="headerlink" title="RetentionPolicy详解"></a>RetentionPolicy详解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> RetentionPolicy &#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be discarded by the compiler.</div><div class="line">     * 在编译的时候会被取消，只用于声明，理解，或者测试</div><div class="line">     */</div><div class="line">    SOURCE,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be recorded in the class file by the compiler</div><div class="line">     * but need not be retained by the VM at run time.  This is the default</div><div class="line">     * behavior.</div><div class="line">     * 注解将被编译器记录在类文件中，但在运行时不需要由VM保留，（默认的选项）</div><div class="line">     */</div><div class="line">    CLASS,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be recorded in the class file by the compiler and</div><div class="line">     * retained by the VM at run time, so they may be read reflectively.</div><div class="line">     * 注解将被编译器记录在类文件中，但在运行时由VM保留，这样他们可以被反射获取（当你需要获取注解中字段的属性值的时候，需要用这个，比如AOP）</div><div class="line">     * <span class="doctag">@see</span> java.lang.reflect.AnnotatedElement</div><div class="line">     */</div><div class="line">    RUNTIME</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="并发模拟工具"><a href="#并发模拟工具" class="headerlink" title="并发模拟工具"></a>并发模拟工具</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png" alt="工具"></p>
+<h2 id="并发模拟代码"><a href="#并发模拟代码" class="headerlink" title="并发模拟代码"></a>并发模拟代码</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956311599230.png" alt=""></p>
+<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956319836166.png" alt=""></p>
 
       
     </div>
@@ -476,9 +532,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
-            <a href="/tags/开源项目/" rel="tag"># 开源项目</a>
+            <a href="/tags/高并发/" rel="tag"># 高并发</a>
           
         </div>
       
@@ -491,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/28/Hexo/Hexo搭建独立博客，托管到Github和Coding教程/" rel="next" title="Hexo搭建独立博客，托管到Github和Coding上">
-                <i class="fa fa-chevron-left"></i> Hexo搭建独立博客，托管到Github和Coding上
+              <a href="/2017/05/04/Java/bingfa2/" rel="next" title="慕课网高并发课程笔记（二）-并发基础">
+                <i class="fa fa-chevron-left"></i> 慕课网高并发课程笔记（二）-并发基础
               </a>
             
           </div>
@@ -501,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/03/Android/android知识体系线路图/" rel="prev" title="android知识结构图">
-                android知识结构图 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/06/环境搭建/MacOS-Maven/" rel="prev" title="Mac OS X下Maven的安装与配置">
+                Mac OS X下Maven的安装与配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,8 +661,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xs5l8.com1.z0.glb.clouddn.com/getheadimg.jpg"
@@ -721,6 +784,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全与线程不安全"><span class="nav-number">1.</span> <span class="nav-text">线程安全与线程不安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建与准备"><span class="nav-number">2.</span> <span class="nav-text">环境搭建与准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Boot构建项目"><span class="nav-number">2.1.</span> <span class="nav-text">Spring Boot构建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解的准备"><span class="nav-number">2.2.</span> <span class="nav-text">注解的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ElementType-详解"><span class="nav-number">2.2.1.</span> <span class="nav-text">ElementType 详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RetentionPolicy详解"><span class="nav-number">2.2.2.</span> <span class="nav-text">RetentionPolicy详解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发模拟工具"><span class="nav-number">3.</span> <span class="nav-text">并发模拟工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发模拟代码"><span class="nav-number">4.</span> <span class="nav-text">并发模拟代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
