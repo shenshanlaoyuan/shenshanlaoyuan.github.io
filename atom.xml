@@ -384,6 +384,65 @@
   </entry>
   
   <entry>
+    <title>Spring 框架之Bean工厂</title>
+    <link href="http://shenshanlaoyuan.com/2017/03/04/Java/%E6%85%95%E8%AF%BE%E7%BD%91%E9%AB%98%E5%B9%B6%E5%8F%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89-%E5%B9%B6%E5%8F%91%E5%92%8C%E9%AB%98%E5%B9%B6%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/</id>
+    <published>2017-03-04T13:50:00.000Z</published>
+    <updated>2018-08-09T07:14:10.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
+&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2017/03/04/Java/慕课网高并发课程笔记（一）-并发和高并发基本概念/&#39;&gt;Spring 框架之Bean工厂&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i &gt;= 0; i--) {
+        if(this[i] &amp;&amp; this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
+  if (white_list.indexOf(domain) &gt;= 0) {
+    var elements = document.getElementsByClassName(&#39;source&#39;);
+    elements.remove();
+  }
+})()
+&lt;/script&gt;
+
+&lt;h2 id=&quot;课程地址&quot;&gt;&lt;a href=&quot;#课程地址&quot; class=&quot;headerlink&quot; title=&quot;课程地址&quot;&gt;&lt;/a&gt;课程地址&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://coding.imooc.com/class/195.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;慕课网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/s/16tDdVXjM9fcvC1cSSwCSMw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度网盘&lt;/a&gt;&lt;br&gt;&lt;strong&gt;密码arkw &lt;/strong&gt;（资源来源于网络，如有侵权联系删除！）&lt;/p&gt;
+&lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h2 id=&quot;并发&quot;&gt;&lt;a href=&quot;#并发&quot; class=&quot;headerlink&quot; title=&quot;并发&quot;&gt;&lt;/a&gt;并发&lt;/h2&gt;&lt;p&gt;同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程交替得换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行。&lt;/p&gt;
+&lt;h2 id=&quot;高并发&quot;&gt;&lt;a href=&quot;#高并发&quot; class=&quot;headerlink&quot; title=&quot;高并发&quot;&gt;&lt;/a&gt;高并发&lt;/h2&gt;&lt;p&gt;高并发（High Concurrency）是互联网分布式系统架构设计中必须考虑的因素之一，他通常是指，通过设计保证系统能够&lt;strong&gt;同时并行处理&lt;/strong&gt;很多请求。&lt;/p&gt;
+&lt;h2 id=&quot;并发和高并发对比&quot;&gt;&lt;a href=&quot;#并发和高并发对比&quot; class=&quot;headerlink&quot; title=&quot;并发和高并发对比&quot;&gt;&lt;/a&gt;并发和高并发对比&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;谈并发时：多个线程操作相同的资源，保证线程安全，合理利用资源&lt;/li&gt;
+&lt;li&gt;谈高并发时：服务能同时处理很多请求（如12306的抢票，天猫双十一的秒杀活动，这会导致系统在短时间内执行大量的操作，如对资源的请求，数据库的访问），提高程序性能（如果高并发处理不好，不光会导致用户体验不好，还可能会使服务器宕机，出现OOM等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;课程内容&quot;&gt;&lt;a href=&quot;#课程内容&quot; class=&quot;headerlink&quot; title=&quot;课程内容&quot;&gt;&lt;/a&gt;课程内容&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png&quot; alt=&quot;内容介绍&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png&quot; alt=&quot;3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png&quot; alt=&quot;4&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
+&lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://shenshanlaoyuan.com/categories/Java/"/>
+    
+    
+      <category term="高并发" scheme="http://shenshanlaoyuan.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring 框架之IoC</title>
     <link href="http://shenshanlaoyuan.com/2017/03/04/Java/spring-IoC/"/>
     <id>http://shenshanlaoyuan.com/2017/03/04/Java/spring-IoC/</id>
@@ -1219,83 +1278,6 @@
     
     
       <category term="Dialog" scheme="http://shenshanlaoyuan.com/tags/Dialog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android下的数据存储与访问方式（三）</title>
-    <link href="http://shenshanlaoyuan.com/2016/05/21/Android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://shenshanlaoyuan.com/2016/05/21/Android/Android下的数据存储与访问方式（三）/</id>
-    <published>2016-05-21T13:18:00.000Z</published>
-    <updated>2016-09-14T11:49:16.000Z</updated>
-    
-    <content type="html">&lt;p&gt;更多方式阅读上两篇文章：&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/13/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/14/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（二）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;SQLite-轻量级数据库&quot;&gt;&lt;a href=&quot;#SQLite-轻量级数据库&quot; class=&quot;headerlink&quot; title=&quot;SQLite 轻量级数据库&quot;&gt;&lt;/a&gt;SQLite 轻量级数据库&lt;/h2&gt;&lt;p&gt;SQLite，是一款轻型的数据库，是遵守ACID(原子性、一致性、隔离性、持久性)的关联式数据库管理系统，多用于嵌入式开发中。&lt;/p&gt;
-&lt;p&gt;SQLite的数据类型：Typelessness(无类型), 可以保存任何类型的数据到你所想要保存的任何表的任何列中. 但它又支持常见的类型比如: NULL, VARCHAR, TEXT, INTEGER, BLOB, CLOB…等. 唯一的例外：integer primary key 此字段只能存储64位整数。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2016/05/21/Android/Android下的数据存储与访问方式（三）/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2016/05/21/Android/Android下的数据存储与访问方式（三）/&#39;&gt;Android下的数据存储与访问方式（三）&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-  Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-  }
-  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-    for(var i = this.length - 1; i &gt;= 0; i--) {
-        if(this[i] &amp;&amp; this[i].parentElement) {
-            this[i].parentElement.removeChild(this[i]);
-        }
-    }
-  }
-  var domain = document.domain;
-  var white_list = [&#39;shenshanlaoyuan.com&#39;, &#39;localhost&#39;];
-  if (white_list.indexOf(domain) &gt;= 0) {
-    var elements = document.getElementsByClassName(&#39;source&#39;);
-    elements.remove();
-  }
-})()
-&lt;/script&gt;
-
-&lt;p&gt;在Android系统，提供了一个SQLiteOpenHelper抽象类，该类用于对数据库版本进行管理.该类中常用的方法:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;onCreate 数据库创建时执行(第一次连接获取数据库对象时执行)&lt;/li&gt;
-&lt;li&gt;onUpgrade 数据库更新时执行(版本号改变时执行)&lt;/li&gt;
-&lt;li&gt;onOpen 数据库每次打开时执行(每次打开数据库时调用，在                onCreate，onUpgrade方法之后)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;使用SQLiteDatabase操作SQLite数据库&quot;&gt;&lt;a href=&quot;#使用SQLiteDatabase操作SQLite数据库&quot; class=&quot;headerlink&quot; title=&quot;使用SQLiteDatabase操作SQLite数据库&quot;&gt;&lt;/a&gt;使用SQLiteDatabase操作SQLite数据库&lt;/h3&gt;&lt;p&gt;Android提供了一个名为SQLiteDatabase的类，该类封装了一些操作数据库的API，使用该类可以完成对数据进行添加(Create)、查询(Retrieve)、更新(Update)和删除(Delete)操作（这些操作简称为CRUD）。&lt;/p&gt;
-&lt;p&gt;对SQLiteDatabase的学习，我们应该重点掌握execSQL()和rawQuery()方法。 execSQL()方法可以执行insert、delete、update和CREATE TABLE之类有更改行为的SQL语句； rawQuery()方法用于执行select语句。&lt;/p&gt;
-&lt;p&gt;1.execSQL()方法的使用例子：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;MySqliteHelper helper = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MySqliteHelper();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SQLiteDatabase db = helper.getWritableDatabase();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.execSQL(&lt;span class=&quot;string&quot;&gt;&quot;insert into person(name, age) values(&#39;张三&#39;, 4)&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.close();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;执行上面SQL语句会往person表中添加进一条记录，在实际应用中， 语句中的“张三”这些参数值会由用户输入界面提供，如果把用户输入的内容原样组拼到上面的insert语句， 当用户输入的内容含有单引号时，组拼出来的SQL语句就会存在语法错误。要解决这个问题需要对单引号进行转义，也就是把单引号转换成两个单引号。有些时候用户往往还会输入像“ &amp;amp; ”这些特殊SQL符号，为保证组拼好的SQL语句语法正确，必须对SQL语句中的这些特殊SQL符号都进行转义，显然，对每条SQL语句都做这样的处理工作是比较烦琐的。 SQLiteDatabase类提供了一个重载后的execSQL(String sql, Object[] bindArgs)方法，使用这个方法可以解决前面提到的问题，因为这个方法支持使用占位符参数(?)。使用例子如下：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;MySqliteHelper helper = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MySqliteHelper();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SQLiteDatabase db = helper.getWritableDatabase();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.execSQL(&lt;span class=&quot;string&quot;&gt;&quot;insert into person(name, age) values(?,?)&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object[]&amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;张三&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&amp;#125;); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.close();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;execSQL(String sql, Object[] bindArgs)方法的第一个参数为SQL语句，第二个参数为SQL语句中占位符参数的值，参数值在数组中的顺序要和占位符的位置对应。&lt;/p&gt;
-&lt;p&gt;2.SQLiteDatabase的rawQuery() 用于执行select语句，使用例子如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;MySqliteHelper helper = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MySqliteHelper();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;SQLiteDatabase db = helper.getReadableDatabase();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Cursor cursor = db.rawQuery(“select * from person”, &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (cursor.moveToNext()) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; personid = cursor.getInt(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//获取第一列的值,第一列的索引从0开始&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	String name = cursor.getString(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//获取第二列的值&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; age = cursor.getInt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//获取第三列的值&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cursor.close();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.close();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;rawQuery()方法的第一个参数为select语句；第二个参数为select语句中占位符参数的值，如果select语句没有使用占位符，该参数可以设置为null。&lt;/p&gt;
-&lt;p&gt;带占位符参数的select语句使用例子如下：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Cursor cursor = db.rawQuery(&lt;span class=&quot;string&quot;&gt;&quot;select * from person where name like ? and age=?&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String[]&amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;%张%&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;4&quot;&lt;/span&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;Cursor是结果集游标，用于对结果集进行随机访问，如果熟悉jdbc， 其实Cursor与JDBC中的ResultSet作用很相似。使用moveToNext()方法可以将游标从当前行移动到下一行，如果已经移过了结果集的最后一行，返回结果为false，否则为true。另外Cursor 还有常用的moveToPrevious()方法（用于将游标从当前行移动到上一行，如果已经移过了结果集的第一行，返回值为false，否则为true ）、moveToFirst()方法（用于将游标移动到结果集的第一行，如果结果集为空，返回值为false，否则为true ）和moveToLast()方法（用于将游标移动到结果集的最后一行，如果结果集为空，返回值为false，否则为true ） 。&lt;/p&gt;
-&lt;p&gt;除了execSQL()和rawQuery()方法, SQLiteDatabase还专门提供了对应于添加、删除、更新、查询的操作方法： &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;insert()        增加数据&lt;/li&gt;
-&lt;li&gt;delete()        删除数据&lt;/li&gt;
-&lt;li&gt;update()    修改数据&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;query()        查询数据&lt;/p&gt;
-&lt;p&gt;这些方法实际上是给那些不太了解SQL语法的开发者使用的，对于熟悉SQL语法的程序员而言，直接使用execSQL()和rawQuery()方法执行SQL语句就能完成数据的添加、删除、更新、查询操作。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;使用事务操作SQLite数据库&quot;&gt;&lt;a href=&quot;#使用事务操作SQLite数据库&quot; class=&quot;headerlink&quot; title=&quot;使用事务操作SQLite数据库&quot;&gt;&lt;/a&gt;使用事务操作SQLite数据库&lt;/h3&gt;&lt;p&gt;使用SQLiteDatabase的beginTransaction()方法可以开启一个事务，程序执行到endTransaction() 方法时会检查事务的标志是否为成功，如果程序执行到endTransaction()之前调用了setTransactionSuccessful() 方法设置事务的标志为成功则提交事务，如果没有调用setTransactionSuccessful() 方法则回滚事务。使用例子如下：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;SQLiteDatabase db = ....;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.beginTransaction();&lt;span class=&quot;comment&quot;&gt;//开始事务&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    db.execSQL(&lt;span class=&quot;string&quot;&gt;&quot;insert into person(name, age) values(?,?)&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object[]&amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;张三&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    db.execSQL(&lt;span class=&quot;string&quot;&gt;&quot;update person set name=? where personid=?&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object[]&amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;李四&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    db.setTransactionSuccessful();&lt;span class=&quot;comment&quot;&gt;//调用此方法会在执行到endTransaction() 时提交当前事务，如果不调用此方法会回滚事务&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    db.endTransaction();&lt;span class=&quot;comment&quot;&gt;//由事务的标志决定是提交事务，还是回滚事务&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;db.close();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;上面两条SQL语句在同一个事务中执行。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;更多方式阅读上两篇文章：&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/13/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%B8%80%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（一）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://shenshanlaoyuan.com/2016/05/14/android/Android%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89/&quot;&gt;Android下的数据存储与访问方式（二）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;SQLite-轻量级数据库&quot;&gt;&lt;a href=&quot;#SQLite-轻量级数据库&quot; class=&quot;headerlink&quot; title=&quot;SQLite 轻量级数据库&quot;&gt;&lt;/a&gt;SQLite 轻量级数据库&lt;/h2&gt;&lt;p&gt;SQLite，是一款轻型的数据库，是遵守ACID(原子性、一致性、隔离性、持久性)的关联式数据库管理系统，多用于嵌入式开发中。&lt;/p&gt;
-&lt;p&gt;SQLite的数据类型：Typelessness(无类型), 可以保存任何类型的数据到你所想要保存的任何表的任何列中. 但它又支持常见的类型比如: NULL, VARCHAR, TEXT, INTEGER, BLOB, CLOB…等. 唯一的例外：integer primary key 此字段只能存储64位整数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://shenshanlaoyuan.com/categories/Android/"/>
-    
-    
-      <category term="SQLite" scheme="http://shenshanlaoyuan.com/tags/SQLite/"/>
     
   </entry>
   
