@@ -17,14 +17,14 @@
   
   <entry>
     <title>慕课网高并发课程笔记（一）-并发和高并发基本概念</title>
-    <link href="http://shenshanlaoyuan.com/2018/05/01/Java/%E6%85%95%E8%AF%BE%E7%BD%91%E9%AB%98%E5%B9%B6%E5%8F%91%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0(%E4%B8%80)-%E5%B9%B6%E5%8F%91%E5%92%8C%E9%AB%98%E5%B9%B6%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记(一)-并发和高并发基本概念/</id>
+    <link href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/"/>
+    <id>http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/</id>
     <published>2018-05-01T13:50:00.000Z</published>
     <updated>2018-08-09T07:21:30.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png&quot; alt=&quot;Java并发编程与高并发解决方案&quot;&gt;&lt;/p&gt;
 &lt;p&gt;课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记(一)-并发和高并发基本概念/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2018/05/01/Java/慕课网高并发课程笔记(一)-并发和高并发基本概念/&#39;&gt;慕课网高并发课程笔记（一）-并发和高并发基本概念&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;span class=&#39;source&#39;&gt;&lt;blockquote&gt;&lt;p&gt;转载请注明出处：http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/&lt;/p&gt;&lt;p&gt;访问原文「&lt;a href=&#39;http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/&#39;&gt;慕课网高并发课程笔记（一）-并发和高并发基本概念&lt;/a&gt;」获取最佳阅读体验并参与讨论&lt;/p&gt;&lt;/blockquote&gt;&lt;/span&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 (function() {
   Element.prototype.remove = function() {
