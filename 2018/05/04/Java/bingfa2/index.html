@@ -89,25 +89,32 @@
 
 
 
-<meta name="description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
+<meta name="description" content="CPU多级缓存
+图左侧为最简单的高速缓存的配置，数据的读取和存储都经过高速缓存，CPU核心与高速缓存有一条特殊的快速通道；主存与高速缓存都连在系统总线上（BUS）这条总线还用于其他组件的通信。
+在高速缓存出现后不久，系统变得越来越复杂，高速缓存与主存之间的速度差异被拉大，直到加入了另一级缓存，新加入的这级缓存比第一缓存更大，并且更慢，由于加大一级缓存从经济上考虑是行不通的，所以有了二级缓存，甚至是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慕课网高并发课程笔记（一）-并发和高并发基本概念">
-<meta property="og:url" content="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/index.html">
+<meta property="og:title" content="慕课网高并发课程笔记（二）-并发基础">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/index.html">
 <meta property="og:site_name" content="深山老猿">
-<meta property="og:description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png">
-<meta property="og:updated_time" content="2018-08-09T07:21:30.000Z">
+<meta property="og:description" content="CPU多级缓存
+图左侧为最简单的高速缓存的配置，数据的读取和存储都经过高速缓存，CPU核心与高速缓存有一条特殊的快速通道；主存与高速缓存都连在系统总线上（BUS）这条总线还用于其他组件的通信。
+在高速缓存出现后不久，系统变得越来越复杂，高速缓存与主存之间的速度差异被拉大，直到加入了另一级缓存，新加入的这级缓存比第一缓存更大，并且更慢，由于加大一级缓存从经济上考虑是行不通的，所以有了二级缓存，甚至是">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774962796143.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775055531383.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277513621658.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775218881565.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277525758516.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775282044126.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775299434958.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775338016819.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775386366786.png">
+<meta property="og:updated_time" content="2018-08-09T07:45:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="慕课网高并发课程笔记（一）-并发和高并发基本概念">
-<meta name="twitter:description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
-<meta name="twitter:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png">
+<meta name="twitter:title" content="慕课网高并发课程笔记（二）-并发基础">
+<meta name="twitter:description" content="CPU多级缓存
+图左侧为最简单的高速缓存的配置，数据的读取和存储都经过高速缓存，CPU核心与高速缓存有一条特殊的快速通道；主存与高速缓存都连在系统总线上（BUS）这条总线还用于其他组件的通信。
+在高速缓存出现后不久，系统变得越来越复杂，高速缓存与主存之间的速度差异被拉大，直到加入了另一级缓存，新加入的这级缓存比第一缓存更大，并且更慢，由于加大一级缓存从经济上考虑是行不通的，所以有了二级缓存，甚至是">
+<meta name="twitter:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774962796143.png">
 
 
 
@@ -135,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/"/>
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/"/>
 
 
 
 
 
-  <title> 慕课网高并发课程笔记（一）-并发和高并发基本概念 | 深山老猿 </title>
+  <title> 慕课网高并发课程笔记（二）-并发基础 | 深山老猿 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -324,7 +331,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -345,7 +352,7 @@
             
             
               
-                慕课网高并发课程笔记（一）-并发和高并发基本概念
+                慕课网高并发课程笔记（二）-并发基础
               
             
           </h1>
@@ -360,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:50:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T21:50:00+08:00">
+                2018-05-04
               </time>
             
 
@@ -400,7 +407,7 @@
 
           
           
-             <span id="/2018/05/01/Java/bingfa1/" class="leancloud_visitors" data-flag-title="慕课网高并发课程笔记（一）-并发和高并发基本概念">
+             <span id="/2018/05/04/Java/bingfa2/" class="leancloud_visitors" data-flag-title="慕课网高并发课程笔记（二）-并发基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,9 +436,10 @@
       
 
       
-        <h1 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h1><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png" alt="Java并发编程与高并发解决方案"></p>
-<p>课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！</p>
-<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/'>慕课网高并发课程笔记（一）-并发和高并发基本概念</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+        <h2 id="CPU多级缓存"><a href="#CPU多级缓存" class="headerlink" title="CPU多级缓存"></a>CPU多级缓存</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774962796143.png" alt="CPU多级缓存"></p>
+<p>图左侧为最简单的高速缓存的配置，数据的读取和存储都经过高速缓存，CPU核心与高速缓存有一条特殊的快速通道；主存与高速缓存都连在系统总线上（BUS）这条总线还用于其他组件的通信。</p>
+<p>在高速缓存出现后不久，系统变得越来越复杂，高速缓存与主存之间的速度差异被拉大，直到加入了另一级缓存，新加入的这级缓存比第一缓存更大，并且更慢，由于加大一级缓存从经济上考虑是行不通的，所以有了二级缓存，甚至是三级缓存。</p>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/'>慕课网高并发课程笔记（二）-并发基础</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
 <script type="text/javascript">
 (function() {
   Element.prototype.remove = function() {
@@ -453,18 +461,81 @@
 })()
 </script>
 
-<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://coding.imooc.com/class/195.html" target="_blank" rel="external">慕课网</a></p>
-<p><a href="https://pan.baidu.com/s/16tDdVXjM9fcvC1cSSwCSMw" target="_blank" rel="external">百度网盘</a><br><strong>密码arkw </strong>（资源来源于网络，如有侵权联系删除！）</p>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程交替得换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行。</p>
-<h2 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h2><p>高并发（High Concurrency）是互联网分布式系统架构设计中必须考虑的因素之一，他通常是指，通过设计保证系统能够<strong>同时并行处理</strong>很多请求。</p>
-<h2 id="并发和高并发对比"><a href="#并发和高并发对比" class="headerlink" title="并发和高并发对比"></a>并发和高并发对比</h2><ul>
-<li>谈并发时：多个线程操作相同的资源，保证线程安全，合理利用资源</li>
-<li>谈高并发时：服务能同时处理很多请求（如12306的抢票，天猫双十一的秒杀活动，这会导致系统在短时间内执行大量的操作，如对资源的请求，数据库的访问），提高程序性能（如果高并发处理不好，不光会导致用户体验不好，还可能会使服务器宕机，出现OOM等）</li>
+<h3 id="为什么需要CPU缓存？"><a href="#为什么需要CPU缓存？" class="headerlink" title="为什么需要CPU缓存？"></a>为什么需要CPU缓存？</h3><p>CPU的频率太快了，快到主存跟不上，这样在处理器时钟周期内，CPU常常需要等待主存，浪费资源，所以cache的出现，是为了缓解CPU和内存之间速度的不匹配问题（结构：cpu-&gt;cache-&gt;memort）。</p>
+<h3 id="CPU缓存有什么意义？"><a href="#CPU缓存有什么意义？" class="headerlink" title="CPU缓存有什么意义？"></a>CPU缓存有什么意义？</h3><ol>
+<li>时间局部性：如果某个数据被访问，那么在不久的将来他很可能被再次访问</li>
+<li>空间局部性：如果某个数据被访问，那么与他相邻的数据很快也可能被访问</li>
+</ol>
+<h2 id="CPU多级缓存-缓存一致性（MESI）"><a href="#CPU多级缓存-缓存一致性（MESI）" class="headerlink" title="CPU多级缓存-缓存一致性（MESI）"></a>CPU多级缓存-缓存一致性（MESI）</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775055531383.png" alt="缓存一致性"></p>
+<ul>
+<li><strong>M: Modified 修改</strong>，指的是该缓存行只被缓存在该CPU的缓存中，并且是被修改过的，因此他与主存中的数据是不一致的，该缓存行中的数据需要在未来的某个时间点（允许其他CPU读取主存相应中的内容之前）写回主存，然后状态变成E（独享）</li>
+<li><p><strong>E：Exclusive 独享</strong> ，缓存行只被缓存在该CPU的缓存中，是未被修改过的，与主存的数据是一致的，可以在任何时刻当有其他CPU读取该内存时，变成S（共享）状态，当CPU修改该缓存行的内容时，变成M（被修改）的状态</p>
+</li>
+<li><p><strong>S：Share 共享</strong>，意味着该缓存行可能会被多个CPU进行缓存，并且该缓存中的数据与主存数据是一致的，当有一个CPU修改该缓存行时，其他CPU是可以被作废的，变成I(无效的)</p>
+</li>
+<li><strong>I：Invalid 无效的</strong>，代表这个缓存是无效的，可能是有其他CPU修改了该缓存行</li>
 </ul>
-<h1 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h1><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png" alt="内容介绍"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png" alt="2"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png" alt="3"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png" alt="4"></p>
+<p>用于保证多个CPU cache之间缓存共享数据的一致</p>
+<ul>
+<li>local read：读本地缓存的数据</li>
+<li>local write：将数据写到本地缓存里面</li>
+<li>remote read：将内（主）存中的数据读取到缓存中来</li>
+<li>remote write：将缓存中的数据写会到主存里面</li>
+</ul>
+<p>在一个典型的多核系统中，每一个核都会有自己的缓存来共享主存总线，每一个CPU会发出读写（I/O）请求，而缓存的目的是为了减少CPU读写共享主存的次数；<br>一个缓存除了在Invaild状态，都可以满足CPU 的读请求</p>
+<p>一个写请求只有在M状态，或者E状态的时候才能给被执行，如果是处在S状态的时候，他必须先将该缓存行变成I状态，<br>这个操作通常作用于广播的方式来完成，这个时候他既不允许不同的CPU同时修改同一个缓存行，即使是修改同一个缓存行中不同端的数据也是不可以的，这里主要解决的是缓存一致性的问题，<br>一个M状态的缓存行必须时刻监听所有试图读该缓存行相对主存的操作，这种操作必须在缓存该缓存行被写会到主存，并将状态变成S状态之前，被延迟执行</p>
+<p>一个处于S状态的缓存行，也必须监听其他缓存使该缓存行无效，或者独享该缓存行的请求，并将缓存行变成无效</p>
+<p>一个处于E状态的缓存行，他要监听其他缓存读缓存行的操作，一旦有，那么他讲变成S状态</p>
+<p>因此对于M和E状态，他们的数据总是一致的与缓存行的真正状态总是保持一致的，<br>但是S状态可能是非一致的，如果一个缓存将处于S状态的 缓存行作废了，另一个缓存可能已经独享了该缓存行，<br>但是该缓存缺不会讲该缓存行升迁为E状态，这是因为其他缓存不会广播他们已经作废掉该缓存行的通知，<br>同样由于缓存并没有保存该缓存行被COPY的数量，因此没有办法确定是否独享了改缓存行，<br>这是一种投机性的优化，因为如果一个CPU想修改一个处于S状态的缓存行，总线需要将所有使用该缓存行的COPY的值变成Invaild状态才可以，而修改E状态的缓存 却不需要这样做</p>
+<h2 id="CPU多级缓存-乱序执行优化"><a href="#CPU多级缓存-乱序执行优化" class="headerlink" title="CPU多级缓存-乱序执行优化"></a>CPU多级缓存-乱序执行优化</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277513621658.png" alt="乱序执行优化"></p>
+<p>处理器多核和缓存导致的一个问题，如果我们不做任何处理，在多核的情况下，的实际结果可能和逻辑运行结果大不相同，如果在一个核上执行数据写入操作，并在最后执行一个操作来标记数据已经写入好了，而在另外一个核上通过该标记位判定数据是否已经写入，这时候就可能出现不一致，标记位先被写入，但是实际的操作缺并未完成，这个未完成既有可能是没有计算完成，也有可能是缓存没有被及时刷新到主存之中，使得其他核读到了错误的数据</p>
+<h2 id="Java内存模型（Java-Memory-Model，JMM）"><a href="#Java内存模型（Java-Memory-Model，JMM）" class="headerlink" title="Java内存模型（Java Memory Model，JMM）"></a>Java内存模型（Java Memory Model，JMM）</h2><h3 id="JAVA内存模型规范"><a href="#JAVA内存模型规范" class="headerlink" title="JAVA内存模型规范"></a>JAVA内存模型规范</h3><p>规定了一个线程如何和何时可以看到其他线程修改过后的共享变量的值 以及何时同步的访问共享变量。</p>
+<h3 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h3><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775218881565.png" alt="Java内存模型"></p>
+<ul>
+<li><p>Heap(堆)：java里的堆是一个运行时的数据区，堆是由垃圾回收来负责的，堆的优势是可以动态的分配内存大小，生存期也不必事先告诉编译器，因为他是在运行时动态分配内存的，java的垃圾回收器会定时收走不用的数据， 缺点是由于要在运行时动态分配，所有存取速度可能会慢一些</p>
+</li>
+<li><p>Stack(栈)：栈的优势是存取速度比堆要快，仅次于计算机里的寄存器，栈的数据是可以共享的，缺点是存在栈中的数据的大小与生存期必须是确定的，缺乏一些灵活性。栈中主要存放一些基本类型的变量，比如int，short，long，byte，double，float，boolean，char，对象句柄，</p>
+</li>
+</ul>
+<p>java内存模型要求调用栈和本地内存变量存放在线程栈（Thread Stack）上，对象存放在堆上。<br>一个本地变量可能存放一个对象的引用，这时引用变量存放在本地栈上，但是对象本身存放在堆上</p>
+<p>成员变量跟随着对象存放在堆上，而不管是原始类型还是引用类型，静态成员变量跟随着类的定义一起存在在堆上</p>
+<p>存在堆上的对象，可以被持有这个对象的引用的线程访问</p>
+<p>如果两个线程同时访问同一个对象的私有变量，这时他们获得的是这个对象的私有拷贝</p>
+<h3 id="计算机硬件架构"><a href="#计算机硬件架构" class="headerlink" title="计算机硬件架构"></a>计算机硬件架构</h3><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277525758516.png" alt="计算机硬件架构"></p>
+<p>CPU：一个计算机一般有多个CPU，一个CPU还会有多核</p>
+<p>CPU Registers（寄存器）：每个CPU都包含一系列的寄存器，他们是CPU内存的基础，CPU在寄存器上执行的速度远大于在主存上执行的速度。</p>
+<p>CPU Cache（高速缓存）：由于计算机的存储设备与处理器的处理设备有着几个数量级的差距，所以现代计算机都会加入一层读写速度与处理器处理速度接近想通的高级缓存来作为内存与处理器之间的缓冲，将运算使用到的数据复制到缓存中，让运算能够快速的执行，当运算结束后，再从缓存同步到内存之中，这样，CPU就不需要等待缓慢的内存读写了</p>
+<p>主（内）存：一个计算机包含一个主存，所有的CPU都可以访问主存，主存比缓存容量大的多</p>
+<p>运作原理：通常情况下，当一个CPU要读取主存的时候，他会将主存中的数据读取到CPU缓存中，甚至将缓存中的内容读到内部寄存器里面，然后再寄存器执行操作，<br>当运行结束后，会将寄存器中的值刷新回缓存中，并在某个时间点刷新回主存</p>
+<h3 id="内存模型与硬件架构之间的关联"><a href="#内存模型与硬件架构之间的关联" class="headerlink" title="内存模型与硬件架构之间的关联"></a>内存模型与硬件架构之间的关联</h3><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775282044126.png" alt="内存模型与硬件架构之间的关联"></p>
+<p>所有线程栈和堆会被保存在缓存里面，部分可能会出现在CPU缓存中和CPU内部的寄存器里面</p>
+<h3 id="线程和主内存之间的抽象关系"><a href="#线程和主内存之间的抽象关系" class="headerlink" title="线程和主内存之间的抽象关系"></a>线程和主内存之间的抽象关系</h3><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775299434958.png" alt="线程和主内存之间的抽象关系"></p>
+<p>每个线程之间共享变量都存放在主内存里面，每个线程都有一个私有的本地内存<br>本地内存是java内存模型中抽象的概念，并不是真实存在的（他涵盖了缓存写缓冲区。寄存器，以及其他硬件的优化），本地内存中存储了以读或者写共享变量的拷贝的一个副本，从一个更低的层次来说，线程本地内存，他是cpu缓存，寄存器的一个抽象描述，而JVM的静态内存存储模型，他只是一种对内存模型的物理划分而已，只局限在内存，而且只局限在JVM的内存</p>
+<p>如果线程A和线程B要通信，必须经历两个过程：<br>1、A将本地内存变量刷新到主内存<br>2、B从主内存中读取变量</p>
+<h3 id="Java内存模型-同步八种操作及规则"><a href="#Java内存模型-同步八种操作及规则" class="headerlink" title="Java内存模型-同步八种操作及规则"></a>Java内存模型-同步八种操作及规则</h3><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775338016819.png" alt="同步操作与规则"></p>
+<ul>
+<li>lock（锁定）：作用于主内存的变量，把一个变量标识变为一条线程独占状态</li>
+<li>unlock（解锁）：作用于主内存的变量，把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定</li>
+<li>read（读取）：作用于主内存的变量，把一个变量值从主内存传输到线程的工作内存中，以便随后的load动作使用</li>
+<li>load（载入）：作用于工作内存的变量，它把read操作从主内存中得到的变量值放入工作内存的变量副本中</li>
+<li>use（使用）：作用于工作内存的变量，把工作内存中的一个变量值传递给执行引擎</li>
+<li>assign（赋值）：作用于工作内存的变量，它把一个从执行引擎接受到的值赋值给工作内存的变量</li>
+<li>store（存储）：作用于工作内存的变量，把工作内存中的一个变量的值传送到主内存中，以便随后的write的操作</li>
+<li>write（写入）：作用于主内存的变量，它把store操作从工作内存中一个变量的值传送到主内存的变量中</li>
+</ul>
+<p><strong>同步规则：</strong></p>
+<ol>
+<li>如果要把一个变量从主内存中赋值到工作内存，就需要按顺序得执行read和load操作，如果把变量从工作内存中同步回主内存中，就要按顺序得执行store和write操作，但java内存模型只要求上述操作必须按顺序执行，没有保证必须是连续执行</li>
+<li>不允许read和load、store和write操作之一单独出现</li>
+<li>不允许一个线程丢弃他的最近assign的操作，即变量在工作内存中改变了之后必须同步到主内存中</li>
+<li>不允许一个线程无原因地（没有发生过任何assign操作）把数据从工作内存同步到主内存中</li>
+<li>一个新的变量只能在主内存中诞生，不允许在工作内存中直接使用一个未被初始化（load或assign）的变量。即就是对一个变量实施use和store操作之前，必须先执行过了load和assign操作</li>
+<li>一个变量在同一时刻只允许一条线程对其进行lock操作，但lock操作可以同时被一条线程重复执行多次，多次执行lock后，只有执行相同次数的unlock操作，变量才会解锁，lock和unlock必须成对出现</li>
+<li>如果一个变量执行lock操作，将会清空工作内存中此变量的值，在执行引擎中使用这个变量前需要重新执行load或assign操作初始化变量的值</li>
+<li>如果一个变量事先没有被lock操作锁定，则不允许他执行unlock操作，也不允许去unlock一个被其他线程锁定的变量</li>
+<li>对一个变量执行unlock操作之前，必须先把此变量同步到主内存中（执行store和write操作）</li>
+</ol>
+<h2 id="并发的优势和风险"><a href="#并发的优势和风险" class="headerlink" title="并发的优势和风险"></a>并发的优势和风险</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152775386366786.png" alt="并发的优势和风险"></p>
 
       
     </div>
@@ -533,8 +604,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/Python/python入门/" rel="next" title="Python入门">
-                <i class="fa fa-chevron-left"></i> Python入门
+              <a href="/2018/05/01/Java/bingfa1/" rel="next" title="慕课网高并发课程笔记（一）-并发和高并发基本概念">
+                <i class="fa fa-chevron-left"></i> 慕课网高并发课程笔记（一）-并发和高并发基本概念
               </a>
             
           </div>
@@ -543,8 +614,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/04/Java/bingfa2/" rel="prev" title="慕课网高并发课程笔记（二）-并发基础">
-                慕课网高并发课程笔记（二）-并发基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/05/Java/bingfa3/" rel="prev" title="慕课网高并发课程笔记（三）-项目准备">
+                慕课网高并发课程笔记（三）-项目准备 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -782,7 +853,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程地址"><span class="nav-number">1.1.</span> <span class="nav-text">课程地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发"><span class="nav-number">2.1.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高并发"><span class="nav-number">2.2.</span> <span class="nav-text">高并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和高并发对比"><span class="nav-number">2.3.</span> <span class="nav-text">并发和高并发对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程内容"><span class="nav-number">3.</span> <span class="nav-text">课程内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU多级缓存"><span class="nav-number">1.</span> <span class="nav-text">CPU多级缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要CPU缓存？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么需要CPU缓存？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU缓存有什么意义？"><span class="nav-number">1.2.</span> <span class="nav-text">CPU缓存有什么意义？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU多级缓存-缓存一致性（MESI）"><span class="nav-number">2.</span> <span class="nav-text">CPU多级缓存-缓存一致性（MESI）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU多级缓存-乱序执行优化"><span class="nav-number">3.</span> <span class="nav-text">CPU多级缓存-乱序执行优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存模型（Java-Memory-Model，JMM）"><span class="nav-number">4.</span> <span class="nav-text">Java内存模型（Java Memory Model，JMM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA内存模型规范"><span class="nav-number">4.1.</span> <span class="nav-text">JAVA内存模型规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java内存模型"><span class="nav-number">4.2.</span> <span class="nav-text">Java内存模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机硬件架构"><span class="nav-number">4.3.</span> <span class="nav-text">计算机硬件架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存模型与硬件架构之间的关联"><span class="nav-number">4.4.</span> <span class="nav-text">内存模型与硬件架构之间的关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程和主内存之间的抽象关系"><span class="nav-number">4.5.</span> <span class="nav-text">线程和主内存之间的抽象关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java内存模型-同步八种操作及规则"><span class="nav-number">4.6.</span> <span class="nav-text">Java内存模型-同步八种操作及规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发的优势和风险"><span class="nav-number">5.</span> <span class="nav-text">并发的优势和风险</span></a></li></ol></div>
             
 
           </div>

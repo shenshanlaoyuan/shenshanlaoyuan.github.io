@@ -89,25 +89,26 @@
 
 
 
-<meta name="description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
+<meta name="description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慕课网高并发课程笔记（一）-并发和高并发基本概念">
-<meta property="og:url" content="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/index.html">
+<meta property="og:title" content="慕课网高并发课程笔记（三）-项目准备">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/index.html">
 <meta property="og:site_name" content="深山老猿">
-<meta property="og:description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png">
-<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png">
-<meta property="og:updated_time" content="2018-08-09T07:21:30.000Z">
+<meta property="og:description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956311599230.png">
+<meta property="og:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956319836166.png">
+<meta property="og:updated_time" content="2018-08-09T07:45:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="慕课网高并发课程笔记（一）-并发和高并发基本概念">
-<meta name="twitter:description" content="课程介绍
-课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！">
-<meta name="twitter:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png">
+<meta name="twitter:title" content="慕课网高并发课程笔记（三）-项目准备">
+<meta name="twitter:description" content="线程安全与线程不安全
+线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。
+线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。">
+<meta name="twitter:image" content="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/"/>
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/"/>
 
 
 
 
 
-  <title> 慕课网高并发课程笔记（一）-并发和高并发基本概念 | 深山老猿 </title>
+  <title> 慕课网高并发课程笔记（三）-项目准备 | 深山老猿 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -324,7 +325,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -345,7 +346,7 @@
             
             
               
-                慕课网高并发课程笔记（一）-并发和高并发基本概念
+                慕课网高并发课程笔记（三）-项目准备
               
             
           </h1>
@@ -360,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:50:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T21:50:00+08:00">
+                2018-05-05
               </time>
             
 
@@ -400,7 +401,7 @@
 
           
           
-             <span id="/2018/05/01/Java/bingfa1/" class="leancloud_visitors" data-flag-title="慕课网高并发课程笔记（一）-并发和高并发基本概念">
+             <span id="/2018/05/05/Java/bingfa3/" class="leancloud_visitors" data-flag-title="慕课网高并发课程笔记（三）-项目准备">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,9 +430,11 @@
       
 
       
-        <h1 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h1><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png" alt="Java并发编程与高并发解决方案"></p>
-<p>课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！</p>
-<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/'>慕课网高并发课程笔记（一）-并发和高并发基本概念</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+        <h2 id="线程安全与线程不安全"><a href="#线程安全与线程不安全" class="headerlink" title="线程安全与线程不安全"></a>线程安全与线程不安全</h2><ul>
+<li>线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。</li>
+<li>线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。</li>
+</ul>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/'>慕课网高并发课程笔记（三）-项目准备</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
 <script type="text/javascript">
 (function() {
   Element.prototype.remove = function() {
@@ -453,18 +456,27 @@
 })()
 </script>
 
-<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://coding.imooc.com/class/195.html" target="_blank" rel="external">慕课网</a></p>
-<p><a href="https://pan.baidu.com/s/16tDdVXjM9fcvC1cSSwCSMw" target="_blank" rel="external">百度网盘</a><br><strong>密码arkw </strong>（资源来源于网络，如有侵权联系删除！）</p>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>同时拥有两个或者多个线程，如果程序在单核处理器上运行，多个线程交替得换入或者换出内存，这些线程是同时“存在”的，每个线程都处于执行过程中的某个状态，如果运行在多核处理器上，此时，程序中的每个线程都将分配到一个处理器核上，因此可以同时运行。</p>
-<h2 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h2><p>高并发（High Concurrency）是互联网分布式系统架构设计中必须考虑的因素之一，他通常是指，通过设计保证系统能够<strong>同时并行处理</strong>很多请求。</p>
-<h2 id="并发和高并发对比"><a href="#并发和高并发对比" class="headerlink" title="并发和高并发对比"></a>并发和高并发对比</h2><ul>
-<li>谈并发时：多个线程操作相同的资源，保证线程安全，合理利用资源</li>
-<li>谈高并发时：服务能同时处理很多请求（如12306的抢票，天猫双十一的秒杀活动，这会导致系统在短时间内执行大量的操作，如对资源的请求，数据库的访问），提高程序性能（如果高并发处理不好，不光会导致用户体验不好，还可能会使服务器宕机，出现OOM等）</li>
+<h2 id="环境搭建与准备"><a href="#环境搭建与准备" class="headerlink" title="环境搭建与准备"></a>环境搭建与准备</h2><h3 id="Spring-Boot构建项目"><a href="#Spring-Boot构建项目" class="headerlink" title="Spring Boot构建项目"></a>Spring Boot构建项目</h3><p><a href="Https://start.spring.io/" target="_blank" rel="external">Https://start.spring.io/</a></p>
+<p>具体搭建过程参考视频。</p>
+<h3 id="注解的准备"><a href="#注解的准备" class="headerlink" title="注解的准备"></a>注解的准备</h3><ul>
+<li><p>线程安全的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 对于线程安全的类，加入一个<span class="doctag">@ThreadSafe</span>注解的标示</div><div class="line"> * <span class="doctag">@Target</span>(ElementType.TYPE) 说明作用于类上</div><div class="line"> * <span class="doctag">@Retention</span>(RetentionPolicy.SOURCE) 指定注解作用的范围，在编译的时候就会被忽略掉</div><div class="line"> * <span class="doctag">@author</span> gaowenfeng</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ThreadSafe &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>线程不安全的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标示[线程不安全的类]</div><div class="line"> * <span class="doctag">@Target</span>(ElementType.TYPE) 说明作用于类上</div><div class="line"> * <span class="doctag">@Retention</span>(RetentionPolicy.SOURCE) 指定注解作用的范围，在编译的时候就会被忽略掉</div><div class="line"> * <span class="doctag">@author</span> gaowenfeng</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NotThreadSafe &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>推荐写法的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标记[推荐]的类或者写法</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Recommend &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不推荐写法的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 用来标记[不推荐]的类或者写法</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.TYPE)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NotRecommend &#123;</div><div class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h1 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h1><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277476981651.png" alt="内容介绍"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277479279969.png" alt="2"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774805567397.png" alt="3"></p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774831768296.png" alt="4"></p>
+<h4 id="ElementType-详解"><a href="#ElementType-详解" class="headerlink" title="ElementType 详解"></a>ElementType 详解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> ElementType &#123;</div><div class="line">    <span class="comment">/** Class, interface (including annotation type), or enum declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在类，借口，枚举上*/</span></div><div class="line">    TYPE,</div><div class="line"></div><div class="line">    <span class="comment">/** Field declaration (includes enum constants) */</span></div><div class="line">   <span class="comment">/** 声明注解作用在属性上*/</span></div><div class="line">    FIELD,</div><div class="line"></div><div class="line">    <span class="comment">/** Method declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在方法上*/</span></div><div class="line">    METHOD,</div><div class="line"></div><div class="line">    <span class="comment">/** Formal parameter declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在参数上*/</span></div><div class="line">    PARAMETER,</div><div class="line"></div><div class="line">    <span class="comment">/** Constructor declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在构造函数上*/</span></div><div class="line">    CONSTRUCTOR,</div><div class="line"></div><div class="line">    <span class="comment">/** Local variable declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在本地变量上*/</span></div><div class="line">    LOCAL_VARIABLE,</div><div class="line"></div><div class="line">    <span class="comment">/** Annotation type declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在注解上*/</span></div><div class="line">    ANNOTATION_TYPE,</div><div class="line"></div><div class="line">    <span class="comment">/** Package declaration */</span></div><div class="line">   <span class="comment">/** 声明注解作用在包上*/</span></div><div class="line">    PACKAGE,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Type parameter declaration</div><div class="line">     *</div><div class="line">     * <span class="doctag">@since</span> 1.8</div><div class="line">     */</div><div class="line">   <span class="comment">/** 声明注解可以应用在TYPE声明上*/</span></div><div class="line">    TYPE_PARAMETER,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Use of a type</div><div class="line">     * Type.TYPE_USE 表示这个 Annotation 可以用在所有使用 Type 的地方（如：泛型，类型转换等）</div><div class="line">     * <span class="doctag">@since</span> 1.8</div><div class="line">     */</div><div class="line">    TYPE_USE</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="RetentionPolicy详解"><a href="#RetentionPolicy详解" class="headerlink" title="RetentionPolicy详解"></a>RetentionPolicy详解</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> RetentionPolicy &#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be discarded by the compiler.</div><div class="line">     * 在编译的时候会被取消，只用于声明，理解，或者测试</div><div class="line">     */</div><div class="line">    SOURCE,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be recorded in the class file by the compiler</div><div class="line">     * but need not be retained by the VM at run time.  This is the default</div><div class="line">     * behavior.</div><div class="line">     * 注解将被编译器记录在类文件中，但在运行时不需要由VM保留，（默认的选项）</div><div class="line">     */</div><div class="line">    CLASS,</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Annotations are to be recorded in the class file by the compiler and</div><div class="line">     * retained by the VM at run time, so they may be read reflectively.</div><div class="line">     * 注解将被编译器记录在类文件中，但在运行时由VM保留，这样他们可以被反射获取（当你需要获取注解中字段的属性值的时候，需要用这个，比如AOP）</div><div class="line">     * <span class="doctag">@see</span> java.lang.reflect.AnnotatedElement</div><div class="line">     */</div><div class="line">    RUNTIME</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="并发模拟工具"><a href="#并发模拟工具" class="headerlink" title="并发模拟工具"></a>并发模拟工具</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956285679441.png" alt="工具"></p>
+<h2 id="并发模拟代码"><a href="#并发模拟代码" class="headerlink" title="并发模拟代码"></a>并发模拟代码</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956311599230.png" alt=""></p>
+<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180621152956319836166.png" alt=""></p>
 
       
     </div>
@@ -533,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/Python/python入门/" rel="next" title="Python入门">
-                <i class="fa fa-chevron-left"></i> Python入门
+              <a href="/2018/05/04/Java/bingfa2/" rel="next" title="慕课网高并发课程笔记（二）-并发基础">
+                <i class="fa fa-chevron-left"></i> 慕课网高并发课程笔记（二）-并发基础
               </a>
             
           </div>
@@ -542,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/04/Java/bingfa2/" rel="prev" title="慕课网高并发课程笔记（二）-并发基础">
-                慕课网高并发课程笔记（二）-并发基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课程介绍"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课程地址"><span class="nav-number">1.1.</span> <span class="nav-text">课程地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发"><span class="nav-number">2.1.</span> <span class="nav-text">并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高并发"><span class="nav-number">2.2.</span> <span class="nav-text">高并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和高并发对比"><span class="nav-number">2.3.</span> <span class="nav-text">并发和高并发对比</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程内容"><span class="nav-number">3.</span> <span class="nav-text">课程内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程安全与线程不安全"><span class="nav-number">1.</span> <span class="nav-text">线程安全与线程不安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建与准备"><span class="nav-number">2.</span> <span class="nav-text">环境搭建与准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Boot构建项目"><span class="nav-number">2.1.</span> <span class="nav-text">Spring Boot构建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解的准备"><span class="nav-number">2.2.</span> <span class="nav-text">注解的准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ElementType-详解"><span class="nav-number">2.2.1.</span> <span class="nav-text">ElementType 详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RetentionPolicy详解"><span class="nav-number">2.2.2.</span> <span class="nav-text">RetentionPolicy详解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发模拟工具"><span class="nav-number">3.</span> <span class="nav-text">并发模拟工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发模拟代码"><span class="nav-number">4.</span> <span class="nav-text">并发模拟代码</span></a></li></ol></div>
             
 
           </div>
