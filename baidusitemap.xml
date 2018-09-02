@@ -166,16 +166,14 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/CentOS-install-ZooKeeper/</loc>
+    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-05-26T06:18:30.000Z</lastmod>
     <data>
         <display>
-        <title>Linux(CentOS) 下安装 ZooKeeper</title>
-        <pubTime>2017-05-07T02:52:00.000Z</pubTime>
+        <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
+        <pubTime>2017-05-07T02:50:00.000Z</pubTime>
         
         <tag>CentOS</tag>
-         
-        <tag>ZooKeeper</tag>
          
          
            
@@ -210,39 +208,21 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%A7%A3%E5%86%B3CentOS7%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8Eifconfig%E5%91%BD%E4%BB%A4%E4%B8%8D%E8%83%BD%E7%94%A8%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://shenshanlaoyuan.com/2017/05/07/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/CentOS-install-ZooKeeper/</loc>
     <lastmod>2017-05-26T06:18:30.000Z</lastmod>
     <data>
         <display>
-        <title>解决 CentOS 安装完成后 ifconfig 命令不能用问题</title>
-        <pubTime>2017-05-07T02:50:00.000Z</pubTime>
+        <title>Linux(CentOS) 下安装 ZooKeeper</title>
+        <pubTime>2017-05-07T02:52:00.000Z</pubTime>
         
         <tag>CentOS</tag>
+         
+        <tag>ZooKeeper</tag>
          
          
            
              
               <breadCrumb title="环境搭建" url="http://shenshanlaoyuan.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://shenshanlaoyuan.com/2016/04/15/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2017-05-07T04:07:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidStudio快捷键汇总</title>
-        <pubTime>2016-04-14T16:00:00.000Z</pubTime>
-        
-        <tag>AndroidStudio</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具使用" url="http://shenshanlaoyuan.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
           
         </display>
     </data>
@@ -262,6 +242,26 @@
         <tag>AndroidStudio</tag>
          
         <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="工具使用" url="http://shenshanlaoyuan.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://shenshanlaoyuan.com/2016/04/15/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2017-05-07T04:07:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidStudio快捷键汇总</title>
+        <pubTime>2016-04-14T16:00:00.000Z</pubTime>
+        
+        <tag>AndroidStudio</tag>
          
          
            
@@ -294,12 +294,12 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2016/04/17/%E9%9A%8F%E7%AC%94/%E6%83%85%E4%B8%8D%E7%9F%A5%E6%89%80%E8%B5%B7%EF%BC%8C%E4%B8%80%E5%BE%80%E8%80%8C%E6%B7%B1/</loc>
+    <loc>http://shenshanlaoyuan.com/2016/06/03/%E9%9A%8F%E7%AC%94/%E6%9C%80%E7%88%B1%E5%90%AC%E6%B0%91%E8%B0%A3/</loc>
     <lastmod>2017-05-07T03:53:29.000Z</lastmod>
     <data>
         <display>
-        <title>这两天有些伤感了</title>
-        <pubTime>2016-04-16T16:00:00.000Z</pubTime>
+        <title>最爱听民谣</title>
+        <pubTime>2016-06-03T03:57:00.000Z</pubTime>
         
         <tag>随笔</tag>
          
@@ -314,12 +314,12 @@
 
     
   <url>
-    <loc>http://shenshanlaoyuan.com/2016/06/03/%E9%9A%8F%E7%AC%94/%E6%9C%80%E7%88%B1%E5%90%AC%E6%B0%91%E8%B0%A3/</loc>
+    <loc>http://shenshanlaoyuan.com/2016/04/17/%E9%9A%8F%E7%AC%94/%E6%83%85%E4%B8%8D%E7%9F%A5%E6%89%80%E8%B5%B7%EF%BC%8C%E4%B8%80%E5%BE%80%E8%80%8C%E6%B7%B1/</loc>
     <lastmod>2017-05-07T03:53:29.000Z</lastmod>
     <data>
         <display>
-        <title>最爱听民谣</title>
-        <pubTime>2016-06-03T03:57:00.000Z</pubTime>
+        <title>这两天有些伤感了</title>
+        <pubTime>2016-04-16T16:00:00.000Z</pubTime>
         
         <tag>随笔</tag>
          
@@ -665,9 +665,9 @@
         <title>Hexo搭建独立博客，托管到Github和Coding上</title>
         <pubTime>2016-03-27T16:00:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>Hexo</tag>
          
         <tag>Coding</tag>
          
