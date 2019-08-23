@@ -736,40 +736,8 @@
           
   <div class="comments" id="comments">
     
-  <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-  <div id="container" style="display:none"></div>
-  <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-  <script>
-  const myTheme = {
-    render(state, instance) {
-      const container = document.createElement('div');
-      container.lang = "en-US";
-      container.className = 'gitment-container gitment-root-container';
-      container.appendChild(instance.renderHeader(state, instance));
-      container.appendChild(instance.renderEditor(state, instance));
-      container.appendChild(instance.renderComments(state, instance));
-      container.appendChild(instance.renderFooter(state, instance));
-      return container;
-    }
-  }
-  function showGitment() {
-    $("#gitment_title").attr("style", "display:none");
-    $("#container").attr("style", "").addClass("gitment_container");
-    var gitment = new Gitment({
-      id:'HTML5新增的元素和移除的元素',
-      theme: myTheme,
-      owner: 'shenshanlaoyuan',
-      repo: 'shenshanlaoyuan.github.io',
-      oauth: {
-        client_id: 'de88c6609903e4b788c5',
-        client_secret: 'cfb34a016234d5db9f1253de280eac1646f59b23'
-      }
-    });
-    gitment.render('container');
-  }
-  </script>
-    
+      <div id="gitalk-container"></div>
+  
   </div>
 
 
@@ -1082,6 +1050,24 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="http://shenshanlaoyuan.com/InterviewBook/md5.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'de88c6609903e4b788c5',
+      clientSecret: 'cfb34a016234d5db9f1253de280eac1646f59b23',
+      repo: 'shenshanlaoyuan.github.io',
+      owner: 'shenshanlaoyuan',
+      admin: ['shenshanlaoyuan'],
+      id: md5(window.location.pathname),
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
 
   

@@ -490,14 +490,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/28/Hexo/Hexo搭建独立博客，托管到Github和Coding教程/" rel="next" title="Hexo搭建独立博客，托管到Github和Coding上">
+                <i class="fa fa-chevron-left"></i> Hexo搭建独立博客，托管到Github和Coding上
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/28/Android/最火的Android开源项目（转载）/" rel="prev" title="最火的Android开源项目（转载）">
-                最火的Android开源项目（转载） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/03/Android/android知识体系线路图/" rel="prev" title="android知识结构图">
+                android知识结构图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,40 +566,8 @@
           
   <div class="comments" id="comments">
     
-  <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-  <div id="container" style="display:none"></div>
-  <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-  <script>
-  const myTheme = {
-    render(state, instance) {
-      const container = document.createElement('div');
-      container.lang = "en-US";
-      container.className = 'gitment-container gitment-root-container';
-      container.appendChild(instance.renderHeader(state, instance));
-      container.appendChild(instance.renderEditor(state, instance));
-      container.appendChild(instance.renderComments(state, instance));
-      container.appendChild(instance.renderFooter(state, instance));
-      return container;
-    }
-  }
-  function showGitment() {
-    $("#gitment_title").attr("style", "display:none");
-    $("#container").attr("style", "").addClass("gitment_container");
-    var gitment = new Gitment({
-      id:'跟随大神的脚步才能成长为大神-android大神Blog推荐（转）',
-      theme: myTheme,
-      owner: 'shenshanlaoyuan',
-      repo: 'shenshanlaoyuan.github.io',
-      oauth: {
-        client_id: 'de88c6609903e4b788c5',
-        client_secret: 'cfb34a016234d5db9f1253de280eac1646f59b23'
-      }
-    });
-    gitment.render('container');
-  }
-  </script>
-    
+      <div id="gitalk-container"></div>
+  
   </div>
 
 
@@ -883,6 +855,24 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="http://shenshanlaoyuan.com/InterviewBook/md5.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'de88c6609903e4b788c5',
+      clientSecret: 'cfb34a016234d5db9f1253de280eac1646f59b23',
+      repo: 'shenshanlaoyuan.github.io',
+      owner: 'shenshanlaoyuan',
+      admin: ['shenshanlaoyuan'],
+      id: md5(window.location.pathname),
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
 
   
