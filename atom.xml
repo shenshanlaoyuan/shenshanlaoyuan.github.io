@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shenshanlaoyuan.com/"/>
-  <updated>2018-09-05T16:13:54.000Z</updated>
+  <updated>2020-04-28T03:34:06.763Z</updated>
   <id>http://shenshanlaoyuan.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试遇到连环炮该如何接招？</title>
+    <link href="http://shenshanlaoyuan.com/2020/04/28/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%81%87%E5%88%B0%E8%BF%9E%E7%8E%AF%E7%82%AE%E8%AF%A5%E5%A6%82%E4%BD%95%E6%8E%A5%E6%8B%9B%EF%BC%9F/"/>
+    <id>http://shenshanlaoyuan.com/2020/04/28/面试/面试遇到连环炮该如何接招？/</id>
+    <published>2020-04-28T03:52:00.000Z</published>
+    <updated>2020-04-28T03:34:06.763Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="消息队列面试场景"><a href="#消息队列面试场景" class="headerlink" title="消息队列面试场景"></a>消息队列面试场景</h2><p><strong>面试官</strong>：你好。</p><p><strong>候选人</strong>：你好。</p><p>（面试官在你的简历上面看到了，呦，有个亮点，你在项目里用过 <code>MQ</code>，比如说你用过 <code>ActiveMQ</code>）</p><p><strong>面试官</strong>：你在系统里用过消息队列吗？（面试官在随和的语气中展开了面试）</p><p><strong>候选人</strong>：用过的（此时感觉没啥）</p><p><strong>面试官</strong>：那你说一下你们在项目里是怎么用消息队列的？</p><p><strong>候选人</strong>：巴拉巴拉，“我们啥啥系统发送个啥啥消息到队列，别的系统来消费啥啥的。比如我们有个订单系统，订单系统每次下一个新的订单的时候，就会发送一条消息到 <code>ActiveMQ</code> 里面去，后台有个库存系统负责获取消息然后更新库存。”</p><p>（部分同学在这里会进入一个误区，就是你仅仅就是知道以及回答你们是怎么用这个消息队列的，用这个消息队列来干了个什么事情？）</p><p><strong>面试官</strong>：那你们为什么使用消息队列啊？你的订单系统不发送消息到 <code>MQ</code>，直接订单系统调用库存系统一个接口，咔嚓一下，直接就调用成功，库存不也就更新了。</p><p><strong>候选人</strong>：额。。。（楞了一下，为什么？我没怎么仔细想过啊，老大让用就用了），硬着头皮胡言乱语了几句。</p><p>（面试官此时听你楞了一下，然后听你胡言乱语了几句，开始心里觉得有点儿那什么了，怀疑你之前就压根儿没思考过这问题）</p><a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2020/04/28/面试/面试遇到连环炮该如何接招？/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2020/04/28/面试/面试遇到连环炮该如何接招？/'>面试遇到连环炮该如何接招？</a>」获取最佳阅读体验并参与讨论</p></blockquote></span><script type="text/javascript">(function() {  Element.prototype.remove = function() {    this.parentElement.removeChild(this);  }  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {    for(var i = this.length - 1; i >= 0; i--) {        if(this[i] && this[i].parentElement) {            this[i].parentElement.removeChild(this[i]);        }    }  }  var domain = document.domain;  var white_list = ['shenshanlaoyuan.com', 'localhost'];  if (white_list.indexOf(domain) >= 0) {    var elements = document.getElementsByClassName('source');    elements.remove();  }})()</script> <p><strong>面试官</strong>：那你说说用消息队列都有什么优点和缺点？</p><p>（面试官此时心里想的是，你的 <code>MQ</code> 在项目里为啥要用，你没怎么考虑过，那我稍微简单点儿，我问问你消息队列你之前有没有考虑过如果用的话，优点和缺点分别是啥？）</p><p><strong>候选人</strong>：这个。。。（确实平时没怎么考虑过这个问题啊。。。胡言乱语了）</p><p>（面试官此时心里已经更觉得你这哥儿们不行，平时都没什么思考）</p><p><strong>面试官</strong>：<code>Kafka</code>、<code>ActiveMQ</code>、<code>RabbitMQ</code>、<code>RocketMQ</code> 都有什么区别？</p><p>（面试官问你这个问题，就是说，绕过比较虚的话题，直接看看你对各种 <code>MQ</code> 中间件是否了解，是否做过功课，是否做过调研）</p><p><strong>候选人</strong>：我们就用过 <code>ActiveMQ</code>，所以别的没用过。。。区别，也不太清楚。。。</p><p>（面试官此时更是觉得你这哥儿们平时就是瞎用，根本就没什么思考，觉得不行）</p><p><strong>面试官</strong>：那你们是如何保证消息队列的高可用啊？</p><p><strong>候选人</strong>：这个。。。我平时就是简单走 API 调用一下，不太清楚消息队列怎么部署的。。。</p><p><strong>面试官</strong>：如何保证消息不被重复消费啊？如何保证消费的时候是幂等的啊？</p><p><strong>候选人</strong>：啥？（<code>MQ</code> 不就是写入&amp;消费就可以了，哪来这么多问题）</p><p><strong>面试官</strong>：如何保证消息的可靠性传输啊？要是消息丢失了怎么办啊？</p><p><strong>候选人</strong>：我们没怎么丢过消息啊。。。</p><p><strong>面试官</strong>：那如何保证消息的顺序性？</p><p><strong>候选人</strong>：顺序性？什么意思？我为什么要保证消息的顺序性？它不是本来就有顺序吗？</p><p><strong>面试官</strong>：如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</p><p><strong>候选人</strong>：不是，我这平时没遇到过这些问题啊，就是简单用用，知道 <code>MQ</code> 的一些功能。</p><p><strong>面试官</strong>：如果让你写一个消息队列，该如何进行架构设计啊？说一下你的思路。</p><p><strong>候选人</strong>：。。。。。我还是走吧。。。。</p><hr><p>这其实是面试官的一种面试风格，就是说面试官的问题不是发散的，而是从一个小点慢慢铺开。比如说面试官可能会跟你聊聊高并发话题，就这个话题里面跟你聊聊缓存、<code>MQ</code> 等等东西，<strong>由浅入深，一步步深挖</strong>。</p><p>其实上面是一个非常典型的关于消息队列的技术考察过程，好的面试官一定是从你做过的某一个点切入，然后层层展开深入考察，一个接一个问，直到把这个技术点刨根问底，问到最底层。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;消息队列面试场景&quot;&gt;&lt;a href=&quot;#消息队列面试场景&quot; class=&quot;headerlink&quot; title=&quot;消息队列面试场景&quot;&gt;&lt;/a&gt;消息队列面试场景&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;面试官&lt;/strong&gt;：你好。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;候选人&lt;/strong&gt;：你好。&lt;/p&gt;
+&lt;p&gt;（面试官在你的简历上面看到了，呦，有个亮点，你在项目里用过 &lt;code&gt;MQ&lt;/code&gt;，比如说你用过 &lt;code&gt;ActiveMQ&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;面试官&lt;/strong&gt;：你在系统里用过消息队列吗？（面试官在随和的语气中展开了面试）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;候选人&lt;/strong&gt;：用过的（此时感觉没啥）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;面试官&lt;/strong&gt;：那你说一下你们在项目里是怎么用消息队列的？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;候选人&lt;/strong&gt;：巴拉巴拉，“我们啥啥系统发送个啥啥消息到队列，别的系统来消费啥啥的。比如我们有个订单系统，订单系统每次下一个新的订单的时候，就会发送一条消息到 &lt;code&gt;ActiveMQ&lt;/code&gt; 里面去，后台有个库存系统负责获取消息然后更新库存。”&lt;/p&gt;
+&lt;p&gt;（部分同学在这里会进入一个误区，就是你仅仅就是知道以及回答你们是怎么用这个消息队列的，用这个消息队列来干了个什么事情？）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;面试官&lt;/strong&gt;：那你们为什么使用消息队列啊？你的订单系统不发送消息到 &lt;code&gt;MQ&lt;/code&gt;，直接订单系统调用库存系统一个接口，咔嚓一下，直接就调用成功，库存不也就更新了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;候选人&lt;/strong&gt;：额。。。（楞了一下，为什么？我没怎么仔细想过啊，老大让用就用了），硬着头皮胡言乱语了几句。&lt;/p&gt;
+&lt;p&gt;（面试官此时听你楞了一下，然后听你胡言乱语了几句，开始心里觉得有点儿那什么了，怀疑你之前就压根儿没思考过这问题）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="面试" scheme="http://shenshanlaoyuan.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://shenshanlaoyuan.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="消息队列" scheme="http://shenshanlaoyuan.com/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
   
   <entry>
     <title>慕课网高并发课程笔记（三）-项目准备</title>
@@ -453,28 +487,6 @@
     
     
       <category term="MD5" scheme="http://shenshanlaoyuan.com/tags/MD5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最爱听民谣</title>
-    <link href="http://shenshanlaoyuan.com/2016/06/03/%E9%9A%8F%E7%AC%94/%E6%9C%80%E7%88%B1%E5%90%AC%E6%B0%91%E8%B0%A3/"/>
-    <id>http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/</id>
-    <published>2016-06-03T03:57:00.000Z</published>
-    <updated>2017-05-07T03:53:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/thumb.jpg" alt=""></p><a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2016/06/03/随笔/最爱听民谣/'>最爱听民谣</a>」获取最佳阅读体验并参与讨论</p></blockquote></span><script type="text/javascript">(function() {  Element.prototype.remove = function() {    this.parentElement.removeChild(this);  }  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {    for(var i = this.length - 1; i >= 0; i--) {        if(this[i] && this[i].parentElement) {            this[i].parentElement.removeChild(this[i]);        }    }  }  var domain = document.domain;  var white_list = ['shenshanlaoyuan.com', 'localhost'];  if (white_list.indexOf(domain) >= 0) {    var elements = document.getElementsByClassName('source');    elements.remove();  }})()</script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="http://music.163.com/outchain/player?type=0&id=325242758&auto=1&height=430"></iframe>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xs5l8.com1.z0.glb.clouddn.com/thumb.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://shenshanlaoyuan.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://shenshanlaoyuan.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
