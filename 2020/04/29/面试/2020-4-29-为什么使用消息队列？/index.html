@@ -119,7 +119,7 @@ Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些�
 <meta property="og:image" content="https://i.loli.net/2020/04/29/eLV5IEqmkiNv7fK.png">
 <meta property="og:image" content="https://i.loli.net/2020/04/29/oBrGk1bnc7Sp5mN.png">
 <meta property="og:image" content="https://i.loli.net/2020/04/29/TGJFC5QgauDPsqd.png">
-<meta property="og:updated_time" content="2020-05-05T01:14:49.077Z">
+<meta property="og:updated_time" content="2020-05-09T01:58:46.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么使用消息队列？">
 <meta name="twitter:description" content="面试题
@@ -513,11 +513,11 @@ Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些�
 <ul>
 <li>系统可用性降低</li>
 </ul>
-<p>系统引入的外部依赖越多，越容易挂掉。本来你就是 A 系统调用 BCD 三个系统的接口就好了，ABCD 四个系统还好好的，没啥问题，你偏加个 MQ 进来，万一 MQ 挂了咋整？MQ 一挂，整套系统崩溃，你不就完了？如何保证消息队列的高可用，可以<a href="/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues.md">点击这里查看</a>。</p>
+<p>系统引入的外部依赖越多，越容易挂掉。本来你就是 A 系统调用 BCD 三个系统的接口就好了，ABCD 四个系统还好好的，没啥问题，你偏加个 MQ 进来，万一 MQ 挂了咋整？MQ 一挂，整套系统崩溃，你不就完了？如何保证消息队列的高可用，可以<a href="http://shenshanlaoyuan.com/2020/04/30/面试/2020-4-30-如何保证消息队列的高可用？/">点击这里查看</a>。</p>
 <ul>
 <li>系统复杂度提高</li>
 </ul>
-<p>硬生生加个 MQ 进来，你怎么<a href="/docs/high-concurrency/how-to-ensure-that-messages-are-not-repeatedly-consumed.md">保证消息没有重复消费</a>？怎么<a href="/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages.md">处理消息丢失的情况</a>？怎么保证消息传递的顺序性？头大头大，问题一大堆，痛苦不已。</p>
+<p>硬生生加个 MQ 进来，你怎么<a href="http://shenshanlaoyuan.com/2020/05/01/面试/2020-5-1-如何保证消息不被重复消费？/">保证消息没有重复消费</a>？怎么<a href="http://shenshanlaoyuan.com/2020/05/02/面试/2020-5-2-如何保证消息的可靠性传输？/">处理消息丢失的情况</a>？怎么保证消息传递的顺序性？头大头大，问题一大堆，痛苦不已。</p>
 <ul>
 <li>一致性问题</li>
 </ul>
