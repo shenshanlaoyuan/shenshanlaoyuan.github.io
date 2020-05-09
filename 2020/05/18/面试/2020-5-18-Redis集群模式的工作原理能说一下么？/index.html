@@ -1,0 +1,1136 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试,缓存," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="深山老猿" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="面试题redis 集群模式的工作原理能说一下么？在集群模式下，redis 的 key 是如何寻址的？分布式寻址都有哪些算法？了解一致性 hash 算法吗？
+面试官心理分析在前几年，redis 如果要搞几个节点，每个节点存储一部分的数据，得借助一些中间件来实现，比如说有 codis，或者 twemproxy，都有。有一些 redis 中间件，你读写 redis 中间件，redis 中间件负责将你的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis集群模式的工作原理能说一下么？">
+<meta property="og:url" content="http://shenshanlaoyuan.com/2020/05/18/面试/2020-5-18-Redis集群模式的工作原理能说一下么？/index.html">
+<meta property="og:site_name" content="深山老猿">
+<meta property="og:description" content="面试题redis 集群模式的工作原理能说一下么？在集群模式下，redis 的 key 是如何寻址的？分布式寻址都有哪些算法？了解一致性 hash 算法吗？
+面试官心理分析在前几年，redis 如果要搞几个节点，每个节点存储一部分的数据，得借助一些中间件来实现，比如说有 codis，或者 twemproxy，都有。有一些 redis 中间件，你读写 redis 中间件，redis 中间件负责将你的数">
+<meta property="og:image" content="https://i.loli.net/2020/05/09/tTmNvnj5HMQfuGq.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/09/KSLQupvrWTXxmoH.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/09/KQxa1OE79g2TNsY.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/09/Rz9WVuLSrmhsTwE.png">
+<meta property="og:image" content="https://i.loli.net/2020/05/09/FYQdlar4cBx5mPJ.png">
+<meta property="og:updated_time" content="2020-05-09T06:40:21.462Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis集群模式的工作原理能说一下么？">
+<meta name="twitter:description" content="面试题redis 集群模式的工作原理能说一下么？在集群模式下，redis 的 key 是如何寻址的？分布式寻址都有哪些算法？了解一致性 hash 算法吗？
+面试官心理分析在前几年，redis 如果要搞几个节点，每个节点存储一部分的数据，得借助一些中间件来实现，比如说有 codis，或者 twemproxy，都有。有一些 redis 中间件，你读写 redis 中间件，redis 中间件负责将你的数">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/09/tTmNvnj5HMQfuGq.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shenshanlaoyuan.com/2020/05/18/面试/2020-5-18-Redis集群模式的工作原理能说一下么？/"/>
+
+
+
+
+
+  <title> Redis集群模式的工作原理能说一下么？ | 深山老猿 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?49a4c174aa8d0ae9013634317dab9a4d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a href="https://github.com/shenshanlaoyuan" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">深山老猿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-interview">
+          <a href="http://shenshanlaoyuan.com/InterviewBook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            面试宝典
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://resume.shenshanlaoyuan.com" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tablet"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2020/05/18/面试/2020-5-18-Redis集群模式的工作原理能说一下么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="深山老猿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2018/12/15/5c145ae6711e7.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="深山老猿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Redis集群模式的工作原理能说一下么？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-18T11:52:00+08:00">
+                2020-05-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>redis 集群模式的工作原理能说一下么？在集群模式下，redis 的 key 是如何寻址的？分布式寻址都有哪些算法？了解一致性 hash 算法吗？</p>
+<h2 id="面试官心理分析"><a href="#面试官心理分析" class="headerlink" title="面试官心理分析"></a>面试官心理分析</h2><p>在前几年，redis 如果要搞几个节点，每个节点存储一部分的数据，得<strong>借助一些中间件</strong>来实现，比如说有 <code>codis</code>，或者 <code>twemproxy</code>，都有。有一些 redis 中间件，你读写 redis 中间件，redis 中间件负责将你的数据分布式存储在多台机器上的 redis 实例中。</p>
+<p>这两年，redis 不断在发展，redis 也不断有新的版本，现在的 redis 集群模式，可以做到在多台机器上，部署多个 redis 实例，每个实例存储一部分的数据，同时每个 redis 主实例可以挂 redis 从实例，自动确保说，如果 redis 主实例挂了，会自动切换到 redis 从实例上来。</p>
+<p>现在 redis 的新版本，大家都是用 redis cluster 的，也就是 redis 原生支持的 redis 集群模式，那么面试官肯定会就 redis cluster 对你来个几连炮。要是你没用过 redis cluster，正常，以前很多人用 codis 之类的客户端来支持集群，但是起码你得研究一下 redis cluster 吧。</p>
+<p>如果你的数据量很少，主要是承载高并发高性能的场景，比如你的缓存一般就几个 G，单机就足够了，可以使用 replication，一个 master 多个 slaves，要几个 slave 跟你要求的读吞吐量有关，然后自己搭建一个 sentinel 集群去保证 redis 主从架构的高可用性。</p>
+<p>redis cluster，主要是针对<strong>海量数据+高并发+高可用</strong>的场景。redis cluster 支撑 N 个 redis master node，每个 master node 都可以挂载多个 slave node。这样整个 redis 就可以横向扩容了。如果你要支撑更大数据量的缓存，那就横向扩容更多的 master 节点，每个 master 节点就能存放更多的数据了。</p>
+<a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2020/05/18/面试/2020-5-18-Redis集群模式的工作原理能说一下么？/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2020/05/18/面试/2020-5-18-Redis集群模式的工作原理能说一下么？/'>Redis集群模式的工作原理能说一下么？</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
+<script type="text/javascript">
+(function() {
+  Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+  }
+  NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+  }
+  var domain = document.domain;
+  var white_list = ['shenshanlaoyuan.com', 'localhost'];
+  if (white_list.indexOf(domain) >= 0) {
+    var elements = document.getElementsByClassName('source');
+    elements.remove();
+  }
+})()
+</script>
+ 
+<h2 id="面试题剖析"><a href="#面试题剖析" class="headerlink" title="面试题剖析"></a>面试题剖析</h2><h3 id="redis-cluster-介绍"><a href="#redis-cluster-介绍" class="headerlink" title="redis cluster 介绍"></a>redis cluster 介绍</h3><ul>
+<li>自动将数据进行分片，每个 master 上放一部分数据</li>
+<li>提供内置的高可用支持，部分 master 不可用时，还是可以继续工作的</li>
+</ul>
+<p>在 redis cluster 架构下，每个 redis 要放开两个端口号，比如一个是 6379，另外一个就是 加1w 的端口号，比如 16379。</p>
+<p>16379 端口号是用来进行节点间通信的，也就是 cluster bus 的东西，cluster bus 的通信，用来进行故障检测、配置更新、故障转移授权。cluster bus 用了另外一种二进制的协议，<code>gossip</code> 协议，用于节点间进行高效的数据交换，占用更少的网络带宽和处理时间。</p>
+<h3 id="节点间的内部通信机制"><a href="#节点间的内部通信机制" class="headerlink" title="节点间的内部通信机制"></a>节点间的内部通信机制</h3><h4 id="基本通信原理"><a href="#基本通信原理" class="headerlink" title="基本通信原理"></a>基本通信原理</h4><p>集群元数据的维护有两种方式：集中式、Gossip 协议。redis cluster 节点间采用 gossip 协议进行通信。</p>
+<p><strong>集中式</strong>是将集群元数据（节点信息、故障等等）几种存储在某个节点上。集中式元数据集中存储的一个典型代表，就是大数据领域的 <code>storm</code>。它是分布式的大数据实时计算引擎，是集中式的元数据存储的结构，底层基于 zookeeper（分布式协调的中间件）对所有元数据进行存储维护。</p>
+<p><img src="https://i.loli.net/2020/05/09/tTmNvnj5HMQfuGq.png" alt="zookeeper-centralized-storage.png"></p>
+<p>redis 维护集群元数据采用另一个方式， <code>gossip</code> 协议，所有节点都持有一份元数据，不同的节点如果出现了元数据的变更，就不断将元数据发送给其它的节点，让其它节点也进行元数据的变更。</p>
+<p><img src="https://i.loli.net/2020/05/09/KSLQupvrWTXxmoH.png" alt="redis-gossip.png"></p>
+<p><strong>集中式</strong>的<strong>好处</strong>在于，元数据的读取和更新，时效性非常好，一旦元数据出现了变更，就立即更新到集中式的存储中，其它节点读取的时候就可以感知到；<strong>不好</strong>在于，所有的元数据的更新压力全部集中在一个地方，可能会导致元数据的存储有压力。</p>
+<p>gossip 好处在于，元数据的更新比较分散，不是集中在一个地方，更新请求会陆陆续续打到所有节点上去更新，降低了压力；不好在于，元数据的更新有延时，可能导致集群中的一些操作会有一些滞后。</p>
+<ul>
+<li><p>10000 端口：每个节点都有一个专门用于节点间通信的端口，就是自己提供服务的端口号+10000，比如 7001，那么用于节点间通信的就是 17001 端口。每个节点每隔一段时间都会往另外几个节点发送 <code>ping</code> 消息，同时其它几个节点接收到 <code>ping</code> 之后返回 <code>pong</code>。</p>
+</li>
+<li><p>交换的信息：信息包括故障信息，节点的增加和删除，hash slot 信息等等。</p>
+</li>
+</ul>
+<h4 id="gossip-协议"><a href="#gossip-协议" class="headerlink" title="gossip 协议"></a>gossip 协议</h4><p>gossip 协议包含多种消息，包含 <code>ping</code>,<code>pong</code>,<code>meet</code>,<code>fail</code> 等等。</p>
+<ul>
+<li>meet：某个节点发送 meet 给新加入的节点，让新节点加入集群中，然后新节点就会开始与其它节点进行通信。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-trib.rb add-node</div></pre></td></tr></table></figure>
+<p>其实内部就是发送了一个 gossip meet 消息给新加入的节点，通知那个节点去加入我们的集群。</p>
+<ul>
+<li>ping：每个节点都会频繁给其它节点发送 ping，其中包含自己的状态还有自己维护的集群元数据，互相通过 ping 交换元数据。</li>
+<li>pong：返回 ping 和 meeet，包含自己的状态和其它信息，也用于信息广播和更新。</li>
+<li>fail：某个节点判断另一个节点 fail 之后，就发送 fail 给其它节点，通知其它节点说，某个节点宕机啦。</li>
+</ul>
+<h4 id="ping-消息深入"><a href="#ping-消息深入" class="headerlink" title="ping 消息深入"></a>ping 消息深入</h4><p>ping 时要携带一些元数据，如果很频繁，可能会加重网络负担。</p>
+<p>每个节点每秒会执行 10 次 ping，每次会选择 5 个最久没有通信的其它节点。当然如果发现某个节点通信延时达到了 <code>cluster_node_timeout / 2</code>，那么立即发送 ping，避免数据交换延时过长，落后的时间太长了。比如说，两个节点之间都 10 分钟没有交换数据了，那么整个集群处于严重的元数据不一致的情况，就会有问题。所以 <code>cluster_node_timeout</code> 可以调节，如果调得比较大，那么会降低 ping 的频率。</p>
+<p>每次 ping，会带上自己节点的信息，还有就是带上 1/10 其它节点的信息，发送出去，进行交换。至少包含 <code>3</code> 个其它节点的信息，最多包含 <code>总节点数减 2</code> 个其它节点的信息。</p>
+<h3 id="分布式寻址算法"><a href="#分布式寻址算法" class="headerlink" title="分布式寻址算法"></a>分布式寻址算法</h3><ul>
+<li>hash 算法（大量缓存重建）</li>
+<li>一致性 hash 算法（自动缓存迁移）+ 虚拟节点（自动负载均衡）</li>
+<li>redis cluster 的 hash slot 算法</li>
+</ul>
+<h4 id="hash-算法"><a href="#hash-算法" class="headerlink" title="hash 算法"></a>hash 算法</h4><p>来了一个 key，首先计算 hash 值，然后对节点数取模。然后打在不同的 master 节点上。一旦某一个 master 节点宕机，所有请求过来，都会基于最新的剩余 master 节点数去取模，尝试去取数据。这会导致<strong>大部分的请求过来，全部无法拿到有效的缓存</strong>，导致大量的流量涌入数据库。</p>
+<p><img src="https://i.loli.net/2020/05/09/KQxa1OE79g2TNsY.png" alt="hash.png"></p>
+<h4 id="一致性-hash-算法"><a href="#一致性-hash-算法" class="headerlink" title="一致性 hash 算法"></a>一致性 hash 算法</h4><p>一致性 hash 算法将整个 hash 值空间组织成一个虚拟的圆环，整个空间按顺时针方向组织，下一步将各个 master 节点（使用服务器的 ip 或主机名）进行 hash。这样就能确定每个节点在其哈希环上的位置。</p>
+<p>来了一个 key，首先计算 hash 值，并确定此数据在环上的位置，从此位置沿环<strong>顺时针“行走”</strong>，遇到的第一个 master 节点就是 key 所在位置。</p>
+<p>在一致性哈希算法中，如果一个节点挂了，受影响的数据仅仅是此节点到环空间前一个节点（沿着逆时针方向行走遇到的第一个节点）之间的数据，其它不受影响。增加一个节点也同理。</p>
+<p>燃鹅，一致性哈希算法在节点太少时，容易因为节点分布不均匀而造成<strong>缓存热点</strong>的问题。为了解决这种热点问题，一致性 hash 算法引入了虚拟节点机制，即对每一个节点计算多个 hash，每个计算结果位置都放置一个虚拟节点。这样就实现了数据的均匀分布，负载均衡。</p>
+<p><img src="https://i.loli.net/2020/05/09/Rz9WVuLSrmhsTwE.png" alt="consistent-hashing-algorithm.png"></p>
+<h4 id="redis-cluster-的-hash-slot-算法"><a href="#redis-cluster-的-hash-slot-算法" class="headerlink" title="redis cluster 的 hash slot 算法"></a>redis cluster 的 hash slot 算法</h4><p>redis cluster 有固定的 <code>16384</code> 个 hash slot，对每个 <code>key</code> 计算 <code>CRC16</code> 值，然后对 <code>16384</code> 取模，可以获取 key 对应的 hash slot。</p>
+<p>redis cluster 中每个 master 都会持有部分 slot，比如有 3 个 master，那么可能每个 master 持有 5000 多个 hash slot。hash slot 让 node 的增加和移除很简单，增加一个 master，就将其他 master 的 hash slot 移动部分过去，减少一个 master，就将它的 hash slot 移动到其他 master 上去。移动 hash slot 的成本是非常低的。客户端的 api，可以对指定的数据，让他们走同一个 hash slot，通过 <code>hash tag</code> 来实现。</p>
+<p>任何一台机器宕机，另外两个节点，不影响的。因为 key 找的是 hash slot，不是机器。</p>
+<p><img src="https://i.loli.net/2020/05/09/FYQdlar4cBx5mPJ.png" alt="hash-slot.png"></p>
+<h3 id="redis-cluster-的高可用与主备切换原理"><a href="#redis-cluster-的高可用与主备切换原理" class="headerlink" title="redis cluster 的高可用与主备切换原理"></a>redis cluster 的高可用与主备切换原理</h3><p>redis cluster 的高可用的原理，几乎跟哨兵是类似的。</p>
+<h4 id="判断节点宕机"><a href="#判断节点宕机" class="headerlink" title="判断节点宕机"></a>判断节点宕机</h4><p>如果一个节点认为另外一个节点宕机，那么就是 <code>pfail</code>，<strong>主观宕机</strong>。如果多个节点都认为另外一个节点宕机了，那么就是 <code>fail</code>，<strong>客观宕机</strong>，跟哨兵的原理几乎一样，sdown，odown。</p>
+<p>在 <code>cluster-node-timeout</code> 内，某个节点一直没有返回 <code>pong</code>，那么就被认为 <code>pfail</code>。</p>
+<p>如果一个节点认为某个节点 <code>pfail</code> 了，那么会在 <code>gossip ping</code> 消息中，<code>ping</code> 给其他节点，如果<strong>超过半数</strong>的节点都认为 <code>pfail</code> 了，那么就会变成 <code>fail</code>。</p>
+<h4 id="从节点过滤"><a href="#从节点过滤" class="headerlink" title="从节点过滤"></a>从节点过滤</h4><p>对宕机的 master node，从其所有的 slave node 中，选择一个切换成 master node。</p>
+<p>检查每个 slave node 与 master node 断开连接的时间，如果超过了 <code>cluster-node-timeout * cluster-slave-validity-factor</code>，那么就<strong>没有资格</strong>切换成 <code>master</code>。</p>
+<h4 id="从节点选举"><a href="#从节点选举" class="headerlink" title="从节点选举"></a>从节点选举</h4><p>每个从节点，都根据自己对 master 复制数据的 offset，来设置一个选举时间，offset 越大（复制数据越多）的从节点，选举时间越靠前，优先进行选举。</p>
+<p>所有的 master node 开始 slave 选举投票，给要进行选举的 slave 进行投票，如果大部分 master node<code>（N/2 + 1）</code>都投票给了某个从节点，那么选举通过，那个从节点可以切换成 master。</p>
+<p>从节点执行主备切换，从节点切换为主节点。</p>
+<h4 id="与哨兵比较"><a href="#与哨兵比较" class="headerlink" title="与哨兵比较"></a>与哨兵比较</h4><p>整个流程跟哨兵相比，非常类似，所以说，redis cluster 功能强大，直接集成了 replication 和 sentinel 的功能。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+</div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixi.jpg" alt="深山老猿 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如对你有帮助，请我喝杯咖啡吧！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://i.loli.net/2018/12/14/5c13d3658736f.jpeg" alt="深山老猿 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://i.loli.net/2018/12/15/5c13d9a7e9a14.jpeg" alt="深山老猿 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+          
+            <a href="/tags/缓存/" rel="tag"><i class="fa fa-tag"></i> 缓存</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/16/面试/2020-5-16-Redis的持久化有哪几种方式？/" rel="next" title="Redis的持久化有哪几种方式？">
+                <i class="fa fa-chevron-left"></i> Redis的持久化有哪几种方式？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/19/面试/2020-5-19-redis的雪崩、穿透和击穿，如何应对？/" rel="prev" title="redis的雪崩、穿透和击穿，如何应对？">
+                redis的雪崩、穿透和击穿，如何应对？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="gitalk-container"></div>
+  
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://i.loli.net/2018/12/15/5c145ae6711e7.jpeg"
+               alt="深山老猿" />
+          <p class="site-author-name" itemprop="name">深山老猿</p>
+           
+              <p class="site-description motion-element" itemprop="description">正在深山修炼中...</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/528975677" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shenshanlaoyuan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-nd.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://portal.qiniu.com/signup?code=3lqr53vcxlc9e" title="七牛" target="_blank">七牛</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hj-zwj.win" title="俺徒弟" target="_blank">俺徒弟</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题"><span class="nav-number">1.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试官心理分析"><span class="nav-number">2.</span> <span class="nav-text">面试官心理分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题剖析"><span class="nav-number">3.</span> <span class="nav-text">面试题剖析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster-介绍"><span class="nav-number">3.1.</span> <span class="nav-text">redis cluster 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点间的内部通信机制"><span class="nav-number">3.2.</span> <span class="nav-text">节点间的内部通信机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本通信原理"><span class="nav-number">3.2.1.</span> <span class="nav-text">基本通信原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gossip-协议"><span class="nav-number">3.2.2.</span> <span class="nav-text">gossip 协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ping-消息深入"><span class="nav-number">3.2.3.</span> <span class="nav-text">ping 消息深入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式寻址算法"><span class="nav-number">3.3.</span> <span class="nav-text">分布式寻址算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hash-算法"><span class="nav-number">3.3.1.</span> <span class="nav-text">hash 算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性-hash-算法"><span class="nav-number">3.3.2.</span> <span class="nav-text">一致性 hash 算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redis-cluster-的-hash-slot-算法"><span class="nav-number">3.3.3.</span> <span class="nav-text">redis cluster 的 hash slot 算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-cluster-的高可用与主备切换原理"><span class="nav-number">3.4.</span> <span class="nav-text">redis cluster 的高可用与主备切换原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断节点宕机"><span class="nav-number">3.4.1.</span> <span class="nav-text">判断节点宕机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从节点过滤"><span class="nav-number">3.4.2.</span> <span class="nav-text">从节点过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从节点选举"><span class="nav-number">3.4.3.</span> <span class="nav-text">从节点选举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与哨兵比较"><span class="nav-number">3.4.4.</span> <span class="nav-text">与哨兵比较</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">深山老猿</span>
+</div>
+
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="http://shenshanlaoyuan.com/InterviewBook/md5.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'de88c6609903e4b788c5',
+      clientSecret: 'cfb34a016234d5db9f1253de280eac1646f59b23',
+      repo: 'shenshanlaoyuan.github.io',
+      owner: 'shenshanlaoyuan',
+      admin: ['shenshanlaoyuan'],
+      id: md5(window.location.pathname),
+      distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+  </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

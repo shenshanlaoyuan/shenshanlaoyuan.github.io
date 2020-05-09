@@ -317,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/04/Java/spring-bean-factory/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2020/04/30/面试/2020-4-30-如何保证消息队列的高可用？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -339,8 +339,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/04/Java/spring-bean-factory/" itemprop="url">
-                  Spring 框架之Bean工厂
+                <a class="post-title-link" href="/2020/04/30/面试/2020-4-30-如何保证消息队列的高可用？/" itemprop="url">
+                  如何保证消息队列的高可用？
                 </a>
               
             
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T21:50:00+08:00">
-                2017-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-30T11:52:00+08:00">
+                2020-04-30
               </time>
             
 
@@ -379,8 +379,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
 
@@ -415,10 +415,12 @@
 
       
         
-          <p>Spring 通过 Bean 工厂创建 Bean 对象。分别是ApplicationContext 和 BeanFactory 。</p>
+          <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>如何保证消息队列的高可用？</p>
+<h2 id="面试官心理分析"><a href="#面试官心理分析" class="headerlink" title="面试官心理分析"></a>面试官心理分析</h2><p>如果有人问到你 MQ 的知识，<strong>高可用是必问的</strong>。<a href="http://shenshanlaoyuan.com/2020/04/29/面试/2020-4-29-为什么使用消息队列？/">上一讲</a>提到，MQ 会导致<strong>系统可用性降低</strong>。所以只要你用了 MQ，接下来问的一些要点肯定就是围绕着 MQ 的那些缺点怎么来解决了。</p>
+<p>要是你傻乎乎的就干用了一个 MQ，各种问题从来没考虑过，那你就杯具了，面试官对你的感觉就是，只会简单使用一些技术，没任何思考，马上对你的印象就不太好了。这样的同学招进来要是做个 20k 薪资以内的普通小弟还凑合，要是做薪资 20k+ 的高工，那就惨了，让你设计个系统，里面肯定一堆坑，出了事故公司受损失，团队一起背锅。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/04/Java/spring-bean-factory/#more" rel="contents">
+            <a class="btn" href="/2020/04/30/面试/2020-4-30-如何保证消息队列的高可用？/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -468,7 +470,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/04/Java/spring-IoC/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2020/04/29/面试/2020-4-29-为什么使用消息队列？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -490,8 +492,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/04/Java/spring-IoC/" itemprop="url">
-                  Spring 框架之IoC
+                <a class="post-title-link" href="/2020/04/29/面试/2020-4-29-为什么使用消息队列？/" itemprop="url">
+                  为什么使用消息队列？
                 </a>
               
             
@@ -507,8 +509,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-04T20:50:00+08:00">
-                2017-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-29T11:52:00+08:00">
+                2020-04-29
               </time>
             
 
@@ -530,8 +532,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
                   </a>
                 </span>
 
@@ -566,11 +568,29 @@
 
       
         
-          <h1 id="什么是IoC"><a href="#什么是IoC" class="headerlink" title="什么是IoC?"></a>什么是IoC?</h1><p>Inversion of Control，控制反转,英文缩写为IoC。将对象的创建权交给了Spring。</p>
-<p>使用IoC可以解决程序耦合性高的问题。</p>
+          <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><ul>
+<li>为什么使用消息队列？</li>
+<li>消息队列有什么优点和缺点？</li>
+<li>Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些场景？</li>
+</ul>
+<h2 id="面试官心理分析"><a href="#面试官心理分析" class="headerlink" title="面试官心理分析"></a>面试官心理分析</h2><p>其实面试官主要是想看看：</p>
+<ul>
+<li><strong>第一</strong>，你知不知道你们系统里为什么要用消息队列这个东西？</li>
+</ul>
+<p>不少候选人，说自己项目里用了 Redis、MQ，但是其实他并不知道自己为什么要用这个东西。其实说白了，就是为了用而用，或者是别人设计的架构，他从头到尾都没思考过。</p>
+<p>没有对自己的架构问过为什么的人，一定是平时没有思考的人，面试官对这类候选人印象通常很不好。因为面试官担心你进了团队之后只会木头木脑的干呆活儿，不会自己思考。</p>
+<ul>
+<li><strong>第二</strong>，你既然用了消息队列这个东西，你知不知道用了有什么好处&amp;坏处？</li>
+</ul>
+<p>你要是没考虑过这个，那你盲目弄个 MQ 进系统里，后面出了问题你是不是就自己溜了给公司留坑？你要是没考虑过引入一个技术可能存在的弊端和风险，面试官把这类候选人招进来了，基本可能就是挖坑型选手。就怕你干 1 年挖一堆坑，自己跳槽了，给公司留下无穷后患。</p>
+<ul>
+<li><strong>第三</strong>，既然你用了 MQ，可能是某一种 MQ，那么你当时做没做过调研？</li>
+</ul>
+<p>你别傻乎乎的自己拍脑袋看个人喜好就瞎用了一个 MQ，比如 Kafka，甚至都从没调研过业界流行的 MQ 到底有哪几种。每一个 MQ 的优点和缺点是什么。每一个 MQ <strong>没有绝对的好坏</strong>，但是就是看用在哪个场景可以<strong>扬长避短，利用其优势，规避其劣势</strong>。</p>
+<p>如果是一个不考虑技术选型的候选人招进了团队，leader 交给他一个任务，去设计个什么系统，他在里面用一些技术，可能都没考虑过选型，最后选的技术可能并不一定合适，一样是留坑。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/04/Java/spring-IoC/#more" rel="contents">
+            <a class="btn" href="/2020/04/29/面试/2020-4-29-为什么使用消息队列？/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -620,7 +640,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/03/03/Java/spring-summary/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2020/04/28/面试/面试遇到连环炮该如何接招？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -642,8 +662,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/03/Java/spring-summary/" itemprop="url">
-                  Spring 框架之框架概述
+                <a class="post-title-link" href="/2020/04/28/面试/面试遇到连环炮该如何接招？/" itemprop="url">
+                  面试遇到连环炮该如何接招？
                 </a>
               
             
@@ -659,8 +679,169 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T10:50:00+08:00">
-                2017-03-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T11:52:00+08:00">
+                2020-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="消息队列面试场景"><a href="#消息队列面试场景" class="headerlink" title="消息队列面试场景"></a>消息队列面试场景</h2><p><strong>面试官</strong>：你好。</p>
+<p><strong>候选人</strong>：你好。</p>
+<p>（面试官在你的简历上面看到了，呦，有个亮点，你在项目里用过 <code>MQ</code>，比如说你用过 <code>ActiveMQ</code>）</p>
+<p><strong>面试官</strong>：你在系统里用过消息队列吗？（面试官在随和的语气中展开了面试）</p>
+<p><strong>候选人</strong>：用过的（此时感觉没啥）</p>
+<p><strong>面试官</strong>：那你说一下你们在项目里是怎么用消息队列的？</p>
+<p><strong>候选人</strong>：巴拉巴拉，“我们啥啥系统发送个啥啥消息到队列，别的系统来消费啥啥的。比如我们有个订单系统，订单系统每次下一个新的订单的时候，就会发送一条消息到 <code>ActiveMQ</code> 里面去，后台有个库存系统负责获取消息然后更新库存。”</p>
+<p>（部分同学在这里会进入一个误区，就是你仅仅就是知道以及回答你们是怎么用这个消息队列的，用这个消息队列来干了个什么事情？）</p>
+<p><strong>面试官</strong>：那你们为什么使用消息队列啊？你的订单系统不发送消息到 <code>MQ</code>，直接订单系统调用库存系统一个接口，咔嚓一下，直接就调用成功，库存不也就更新了。</p>
+<p><strong>候选人</strong>：额。。。（楞了一下，为什么？我没怎么仔细想过啊，老大让用就用了），硬着头皮胡言乱语了几句。</p>
+<p>（面试官此时听你楞了一下，然后听你胡言乱语了几句，开始心里觉得有点儿那什么了，怀疑你之前就压根儿没思考过这问题）</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/28/面试/面试遇到连环炮该如何接招？/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+</div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/05/Java/bingfa3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="深山老猿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2018/12/15/5c145ae6711e7.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="深山老猿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/05/05/Java/bingfa3/" itemprop="url">
+                  慕课网高并发课程笔记（三）-项目准备
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T21:50:00+08:00">
+                2018-05-05
               </time>
             
 
@@ -718,16 +899,13 @@
 
       
         
-          <h1 id="什么是-Spring？"><a href="#什么是-Spring？" class="headerlink" title="什么是 Spring？"></a>什么是 Spring？</h1><ul>
-<li>Spring 是一个开源框架。</li>
-<li>Spring 是于2003 年兴起的一个轻量级的 Java 开发框架，由 Rod Johnson 在其著作 Expert One-On-One J2EE Development and Design 中阐述的部分理念和原型衍生而来。</li>
-<li>它是为了解决企业应用开发的复杂性而创建的。框架的主要优势之一就是其分层架构，分层架构允许使用者选择使用哪一个组件，同时为 J2EE 应用程序开发提供集成的框架。</li>
-<li>Spring 使用基本的 JavaBean 来完成以前只可能由EJB完成的事情。然而，Spring 的用途不仅限于服务器端的开发。从简单性、可测试性和松耦合的角度而言，任何 Java 应用都可以从 Spring 中受益。</li>
-<li>Spring 的核心是控制反转（IoC）和面向切面（AOP）。简单来说，Spring 是一个分层的 JavaSE/EEfull-stack(一站式) 轻量级开源框架。</li>
+          <h2 id="线程安全与线程不安全"><a href="#线程安全与线程不安全" class="headerlink" title="线程安全与线程不安全"></a>线程安全与线程不安全</h2><ul>
+<li>线程安全：代码所在的进程有多个线程在同时运行，这些线程可能会同时运行同一段代码，如果每次运行的结果和单线程运行的结果一样的，而且其他的变量的值也和预期是一样的，我们就认为这是线程安全的。简单的说，就是并发环境下得到我们期望的结果。</li>
+<li>线程不安全：就是不提供数据访问保护，有可能出现多个线程先后更改数据，所得到的数据是脏数据，也可能是在计算中出现错误。</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/03/Java/spring-summary/#more" rel="contents">
+            <a class="btn" href="/2018/05/05/Java/bingfa3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -777,7 +955,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/02/27/Android/引入开源项目的正确姿势/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/04/Java/bingfa2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -799,8 +977,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/27/Android/引入开源项目的正确姿势/" itemprop="url">
-                  引入开源项目的正确姿势
+                <a class="post-title-link" href="/2018/05/04/Java/bingfa2/" itemprop="url">
+                  慕课网高并发课程笔记（二）-并发基础
                 </a>
               
             
@@ -816,8 +994,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T22:00:00+08:00">
-                2017-02-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T21:50:00+08:00">
+                2018-05-04
               </time>
             
 
@@ -839,8 +1017,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -875,11 +1053,12 @@
 
       
         
-          <h2 id="为什么要用开源项目？"><a href="#为什么要用开源项目？" class="headerlink" title="为什么要用开源项目？"></a>为什么要用开源项目？</h2><p>软件开发领域一直有一个原则，DRY，Don’t repeat yourself，翻译过来就是”<strong>不要重复造轮子</strong>“。一个项目的开发，我们不可能一切从 0 开始，如果真要那样··· 开源项目的主要目的是共享，其实就为了让大家不要重复造轮子，尤其在互联网这个快速发展的领域，速度就是生命，引入开源项目，可以节省大量的人力和时间。</p>
-<p>虽说开源项目为我们节省了大量的人力和时间，但是开源项目并不是完美的，相信使用过开源项目的人都大大小小踩过一些坑，如代码不规范啊，项目有 bug 啊等等，出了问题都会为我们的项目以及公司带来不小的影响，这个时候如何选择开源项目就变得很重要。</p>
+          <h2 id="CPU多级缓存"><a href="#CPU多级缓存" class="headerlink" title="CPU多级缓存"></a>CPU多级缓存</h2><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/20180531152774962796143.png" alt="CPU多级缓存"></p>
+<p>图左侧为最简单的高速缓存的配置，数据的读取和存储都经过高速缓存，CPU核心与高速缓存有一条特殊的快速通道；主存与高速缓存都连在系统总线上（BUS）这条总线还用于其他组件的通信。</p>
+<p>在高速缓存出现后不久，系统变得越来越复杂，高速缓存与主存之间的速度差异被拉大，直到加入了另一级缓存，新加入的这级缓存比第一缓存更大，并且更慢，由于加大一级缓存从经济上考虑是行不通的，所以有了二级缓存，甚至是三级缓存。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/27/Android/引入开源项目的正确姿势/#more" rel="contents">
+            <a class="btn" href="/2018/05/04/Java/bingfa2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -929,7 +1108,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/10/01/Web/HTML5新增的元素和移除的元素/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/05/01/Java/bingfa1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -951,8 +1130,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/01/Web/HTML5新增的元素和移除的元素/" itemprop="url">
-                  HTML5新增的元素和移除的元素
+                <a class="post-title-link" href="/2018/05/01/Java/bingfa1/" itemprop="url">
+                  慕课网高并发课程笔记（一）-并发和高并发基本概念
                 </a>
               
             
@@ -968,8 +1147,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-01T20:00:00+08:00">
-                2016-10-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T21:50:00+08:00">
+                2018-05-01
               </time>
             
 
@@ -991,8 +1170,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1027,10 +1206,11 @@
 
       
         
-          <p>为了更好地处理今天的互联网应用，HTML5添加了很多新元素及功能，比如: 图形的绘制，多媒体内容，更好的页面结构，更好的形式 处理，和几个api拖放元素，定位，包括网页 应用程序缓存，存储，网络工作者，等。</p>
+          <h1 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h1><p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/2018053115277481628838.png" alt="Java并发编程与高并发解决方案"></p>
+<p>课程结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/10/01/Web/HTML5新增的元素和移除的元素/#more" rel="contents">
+            <a class="btn" href="/2018/05/01/Java/bingfa1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1080,7 +1260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/09/26/Hexo/解决GitHub Pages自有域名二级目录无法访问问题/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2018/04/07/Python/python入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -1102,8 +1282,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/26/Hexo/解决GitHub Pages自有域名二级目录无法访问问题/" itemprop="url">
-                  解决GitHub Pages自有域名二级目录无法访问问题
+                <a class="post-title-link" href="/2018/04/07/Python/python入门/" itemprop="url">
+                  Python入门
                 </a>
               
             
@@ -1119,8 +1299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-26T17:10:00+08:00">
-                2016-09-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T17:20:00+08:00">
+                2018-04-07
               </time>
             
 
@@ -1142,8 +1322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -1178,11 +1358,10 @@
 
       
         
-          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>通常新建个项目，通过GitHub上创建gh-pages分支可以访问项目主页。然而我访问<code>usename.github.io/repo</code>,或者自定义域名 <code>yoursite.com/repo</code>    ，跳转到了 404 页面。</p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>自己把博客同时放在 GitHub 和 Coding上，通过 DNS 做了不同线路解析，通过 CNAME 文件绑定了自己的自定义域名。GitHub 可以创建一个个人主页和多个项目主页，一般这样访问是没有问题。我的问题出现在域名解析这，默认线路设置为解析到 Coding 了，显然 Coding 上找不到  GitHub 创建的项目主页，就去博客目录下去找 <code>/repo</code> 目录，肯定找不到啦。</p>
+          <p>Python入门系列电子书，搭配廖雪峰的<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000"><font color=blue>Python教程</font></a>学习效果更佳。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/26/Hexo/解决GitHub Pages自有域名二级目录无法访问问题/#more" rel="contents">
+            <a class="btn" href="/2018/04/07/Python/python入门/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1232,7 +1411,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/09/24/随笔/该重新学习下前端知识了/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/05/07/环境搭建/CentOS-install-ZooKeeper/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -1254,8 +1433,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/24/随笔/该重新学习下前端知识了/" itemprop="url">
-                  该重新学习下前端知识了
+                <a class="post-title-link" href="/2017/05/07/环境搭建/CentOS-install-ZooKeeper/" itemprop="url">
+                  Linux(CentOS) 下安装 ZooKeeper
                 </a>
               
             
@@ -1271,8 +1450,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-24T20:00:00+08:00">
-                2016-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T10:52:00+08:00">
+                2017-05-07
               </time>
             
 
@@ -1294,8 +1473,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -1330,10 +1509,11 @@
 
       
         
-          <p>前几天微博朋友圈被微信小程序刷屏了。虽说现在只是内测，但微博Q群里都讨论炸了，可见微信对移动互联网影响多大。<br><img src="http://7xs5l8.com1.z0.glb.clouddn.com/cb105e8438ba4d5e9a7f8548906a93c2_th.jpg" alt=""></p>
+          <h2 id="1-单机模式-Standalone-mode"><a href="#1-单机模式-Standalone-mode" class="headerlink" title="1.单机模式(Standalone mode)"></a>1.单机模式(Standalone mode)</h2><h3 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h3><p><a href="http://apache.fayea.com/zookeeper/">官网</a>下载或使用 wget 命令下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># wget http://archive.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz</div><div class="line"># tar zxf zookeeper-3.4.9.tar.gz</div></pre></td></tr></table></figure></p>
+<p>如果 <code>wget</code> 命令找不到，先安装 wget 的 RPM 包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum -y install wget</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/24/随笔/该重新学习下前端知识了/#more" rel="contents">
+            <a class="btn" href="/2017/05/07/环境搭建/CentOS-install-ZooKeeper/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1383,7 +1563,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/09/02/Android/Banner轮播图效果实现/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -1405,8 +1585,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/02/Android/Banner轮播图效果实现/" itemprop="url">
-                  Banner轮播图效果实现
+                <a class="post-title-link" href="/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/" itemprop="url">
+                  解决 CentOS 安装完成后 ifconfig 命令不能用问题
                 </a>
               
             
@@ -1422,8 +1602,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-02T21:20:00+08:00">
-                2016-09-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T10:50:00+08:00">
+                2017-05-07
               </time>
             
 
@@ -1445,8 +1625,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -1481,11 +1661,10 @@
 
       
         
-          <p>项目中常常需要用到如下图的 Banner 广告轮播图的效果,利用 ViewPager 实现。</p>
-<p><img src="http://7xs5l8.com1.z0.glb.clouddn.com/GIF.gif" alt=""></p>
+          <p>本来想查看一下本机的 ip 地址，ifconfig 命令报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># ifconfig</div><div class="line">-bash: ifconfig: command not found</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/02/Android/Banner轮播图效果实现/#more" rel="contents">
+            <a class="btn" href="/2017/05/07/环境搭建/解决CentOS7安装完成后ifconfig命令不能用问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1535,7 +1714,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/06/15/Utils/dip(独立像素)和px(像素)之间转换/">
+    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2017/05/06/环境搭建/MacOS-Maven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="深山老猿">
@@ -1557,8 +1736,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/15/Utils/dip(独立像素)和px(像素)之间转换/" itemprop="url">
-                  dip(独立像素)和px(像素)之间转换
+                <a class="post-title-link" href="/2017/05/06/环境搭建/MacOS-Maven/" itemprop="url">
+                  Mac OS X下Maven的安装与配置
                 </a>
               
             
@@ -1574,8 +1753,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-15T20:50:00+08:00">
-                2016-06-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T04:39:00+08:00">
+                2017-05-06
               </time>
             
 
@@ -1597,8 +1776,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Utils/" itemprop="url" rel="index">
-                    <span itemprop="name">Utils</span>
+                  <a href="/categories/环境搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">环境搭建</span>
                   </a>
                 </span>
 
@@ -1633,164 +1812,10 @@
 
       
         
-          <ul>
-<li><strong>dip(dp):</strong> 与设备无关的像素，与“像素密度”密切相关，推荐使用</li>
-<li><strong>px:</strong> 普通像素</li>
-</ul>
+          <h2 id="Maven-下载"><a href="#Maven-下载" class="headerlink" title="Maven 下载"></a>Maven 下载</h2><p><a href="https://maven.apache.org/download.cgi">官网下载</a>压缩包,选择 <code>Binary zip archive</code><br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1ffbqojfs9wj314e0j6dgt.jpg" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/06/15/Utils/dip(独立像素)和px(像素)之间转换/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-</div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://shenshanlaoyuan.com/2016/06/13/Android/The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required .class files/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="深山老猿">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2018/12/15/5c145ae6711e7.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="深山老猿">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/13/Android/The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required .class files/" itemprop="url">
-                  The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required .class files
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-13T20:00:00+08:00">
-                2016-06-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在 Android 6.0（API 23）中，Google 已经移除了移除了Apache HttpClient 相关的类、HttpResponse 类。缺失jar包使用HttpResponse等会报错：<br><code>The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/06/13/Android/The type org.apache.http.HttpResponse cannot be resolved. It is indirectly referenced from required .class files/#more" rel="contents">
+            <a class="btn" href="/2017/05/06/环境搭建/MacOS-Maven/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1835,7 +1860,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1880,7 +1905,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1902,7 +1927,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
