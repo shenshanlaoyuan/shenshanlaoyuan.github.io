@@ -101,7 +101,7 @@
 如果说你这个是用 MQ 来传递非常核心的消息，比如说计费、扣费的一些消息，那必须确保这个 MQ 传递过程中绝对不会把计费消息给弄丢。">
 <meta property="og:image" content="https://i.loli.net/2020/04/29/TDqAgEfCtRskpGV.png">
 <meta property="og:image" content="https://i.loli.net/2020/04/29/v58Tau3UpytYIXV.png">
-<meta property="og:updated_time" content="2020-05-05T01:21:34.513Z">
+<meta property="og:updated_time" content="2020-05-09T02:05:02.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何保证消息的可靠性传输？">
 <meta name="twitter:description" content="面试题如何保证消息的可靠性传输？或者说，如何处理消息丢失的问题？
@@ -420,7 +420,7 @@
 
       
         <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>如何保证消息的可靠性传输？或者说，如何处理消息丢失的问题？</p>
-<h2 id="面试官心理分析"><a href="#面试官心理分析" class="headerlink" title="面试官心理分析"></a>面试官心理分析</h2><p>这个是肯定的，用 MQ 有个基本原则，就是<strong>数据不能多一条，也不能少一条</strong>，不能多，就是前面说的<a href="/docs/high-concurrency/how-to-ensure-that-messages-are-not-repeatedly-consumed.md">重复消费和幂等性问题</a>。不能少，就是说这数据别搞丢了。那这个问题你必须得考虑一下。</p>
+<h2 id="面试官心理分析"><a href="#面试官心理分析" class="headerlink" title="面试官心理分析"></a>面试官心理分析</h2><p>这个是肯定的，用 MQ 有个基本原则，就是<strong>数据不能多一条，也不能少一条</strong>，不能多，就是前面说的<a href="http://shenshanlaoyuan.com/2020/05/01/面试/2020-5-1-如何保证消息不被重复消费？/">重复消费和幂等性问题</a>。不能少，就是说这数据别搞丢了。那这个问题你必须得考虑一下。</p>
 <p>如果说你这个是用 MQ 来传递非常核心的消息，比如说计费、扣费的一些消息，那必须确保这个 MQ 传递过程中<strong>绝对不会把计费消息给弄丢</strong>。</p>
 <a id="more"></a><span class='source'><blockquote><p>转载请注明出处：http://shenshanlaoyuan.com/2020/05/02/面试/2020-5-2-如何保证消息的可靠性传输？/</p><p>访问原文「<a href='http://shenshanlaoyuan.com/2020/05/02/面试/2020-5-2-如何保证消息的可靠性传输？/'>如何保证消息的可靠性传输？</a>」获取最佳阅读体验并参与讨论</p></blockquote></span>
 <script type="text/javascript">
